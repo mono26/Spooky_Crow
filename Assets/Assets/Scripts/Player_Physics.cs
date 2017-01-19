@@ -8,6 +8,9 @@ public class Player_Physics : MonoBehaviour
     public Vector2 direction;
     public Vector2 velocityVector;
     public float speed = 1;     //Is going to be in m/s and is initialized 1
+    public float bulletSpeed;
+    public GameObject bulletPrefab;
+    public float firingRate = 0.2f;
 
     private Rigidbody2D my_RigidBody;
 
@@ -25,9 +28,16 @@ public class Player_Physics : MonoBehaviour
         ClampPosition();
         velocityVector = my_RigidBody.velocity;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            CastRay();      //Se necesita saber la posicion de el click
+            Fire();
+            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            // CastRay();      //Se necesita saber la posicion de el click
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            CancelInvoke("Fire");
         }
     }
 
@@ -59,5 +69,20 @@ public class Player_Physics : MonoBehaviour
                 Mathf.Clamp(my_RigidBody.position.x, -7f, 7f),
                 Mathf.Clamp(my_RigidBody.position.y, -5f, 5f)
             );
+    }
+
+    void Fire()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var localMousePosition = mousePosition;
+
+        var direction = (localMousePosition - my_RigidBody.position).normalized;
+        Debug.Log(direction);
+
+        GameObject bullet = Instantiate(bulletPrefab, my_RigidBody.position, transform.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed * Time.deltaTime);
+        //bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(mousePosition .x, mousePosition .y, 0);
+        //bullet.GetComponent<Rigidbody2D>().position = new Vector3(mousePosition.x, mousePosition.y, 0);
+
     }
 }
