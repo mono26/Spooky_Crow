@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Player_Physics : MonoBehaviour
 {
-    public Vector2 mousePosition;
-    public Vector2 direction;
+    public Vector3 targetPosition;
+    public Vector3 directionVector;
     public Vector2 velocityVector;
     public float speed = 1;     //Is going to be in m/s and is initialized 1
     public float bulletSpeed;
     public GameObject bulletPrefab;
     public float firingRate = 0.2f;
+    public float firingTime = 0.00001f;
 
     private Rigidbody2D my_RigidBody;
+    private Camera my_Camera;
 
     void Awake()
     {
@@ -26,25 +28,31 @@ public class Player_Physics : MonoBehaviour
 
         MovePlayer(vertical, horizontal);
         ClampPosition();
-        velocityVector = my_RigidBody.velocity;
+        //velocityVector = my_RigidBody.velocity;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            InvokeRepeating("Fire", firingTime, firingRate);
+        }
 
         if (Input.GetMouseButton(0))
         {
-            Fire();
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            // CastRay();      //Se necesita saber la posicion de el click
+            my_Camera = FindCamera();
+
+            RaycastHit hit;
+            if (!Physics.Raycast(my_Camera.ScreenPointToRay(Input.mousePosition), out hit, 50.0f))
+                return;
+
+            targetPosition = hit.point;
+            directionVector = targetPosition - transform.position;
+            if (directionVector.magnitude > 1)
+                directionVector = directionVector.normalized;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             CancelInvoke("Fire");
         }
-    }
-
-    void CastRay()
-    {
-        RaycastHit2D hit;
-        Ray2D ray = new Ray2D(Input.mousePosition, Vector3.forward);
     }
 
     void MovePlayer(float forward, float horizontal)       //Metodo usado para mover al jugador, giroscopio, test teclas
@@ -71,16 +79,24 @@ public class Player_Physics : MonoBehaviour
             );
     }
 
+    Camera FindCamera()     //Para encontrar la camara
+    {
+        if (GetComponent<Camera>())
+            return GetComponent<Camera>();
+        else
+            return Camera.main;
+    }
+
     void Fire()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var localMousePosition = mousePosition;
+        //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //MONO
+        //var localMousePosition = mousePosition; //MONO
 
-        var direction = (localMousePosition - my_RigidBody.position).normalized;
-        Debug.Log(direction);
+        /*var direction = (localMousePosition - my_RigidBody.position).normalized;
+        Debug.Log(direction);*/ //MONO
 
-        GameObject bullet = Instantiate(bulletPrefab, my_RigidBody.position, transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed * Time.deltaTime);
+        GameObject bullet = Instantiate(bulletPrefab, my_RigidBody.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(directionVector.x, directionVector.y) * bulletSpeed, ForceMode2D.Impulse);
         //bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(mousePosition .x, mousePosition .y, 0);
         //bullet.GetComponent<Rigidbody2D>().position = new Vector3(mousePosition.x, mousePosition.y, 0);
 
