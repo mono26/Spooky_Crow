@@ -7,7 +7,10 @@ public class Player_Physics : MonoBehaviour
     public Vector3 targetPosition;
     public Vector3 directionVector;
     public Vector2 velocityVector;
+
     public float speed = 1;     //Is going to be in m/s and is initialized 1
+    public float rotationSpeed = 1;
+
     public float bulletSpeed;
     public GameObject bulletPrefab;
     public float firingRate = 0.2f;
@@ -21,7 +24,7 @@ public class Player_Physics : MonoBehaviour
         my_RigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -47,12 +50,25 @@ public class Player_Physics : MonoBehaviour
             directionVector = targetPosition - transform.position;
             if (directionVector.magnitude > 1)
                 directionVector = directionVector.normalized;
+
+            RotatePlayer();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             CancelInvoke("Fire");
         }
+    }
+    void RotatePlayer()
+    {
+        var direccion = directionVector;
+        direccion.z = 0.0f;
+        var forward = transform.right;
+        forward.z = 0.0f;
+
+        if (direccion == forward)
+            return;
+        transform.rotation = Quaternion.FromToRotation(forward, direccion);
     }
 
     void MovePlayer(float forward, float horizontal)       //Metodo usado para mover al jugador, giroscopio, test teclas
@@ -67,7 +83,7 @@ public class Player_Physics : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.black;
-        Gizmos.DrawLine(transform.position, transform.position+new Vector3(1, 0, 0));
+        Gizmos.DrawLine(transform.position, transform.position+transform.right);
     }
 
     void ClampPosition()        //Method for clamping character inside moving plane
