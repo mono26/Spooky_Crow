@@ -111,8 +111,10 @@ public class Player_Physics : MonoBehaviour
         /*var direction = (localMousePosition - my_RigidBody.position).normalized;
         Debug.Log(direction);*/ //MONO
 
-        GameObject bullet = Instantiate(bulletPrefab, my_RigidBody.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(directionVector.x, directionVector.y) * bulletSpeed, ForceMode2D.Impulse);
+        Rigidbody2D bullet = BulletPool.Instance.GetBullet();
+        bullet.position = my_RigidBody.position;
+        bullet.rotation = my_RigidBody.rotation;
+        bullet.AddForce(new Vector2(directionVector.x, directionVector.y) * bulletSpeed, ForceMode2D.Impulse);
         //bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(mousePosition .x, mousePosition .y, 0);
         //bullet.GetComponent<Rigidbody2D>().position = new Vector3(mousePosition.x, mousePosition.y, 0);
 
