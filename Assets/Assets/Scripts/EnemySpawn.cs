@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour {
     {
         foreach (GameObject enemy in enemyPrefabs)      //Llenar el diccionario del nivel con los enemigos del nivel.
         {
-            enemigos[enemy.name] = enemy;
+            enemigos.Add(enemy.name, enemy);
         }
     }
 
@@ -34,5 +34,10 @@ public class EnemySpawn : MonoBehaviour {
                 Instantiate(enemigos["Boss"], spawn.position, spawn.rotation);
             }
         }
+        else
+            foreach (Transform spawn in spawnPoints)
+            {
+                Instantiate(enemigos["Enemy"], spawn.position, spawn.rotation);
+            }
     }
 }

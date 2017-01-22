@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour {
+public class BulletPool : MonoBehaviour
+{
     private static BulletPool instance;
     public static BulletPool Instance
     {

@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalEnemyBehaviour : MonoBehaviour {
+public class SpecialEnemyBehaviour : MonoBehaviour
+{
 
     public float ySpeed;
-    public float health = 100;
-    public int scoreValue = 30;
+    public float health = 150;
+    public int scoreValue = 50;
 
+    private GameObject player;
     private Rigidbody2D my_RigidBody;
     private ScoreKeeper scoreKeeper;
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         my_RigidBody = GetComponent<Rigidbody2D>();
     }
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         scoreKeeper = GameObject.Find("Score").GetComponent<ScoreKeeper>();
-	}
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -34,23 +37,19 @@ public class NormalEnemyBehaviour : MonoBehaviour {
             }
         }
     }
-    
 
-    // Update is called once per frame
-    void Update ()
-    {
-        VerticalMovement();
-    }
-
-    void VerticalMovement()
-    {
-        Vector2 verticalMovement = Vector2.down;
-        gameObject.GetComponent<Rigidbody2D>().position += (verticalMovement * ySpeed) * Time.deltaTime;
-    }
     void Die()
     {
-        Destroy(gameObject);
+        EnemyPool.Instance.ReleaseEnemy(my_RigidBody);
         scoreKeeper.Score(scoreValue);
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        var playerPosition = player.GetComponent<Rigidbody2D>().position;
+        var myPosition = my_RigidBody.position;
+        var direccion = (playerPosition - myPosition).normalized;
+        gameObject.GetComponent<Rigidbody2D>().position += (direccion * ySpeed) * Time.deltaTime;
     }
+}
