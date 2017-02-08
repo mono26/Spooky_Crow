@@ -1,0 +1,3 @@
+Pool Enemigos
+Corregir el movimiento del personaje
+Corregir movimiento de los enemigos
