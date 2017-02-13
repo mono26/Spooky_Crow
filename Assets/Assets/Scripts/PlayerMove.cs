@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Vector3 targetPoint = Vector3.zero;
-    public Vector2 velocityVector;
+    public Vector3 velocityVector;
     public Vector3 touchPosition;
 
     public float speed = 1;     //Is going to be in m/s and is initialized 1
     public float rotationSpeed = 1;
 
-    private Rigidbody2D my_RigidBody;
+    private Rigidbody my_RigidBody;
     private Camera my_Camera;
 
     void Awake()
     {
-        my_RigidBody = GetComponent<Rigidbody2D>();
+        my_RigidBody = GetComponent<Rigidbody>();
     }
     void Start()
     {
@@ -54,26 +54,27 @@ public class PlayerMove : MonoBehaviour
     }
     void RotatePlayer()
     {
-        var direccion = targetPoint - transform.position;
-        direccion.z = 0.0f;
+        var direccion = (targetPoint - transform.position).normalized;
+        direccion.y = 0.0f;
 
         var forwardVector = Vector3.RotateTowards(transform.right, direccion, rotationSpeed * Time.deltaTime, 0.0f);
-        transform.right = forwardVector;
+        transform.forward = forwardVector;
     }
     public void MovePlayer(float vertical, float horizontal)       //Metodo usado para mover al jugador, giroscopio, test teclas
     {
-        var forces = Vector2.zero;
-        forces += Vector2.right * horizontal * speed;
-        forces += Vector2.up * vertical * speed;
+        var forces = Vector3.zero;
+        forces += Vector3.forward * horizontal * speed;
+        forces += Vector3.right * vertical * speed;
         my_RigidBody.velocity += forces * Time.deltaTime;
 
     }
     void ClampPosition()        //Method for clamping character inside moving plane
     {
-        my_RigidBody.position = new Vector2
+        my_RigidBody.position = new Vector3
             (
                 Mathf.Clamp(my_RigidBody.position.x, -7f, 7f),
-                Mathf.Clamp(my_RigidBody.position.y, -5f, 5f)
+                my_RigidBody.position.y,
+                Mathf.Clamp(my_RigidBody.position.z, -7.0f, 7.0f)
             );
     }
 }
