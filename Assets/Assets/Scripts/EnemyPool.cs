@@ -12,11 +12,11 @@ public class EnemyPool : MonoBehaviour
         get { return instance; }
     }
     [SerializeField]
-    private Rigidbody2D enemyPrefab;
+    private Rigidbody enemyPrefab;
     [SerializeField]
     private int size;
 
-    private List<Rigidbody2D> enemies;
+    private List<Rigidbody> enemies;
 
     private void Awake()
     {
@@ -29,28 +29,28 @@ public class EnemyPool : MonoBehaviour
     }
     private void Start()
     {
-        enemies = new List<Rigidbody2D>();
+        enemies = new List<Rigidbody>();
     }
-    private void AddBullet()
+    private void AddEnemy()
     {
-        Rigidbody2D instance = Instantiate(enemyPrefab);
+        Rigidbody instance = Instantiate(enemyPrefab);
         instance.gameObject.SetActive(false);
         enemies.Add(instance);
     }
-    public Rigidbody2D GetBullet()
+    public Rigidbody GetEnemy()
     {
         if (enemies.Count == 0)
-            AddBullet();    //Si no hay ninguna bala la añade.
+            AddEnemy();    //Si no hay ninguna bala la añade.
 
-        Rigidbody2D enemy = enemies[enemies.Count - 1];      //Se hace una referencia a la bala en la ultima posicion de la list, funciona como un queue
+        Rigidbody enemy = enemies[enemies.Count - 1];      //Se hace una referencia a la bala en la ultima posicion de la list, funciona como un queue
         enemies.RemoveAt(enemies.Count - 1);    //Se remueve la bala de la lista
         enemy.gameObject.SetActive(true);    //Se activa la bala
         return enemy;
     }
 
-    public void ReleaseBullet(Rigidbody2D releaseBullet)
+    public void ReleaseEnemy(Rigidbody releaseEnemy)
     {
-        releaseBullet.gameObject.SetActive(false);
-        enemies.Add(releaseBullet);
+        releaseEnemy.gameObject.SetActive(false);
+        enemies.Add(releaseEnemy);
     }
 }

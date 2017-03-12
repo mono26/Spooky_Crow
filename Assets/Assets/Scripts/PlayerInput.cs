@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     public float vertical;      //Valor para el input vertical dependiendo del acelerometro
     public float horizontal;      //Valor para el input horizontal dependiendo del acelerometro
+    public float movSpeed;
 
     private PlayerMove my_PlayerMove;
 
@@ -22,10 +23,13 @@ public class PlayerInput : MonoBehaviour
 	
 	// Update is called once per frame
 	void FixedUpdate ()
-    {
-        vertical = Input.acceleration.y * 3;
-        horizontal = Input.acceleration.x * 3;
+    {   
+        
+
+        vertical = Input.GetAxis("Horizontal") * movSpeed;
+        horizontal = Input.GetAxis("Vertical") * movSpeed;
 
         my_PlayerMove.MovePlayer(vertical, horizontal);
+    
     }
 }

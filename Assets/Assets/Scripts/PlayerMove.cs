@@ -57,7 +57,7 @@ public class PlayerMove : MonoBehaviour
         var direccion = (targetPoint - transform.position).normalized;
         direccion.y = 0.0f;
 
-        var forwardVector = Vector3.RotateTowards(transform.right, direccion, rotationSpeed * Time.deltaTime, 0.0f);
+        var forwardVector = Vector3.RotateTowards(transform.forward, direccion, rotationSpeed * Time.deltaTime, 0.0f);
         transform.forward = forwardVector;
     }
     public void MovePlayer(float vertical, float horizontal)       //Metodo usado para mover al jugador, giroscopio, test teclas
@@ -65,7 +65,7 @@ public class PlayerMove : MonoBehaviour
         var forces = Vector3.zero;
         forces += Vector3.forward * horizontal * speed;
         forces += Vector3.right * vertical * speed;
-        my_RigidBody.velocity += forces * Time.deltaTime;
+        my_RigidBody.position += forces * Time.deltaTime;
 
     }
     void ClampPosition()        //Method for clamping character inside moving plane
