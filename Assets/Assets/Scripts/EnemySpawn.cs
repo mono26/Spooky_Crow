@@ -31,7 +31,7 @@ public class EnemySpawn : MonoBehaviour {
         {
             foreach (Transform spawn in spawnPoints)
             {
-                Instantiate(enemigos["Boss"], spawn.position, spawn.rotation);
+                Instantiate(enemigos["Enemy"], spawn.position, spawn.rotation);
             }
         }
     }
