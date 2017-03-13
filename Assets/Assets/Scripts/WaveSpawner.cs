@@ -11,10 +11,15 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]   //Para poder ver una clase en el editor
     public class Wave
     {
+        public enum WaveType
+        {
+            SINGLE, MULTIPLE    //Para crear waves con multiples enemigos.
+        }
+        public WaveType type;
         public string name;
-        public Rigidbody enemy;
+        public Rigidbody[] enemy;       //Alamcenar los distintos enemigos.
         public float spawnRate;
-        public int count;
+        public int[] count;     //Cuanto se spawnea de cada enmigo
     }
     public Wave[] waves;        //Para alamacenar las diferentes waves.
     public int nextWave = 0;    //Para saber cual es la siguente Wave y comparar si es el maximo.
@@ -83,11 +88,25 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Spawning Wave");
         state = SpawnState.SPAWNING;    //Al inicio para poner el stado en spawning.
-        for (int i = 0; i < _wave.count; i++)
+        if (_wave.type == Wave.WaveType.SINGLE)
         {
-            SpawnEnemy(_wave.enemy);    //Should pass the correct enemy per wave
-            //SpawnEnemy(EnemyPool.Instance.GetEnemy());
-            yield return new WaitForSeconds(1f / _wave.spawnRate);
+            for (int i = 0; i < _wave.count[0]; i++)
+            {
+                SpawnEnemy(_wave.enemy[0]);    //Should pass the correct enemy per wave
+                //SpawnEnemy(EnemyPool.Instance.GetEnemy());
+                yield return new WaitForSeconds(1f / _wave.spawnRate);
+            }
+        }
+        else if(_wave.type == Wave.WaveType.MULTIPLE)
+        {
+            for(int enemy = 0; enemy < _wave.enemy.Length; enemy++)
+            {
+                for (int count = 0; count < _wave.count[count]; count++)
+                {
+                    SpawnEnemy(_wave.enemy[enemy]);
+                    yield return new WaitForSeconds(1f / _wave.spawnRate);
+                }
+            }
         }
         state = SpawnState.WAITING;
         yield break;

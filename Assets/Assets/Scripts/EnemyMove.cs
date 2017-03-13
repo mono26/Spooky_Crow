@@ -28,12 +28,12 @@ public class EnemyMove : MonoBehaviour
         var type = my_Info.my_Type;
         switch(type)
         {
-            case (EnemyType.atacker):
+            case (EnemyInfo.EnemyType.ATACKER):
                 {
                     FindPlayer();
                     break;
                 }
-            case (EnemyType.stealer):
+            case (EnemyInfo.EnemyType.STEALER):
                 {
                     FindHouse();
                     break;

@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType
-{
-    atacker, stealer, boss
-}
+[System.Serializable]
 public class EnemyInfo : MonoBehaviour {
+    public enum EnemyType
+    {
+        ATACKER, STEALER, BOSS
+    }
 
     public EnemyType my_Type;
-    private int health;
+    public string name;
 
+    [SerializeField]
+    private int health;
+    [SerializeField]
+    private int speed;
 }
