@@ -11,6 +11,7 @@ public class EnemyInfo : MonoBehaviour {
 
     public EnemyType my_Type;
     public string name;
+    public int index;   //Variable para almacenar la informacion de los pools.
 
     [SerializeField]
     private int health;

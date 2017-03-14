@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
         }
         public WaveType type;
         public string name;
-        public Rigidbody[] enemy;       //Alamcenar los distintos enemigos.
+        public GameObject[] enemy;       //Alamcenar los distintos enemigos.
         public float spawnRate;
         public int[] count;     //Cuanto se spawnea de cada enmigo
     }
@@ -32,8 +32,7 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform[] spawnPoints;   //Para almacenar los spawn points
 
-	// Use this for initialization
-	void Start ()
+    void Awake()
     {
         waveCountDown = timeBetweenWaves;
         state = SpawnState.COUNTING;
@@ -41,6 +40,24 @@ public class WaveSpawner : MonoBehaviour
             Debug.LogError("No spawn points");
         if (waves.Length == 0)
             Debug.LogError("No wave to spawn");
+    }
+	// Use this for initialization
+	void Start ()
+    {
+        //Esta seccion del codigo solo sirve para asignar los index del pool al WaveInfo para el prefab contenido en el wave.enemy
+        //Esta machetiado para que funcione solo si los enemy infos pertenecientes a cada prefab son los mismos y estan en el mismo orden tanto en el pool como en la wave.enemy
+        for (int wave = 0; wave < waves.Length; wave++)
+        {
+            if (waves[wave].type == Wave.WaveType.SINGLE)
+                waves[wave].enemy[0].GetComponent<EnemyInfo>().index = wave;
+            else if(waves[wave].type == Wave.WaveType.MULTIPLE)
+            {
+                for (int enemy = 0; enemy < waves[wave].enemy.Length; enemy++)
+                {
+                    waves[wave].enemy[enemy].GetComponent<EnemyInfo>().index = enemy;
+                }
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -112,11 +129,13 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(Rigidbody _enemy)
+    void SpawnEnemy(GameObject _enemy)
     {
         Debug.Log("Spawning Enemy:" + _enemy.name);
         var spawnIndex = Random.Range(0, spawnPoints.Length - 1);   //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
-        var instance = GameObject.Instantiate(_enemy, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
+        var obj = PoolsManager.Instance.GetObject(_enemy.GetComponent<EnemyInfo>().index);
+        obj.transform.position = spawnPoints[spawnIndex].position;
+        obj.transform.rotation = spawnPoints[spawnIndex].rotation;
     }
 
     void WaveCompleted()
