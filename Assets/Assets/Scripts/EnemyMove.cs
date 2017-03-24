@@ -17,7 +17,6 @@ public class EnemyMove : MonoBehaviour
     void Awake()
     {
         my_RigidBody = GetComponent<Rigidbody>();
-        my_Info = GetComponent<EnemyInfo>();
     }
     void Start()
     {

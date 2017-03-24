@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Singleton part
+    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public int rondas;
 
-    private int numberOfEnemies;
-
-    Dictionary<string,GameObject> enemigos = new Dictionary<string,GameObject>();
+    public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.
+    public GameObject house;    ////Referencia a la casa para que puedan acceder a los targets.
 
     void Awake()
     {
-        foreach (GameObject enemy in enemyPrefabs)      //Llenar el diccionario del nivel con los enemigos del nivel.
+        if (instance == null)
         {
-            enemigos[enemy.name] = enemy;
+            instance = this;    //Parte del singleton en donde se asigna la unica instancia de la clase
+        }
+        else
+            Destroy(gameObject);
+
+        //Si ambas referencias no han sido asignadas por en el editor las debe de encontrar.
+        if (player == null || house == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Crow");
+            house = GameObject.FindGameObjectWithTag("House");
         }
     }
-
     void Start()
     {
-        Spawn();
-    }
 
-    void Spawn()        //Metodo para invocar los enemigos
-    {
-        if (rondas % 5 == 0)
-        {
-            foreach (Transform spawn in spawnPoints)
-            {
-                Instantiate(enemigos["Boss"],spawn.position,spawn.rotation);
-            }
-        }
     }
 
 }

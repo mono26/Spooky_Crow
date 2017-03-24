@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
         }
         public WaveType type;
         public string name;
-        public GameObject[] enemy;       //Alamcenar los distintos enemigos.
+        public EnemyInfo[] enemy;       //Alamcenar los distintos enemigos.
         public float spawnRate;
         public int[] count;     //Cuanto se spawnea de cada enmigo
     }
@@ -49,12 +49,12 @@ public class WaveSpawner : MonoBehaviour
         for (int wave = 0; wave < waves.Length; wave++)
         {
             if (waves[wave].type == Wave.WaveType.SINGLE)
-                waves[wave].enemy[0].GetComponent<EnemyInfo>().index = wave;
+                waves[wave].enemy[0].index = wave;
             else if(waves[wave].type == Wave.WaveType.MULTIPLE)
             {
                 for (int enemy = 0; enemy < waves[wave].enemy.Length; enemy++)
                 {
-                    waves[wave].enemy[enemy].GetComponent<EnemyInfo>().index = enemy;
+                    waves[wave].enemy[enemy].index = enemy;
                 }
             }
         }
@@ -79,7 +79,6 @@ public class WaveSpawner : MonoBehaviour
         {
             if(state != SpawnState.SPAWNING)    //Si cuando el conteo de spawn = 0 no esta en estado de spawn
             {
-                Debug.Log("Should Start Spawning");
                 StartCoroutine(SpawnWave(waves[nextWave]));     //Comienza la couroutine para spawnear.
             }
         }
@@ -95,7 +94,6 @@ public class WaveSpawner : MonoBehaviour
         if (searchTime == 0.0f)
         {
             searchTime = 1.0f;
-            Debug.Log("Looking for enemies");
             if (GameObject.FindGameObjectsWithTag("Enemy") == null)     //Si no encuentra ningun enemigo return false
                 return false;
         }
@@ -103,7 +101,6 @@ public class WaveSpawner : MonoBehaviour
     }
     IEnumerator SpawnWave(Wave _wave)   //Debes de pasarle un wave
     {
-        Debug.Log("Spawning Wave");
         state = SpawnState.SPAWNING;    //Al inicio para poner el stado en spawning.
         if (_wave.type == Wave.WaveType.SINGLE)
         {
@@ -129,11 +126,10 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(GameObject _enemy)
+    void SpawnEnemy(EnemyInfo _enemy)
     {
-        Debug.Log("Spawning Enemy:" + _enemy.name);
         var spawnIndex = Random.Range(0, spawnPoints.Length - 1);   //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
-        var obj = PoolsManager.Instance.GetObject(_enemy.GetComponent<EnemyInfo>().index);
+        var obj = PoolsManager.Instance.GetObject(_enemy.index);
         obj.transform.position = spawnPoints[spawnIndex].position;
         obj.transform.rotation = spawnPoints[spawnIndex].rotation;
     }
@@ -146,7 +142,6 @@ public class WaveSpawner : MonoBehaviour
         if(nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
-            Debug.Log("Waves Completed");
         }
 
         nextWave++;

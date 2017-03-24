@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "AIComponents/Enemy Info")]
 [System.Serializable]
-public class EnemyInfo : MonoBehaviour {
+public class EnemyInfo : ScriptableObject {
     public enum EnemyType
     {
         ATACKER, STEALER, BOSS
     }
-
     public EnemyType my_Type;
-    public string name;
+    public string enemyName;
     public int index;   //Variable para almacenar la informacion de los pools.
-
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int speed;
+    public float speed;
+    public float health;
+    public float lookSphereCastRadius;
+    public float lookRange;
 }
