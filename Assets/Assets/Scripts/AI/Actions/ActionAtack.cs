@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/Atack")]
-public class MoveToAtack : AIAction
+public class ActionAtack : AIAction
 { 
     public override void DoAction(AIStateController controller)
     {

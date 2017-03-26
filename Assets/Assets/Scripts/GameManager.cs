@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
+    public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
     public int rondas;
 
     public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.

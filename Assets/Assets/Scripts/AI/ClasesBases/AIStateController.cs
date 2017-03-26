@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-[RequireComponent (typeof(Rigidbody), typeof(Seeker))]
+[RequireComponent (typeof(Rigidbody), typeof(Seeker), typeof(AIAtack))]
 public class AIStateController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
@@ -13,15 +13,19 @@ public class AIStateController : MonoBehaviour
     public AIState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     //Catching
     public AIAtack aiAtack;
+    public AIAnimations aiAnimations;
     public Rigidbody rigidBody;     //Referecia al rigidBody del objeto
     public Transform target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
     public Seeker seeker;       //Referencia al seeker del objeto
+    //Seeker info y waypoint y su distancia.
     public float UpdateRate = 2f;
     public Path path;
     public bool pathIsEnded;
     public float nextWayPointDistance = 0.3f;
     public int currentWayPoint = 0;
-    public bool aiActive;
+
+    public bool canMove = true;
+    public bool aiActive = true;
 
     void Awake()
     {
@@ -98,15 +102,30 @@ public class AIStateController : MonoBehaviour
     {
 
     }
-    public void Move()
+    public void LookForRunAwayPoint()
     {
-        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);
-        direction = direction.normalized;
-        direction *= enemyInfo.speed/2 * Time.deltaTime;
-        direction.y = 0.0f;
-        rigidBody.velocity += direction;
+        if (!target.CompareTag("RunAwayPoint"))
+        {
+            var runIndex = Random.Range(0, GameManager.Instance.runAwayPoints.Length);
+            target = GameManager.Instance.runAwayPoints[runIndex];
+        }
+        else
+            return;
     }
-
+    public void Move(float speed)
+    {
+        if (canMove)
+        {
+            Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);
+            Debug.Log(path.vectorPath[currentWayPoint]);
+            direction = direction.normalized;
+            direction.y = 0.0f;
+            transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime);
+            rigidBody.velocity += direction * speed * Time.deltaTime;
+        }
+        else
+            return;
+    }
     void OnDrawGizmos()
     {
         if (currentState != null && eyes != null)
@@ -127,14 +146,13 @@ public class AIStateController : MonoBehaviour
         {
             path = p;
             currentWayPoint = 0;
+            Debug.Log("Se completo un path");
         }
     }
     public void TransitionToState(AIState nextState)
     {
         if(nextState != remainState)
         {
-            Debug.Log("Cambiando de estado");
-            Debug.Log(nextState.name);
             currentState = nextState;
         }
     }
@@ -148,5 +166,18 @@ public class AIStateController : MonoBehaviour
         seeker.StartPath(transform.position, target.position, OnPathComplete);
         yield return new WaitForSeconds(1 / UpdateRate); //Numero de Updates por segundo.
         StartCoroutine(UpdatePath());
+    }
+
+    public IEnumerator StartStealAndRun()   //Se ejecuta cuando encuentra a la casa y esta en el rango de ella
+    {
+        canMove = false;
+        //Primero debo de ejecutar la animacion de robar y los metodos etc.
+        //Buscar el punto de runaway
+        if (!target.CompareTag("RunAwayPoint"))
+        {
+            LookForRunAwayPoint();
+        }
+        yield return new WaitForSeconds(1.5f);
+        canMove = true;
     }
 }
