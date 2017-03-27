@@ -34,6 +34,20 @@ public class GameManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Crow");
             house = GameObject.FindGameObjectWithTag("House");
         }
+
+        //Para buscar todos los runaway y spawn points
+        var sp = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        var rp = GameObject.FindGameObjectsWithTag("RunAwayPoint");
+        spawnPoints = new Transform[sp.Length];
+        runAwayPoints = new Transform[rp.Length];
+        for (int i = 0; i < sp.Length; i++)
+        {
+            spawnPoints[i] = sp[i].GetComponent<Transform>();
+        }
+        for (int i = 0; i < rp.Length; i++)
+        {
+            runAwayPoints[i] = rp[i].GetComponent<Transform>();
+        }
     }
     void Start()
     {

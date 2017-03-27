@@ -8,8 +8,8 @@ TagManager:
   - House
   - Crow
   - Bullet
-  - Spawner
   - RunAwayPoint
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

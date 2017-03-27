@@ -34,7 +34,7 @@ public class AIStateController : MonoBehaviour
         aiAtack = GetComponent<AIAtack>();
     }
 	// Use this for initialization
-	void Start ()
+	void OnEnable ()
     {
 		if(!target)
         {
@@ -117,9 +117,9 @@ public class AIStateController : MonoBehaviour
         if (canMove)
         {
             Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);
-            Debug.Log(path.vectorPath[currentWayPoint]);
             direction = direction.normalized;
             direction.y = 0.0f;
+            Debug.Log(direction);
             transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime);
             rigidBody.velocity += direction * speed * Time.deltaTime;
         }
