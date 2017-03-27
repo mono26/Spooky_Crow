@@ -21,7 +21,7 @@ public class AIStateController : MonoBehaviour
     public float UpdateRate = 2f;
     public Path path;
     public bool pathIsEnded;
-    public float nextWayPointDistance = 0.3f;
+    public float nextWayPointDistance = 0.8f;       //Si la distancia es menor de 0.8 el objeto se deja de mover, random BUG!
     public int currentWayPoint = 0;
 
     public bool canMove = true;

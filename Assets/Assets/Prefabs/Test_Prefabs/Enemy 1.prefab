@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114305044023320516}
   m_Layer: 0
   m_Name: Enemy 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   UpdateRate: 1
   pathIsEnded: 0
-  nextWayPointDistance: 0.5
+  nextWayPointDistance: 0.8
   currentWayPoint: 0
   canMove: 1
   aiActive: 1

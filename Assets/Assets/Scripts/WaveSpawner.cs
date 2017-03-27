@@ -26,7 +26,7 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5.0f;      //Tiempo automatico para spawnear la siguiente oleada.
     public float waveCountDown;     //Tiempo para spawnear la oleada.
 
-    private float searchTime;
+    private float searchTime = 1.0f;
 
     public SpawnState state;    //Para saber el estado del spawn     
 
@@ -65,6 +65,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (state == SpawnState.WAITING)
         {
+            Debug.Log(EnemyIsAlive());
             if(!EnemyIsAlive())
             {
                 //Begin a new Round
@@ -91,11 +92,23 @@ public class WaveSpawner : MonoBehaviour
     bool EnemyIsAlive()
     {
         searchTime -= Time.deltaTime;   //Reduce el tiempo para buscar los enemigos
-        if (searchTime == 0.0f)
+        if (searchTime <= 0.0f)
         {
             searchTime = 1.0f;
-            if (GameObject.FindGameObjectsWithTag("Enemy") == null)     //Si no encuentra ningun enemigo return false
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < enemies.Length; i++)    //Si no encuentra ningun enemigo return false
+            {
+                if(enemies[i].activeInHierarchy)
+                {
+
+                }
                 return false;
+            }     
+            else
+            {
+                Debug.Log("Encontre enemigos");
+                return true;
+            }
         }
         return true;
     }

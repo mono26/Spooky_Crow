@@ -59,8 +59,8 @@ public class PlayerFire : MonoBehaviour
         var scopeTarget = targetPoint;
         var direction = (scopeTarget - transform.position).normalized;
         //Acceder al pool de las balas para darle la direccion al rigidbody
-        /*Rigidbody2D bullet = BulletPool.Instance.GetBullet();
+        Rigidbody bullet = BulletsPool.Instance.GetBullet();
         bullet.transform.position = transform.position;
-        bullet.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);*/
+        bullet.AddForce(direction * bulletSpeed, ForceMode.Impulse);
     }
 }
