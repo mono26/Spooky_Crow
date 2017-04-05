@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 114314537187241202}
   - component: {fileID: 114830411776880508}
   - component: {fileID: 114257591845004508}
+  - component: {fileID: 114002455345527922}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -303,6 +304,20 @@ Transform:
   m_Father: {fileID: 4082338622817232}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114002455345527922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741945308620780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbe00224d7890542b06f1081eae9265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 54798220388213412, guid: 68eb93fef63558143b430562918b28e0,
+    type: 2}
+  size: 5
 --- !u!114 &114257591845004508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,7 +374,7 @@ MonoBehaviour:
     enemy:
     - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
     - {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
-    spawnRate: 0
+    spawnRate: 0.5
     count: 0500000003000000
   - type: 1
     name: 

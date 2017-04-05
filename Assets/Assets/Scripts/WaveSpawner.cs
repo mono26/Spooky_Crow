@@ -96,19 +96,17 @@ public class WaveSpawner : MonoBehaviour
         {
             searchTime = 1.0f;
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            for (int i = 0; i < enemies.Length; i++)    //Si no encuentra ningun enemigo return false
+            int index = 0;
+            while (index < enemies.Length)    //Si no encuentra ningun enemigo return false
             {
-                if(enemies[i].activeInHierarchy)
+                if (enemies[index].activeInHierarchy)
                 {
-
+                    searchTime = 1.0f;
+                    index++; 
                 }
-                return false;
-            }     
-            else
-            {
-                Debug.Log("Encontre enemigos");
-                return true;
             }
+            if (index == enemies.Length)
+                WaveCompleted();     
         }
         return true;
     }
@@ -128,7 +126,7 @@ public class WaveSpawner : MonoBehaviour
         {
             for(int enemy = 0; enemy < _wave.enemy.Length; enemy++)
             {
-                for (int count = 0; count < _wave.count[count]; count++)
+                for (int count = 0; count < _wave.count[enemy]; count++)
                 {
                     SpawnEnemy(_wave.enemy[enemy]);
                     yield return new WaitForSeconds(1f / _wave.spawnRate);
@@ -156,7 +154,7 @@ public class WaveSpawner : MonoBehaviour
         {
             nextWave = 0;
         }
-
         nextWave++;
+        Debug.Log("Se completo una wave");
     }
 }

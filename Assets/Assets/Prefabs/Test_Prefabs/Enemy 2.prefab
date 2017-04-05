@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4418477595017464}
   - component: {fileID: 54214353148953266}
-  - component: {fileID: 65490737161648900}
+  - component: {fileID: 135167484767738942}
   - component: {fileID: 114075596285737968}
   - component: {fileID: 114418767284313042}
   - component: {fileID: 114542138377204940}
@@ -199,18 +199,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.45, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65490737161648900
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995082792655942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114075596285737968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,9 +219,9 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   target: {fileID: 0}
   seeker: {fileID: 0}
-  UpdateRate: 2
+  UpdateRate: 1
   pathIsEnded: 0
-  nextWayPointDistance: 0.5
+  nextWayPointDistance: 0.8
   currentWayPoint: 0
   canMove: 1
   aiActive: 1
@@ -279,3 +267,15 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!135 &135167484767738942
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995082792655942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shredder : MonoBehaviour {
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter(Collider col)
     {
-        Destroy(col.gameObject);
+        if(col.CompareTag("Bullet"))
+        {
+            BulletsPool.Instance.ReleaseBullet(col.GetComponent<Rigidbody>());
+        }
     }
 }
