@@ -18,6 +18,6 @@ public class ActionAtack : AIAction
             controller.target = GameManager.Instance.player.transform;
             return;
         }
-        controller.aiAtack.MeleeAtack();
+        controller.aiAtack.NormalMeleeAtack();
     }
 }

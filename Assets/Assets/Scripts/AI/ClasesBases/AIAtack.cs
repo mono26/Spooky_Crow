@@ -6,11 +6,16 @@ public class AIAtack : MonoBehaviour
 {
     public bool atacking;
 
-    public float atackCD;
+    public float meleeAtackCD;
+    public float rangeAtackCD;
     [SerializeField]
-    private float cdTimer;
+    private float cdTimer1;
+    private float cdTimer2;
 
     public Collider clawsCollider;
+    public Transform[] weapons;
+
+    public float speed;
 
     //Animaciones
 	
@@ -19,9 +24,9 @@ public class AIAtack : MonoBehaviour
     {
 		if(atacking)
         {
-            if(cdTimer > 0)
+            if(cdTimer1 > 0)
             {
-                cdTimer -= Time.deltaTime;
+                cdTimer1 -= Time.deltaTime;
             }
             else
             {
@@ -31,15 +36,52 @@ public class AIAtack : MonoBehaviour
         }
 	}
 
-    public void MeleeAtack()
+    public void NormalMeleeAtack()
     {
+        if (cdTimer1 > 0)
+            return;
         if (!atacking)
         {
             atacking = true;
-            cdTimer = atackCD;
+            cdTimer1 = meleeAtackCD;
             clawsCollider.enabled = true;
         }
         else
             return;
+    }
+
+    public void BossMeleeAtack()
+    {
+        if (cdTimer1 > 0)
+            return;
+        if (!atacking)
+        {
+            atacking = true;
+            cdTimer1 = meleeAtackCD;
+            clawsCollider.enabled = true;
+        }
+        else
+            return;
+    }
+    
+    public void BossRangedAtack()
+    {
+        if (cdTimer2 > 0)
+            return;
+        if (!atacking)
+        {
+            atacking = true;
+            cdTimer1 = rangeAtackCD;
+            //Metodo para que dispare las armas
+        }
+        else
+            return;
+    }
+
+    void ShootWeapons()
+    {
+        var obj = BulletsPool.Instance.GetBullet();
+        obj.transform.position = weapons[Random.Range(0, weapons.Length)].position;
+        obj.AddForce(obj.transform.forward * speed, ForceMode.Impulse);
     }
 }
