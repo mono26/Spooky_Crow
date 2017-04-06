@@ -70,8 +70,8 @@ GameObject:
   - component: {fileID: 54214353148953266}
   - component: {fileID: 135654340422401872}
   - component: {fileID: 114075596285737968}
-  - component: {fileID: 114542138377204940}
   - component: {fileID: 114305044023320516}
+  - component: {fileID: 114542138377204940}
   - component: {fileID: 114354910740096294}
   m_Layer: 0
   m_Name: Enemy 1
@@ -165,6 +165,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33064445950961766
 MeshFilter:
@@ -238,9 +239,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atacking: 0
-  atackCD: 0
-  cdTimer: 0
+  meleeAtackCD: 0
+  rangeAtackCD: 0
+  cdTimer1: 0
   clawsCollider: {fileID: 65944596687626336}
+  weapons: []
+  speed: 0
 --- !u!114 &114354910740096294
 MonoBehaviour:
   m_ObjectHideFlags: 1

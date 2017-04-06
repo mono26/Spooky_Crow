@@ -72,6 +72,7 @@ public class AIAtack : MonoBehaviour
         {
             atacking = true;
             cdTimer1 = rangeAtackCD;
+            ShootWeapons();
             //Metodo para que dispare las armas
         }
         else

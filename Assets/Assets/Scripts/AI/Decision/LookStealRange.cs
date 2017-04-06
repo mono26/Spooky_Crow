@@ -12,7 +12,7 @@ public class LookStealRange : AIDecision
     }
     private bool StealRange(AIStateController controller)
     {
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookSphereCastRadius, Color.green);
+        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookRange, Color.green);
 
         var colliders = Physics.OverlapSphere(controller.transform.position, 1.0f, 1 << 10);
         if (colliders.Length > 0)

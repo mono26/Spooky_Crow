@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 114075596285737968}
   - component: {fileID: 114418767284313042}
   - component: {fileID: 114542138377204940}
+  - component: {fileID: 114857609148103162}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -164,6 +165,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33064445950961766
 MeshFilter:
@@ -237,9 +239,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atacking: 0
-  atackCD: 1
-  cdTimer: 0
+  meleeAtackCD: 0
+  rangeAtackCD: 0
+  cdTimer1: 0
   clawsCollider: {fileID: 65036334271560362}
+  weapons: []
+  speed: 0
 --- !u!114 &114542138377204940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,6 +272,26 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &114857609148103162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995082792655942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothType: 0
+  subdivisions: 2
+  iterations: 2
+  strength: 0.5
+  uniformLength: 1
+  maxSegmentLength: 2
+  bezierTangentLength: 0.4
+  offset: 0.2
+  factor: 0.1
 --- !u!135 &135167484767738942
 SphereCollider:
   m_ObjectHideFlags: 1

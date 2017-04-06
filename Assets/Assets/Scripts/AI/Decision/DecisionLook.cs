@@ -12,9 +12,9 @@ public class DecisionLook : AIDecision
     }
     private bool Look(AIStateController controller)
     {
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookSphereCastRadius, Color.green);
+        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookRange, Color.green);
 
-        var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.lookSphereCastRadius, 1 << 9);
+        var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.lookRange, 1 << 9);
         if (colliders.Length > 0)
         {
             if(colliders[0].CompareTag("Crow"))

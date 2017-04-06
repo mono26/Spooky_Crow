@@ -131,7 +131,7 @@ public class AIStateController : MonoBehaviour
         if (currentState != null && eyes != null)
         {
             Gizmos.color.Equals(currentState.sceneGuizmoColor);
-            Gizmos.DrawWireSphere(eyes.position, enemyInfo.lookSphereCastRadius);
+            Gizmos.DrawWireSphere(eyes.position, enemyInfo.lookRange);
         }
     }
 
