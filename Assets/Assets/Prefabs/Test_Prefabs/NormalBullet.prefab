@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4011428917984756}
   - component: {fileID: 135904247360193258}
   - component: {fileID: 54798220388213412}
+  - component: {fileID: 114328901180197118}
   m_Layer: 0
   m_Name: NormalBullet
   m_TagString: Bullet
@@ -102,6 +103,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33373958445099464
 MeshFilter:
@@ -125,6 +127,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114328901180197118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799134145689592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03d86e1704c9314e95bce533e512214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_Info: {fileID: 11400000, guid: 1e5e46dd38c55494791bdc3b0fb3481b, type: 2}
+  my_RigidBody: {fileID: 0}
+  index: 0
 --- !u!135 &135904247360193258
 SphereCollider:
   m_ObjectHideFlags: 1

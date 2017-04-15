@@ -72,9 +72,9 @@ public class PlayerMove : MonoBehaviour
     {
         my_RigidBody.position = new Vector3
             (
-                Mathf.Clamp(my_RigidBody.position.x, -7f, 7f),
+                Mathf.Clamp(my_RigidBody.position.x, -25f, 25f),
                 my_RigidBody.position.y,
-                Mathf.Clamp(my_RigidBody.position.z, -7.0f, 7.0f)
+                Mathf.Clamp(my_RigidBody.position.z, -25.0f, 25.0f)
             );
     }
 }

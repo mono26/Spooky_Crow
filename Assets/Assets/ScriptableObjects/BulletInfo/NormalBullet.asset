@@ -14,4 +14,5 @@ MonoBehaviour:
   my_Type: 0
   bulletName: 
   index: 0
-  speed: 0
+  speed: 10
+  damage: 1

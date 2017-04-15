@@ -14,8 +14,8 @@ MonoBehaviour:
   my_Type: 1
   enemyName: 
   index: 0
-  speed: 2
-  health: 0
+  speed: 5
+  health: 2
   lookRange: 5
   meleeRange: 2
   shootRange: 0

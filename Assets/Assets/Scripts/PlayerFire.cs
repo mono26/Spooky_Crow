@@ -19,7 +19,7 @@ public class PlayerFire : MonoBehaviour
     void Start()
     {
         my_Camera = FindCamera();
-        bulletSpeed = 5.0f;
+        bulletSpeed = 8f;
     }
     void FixedUpdate()
     {
@@ -42,13 +42,11 @@ public class PlayerFire : MonoBehaviour
     void SummonRayCast()
     {
         RaycastHit my_hit = new RaycastHit();
-        if (Physics.Raycast(my_Camera.ScreenPointToRay(touchPosition), out my_hit, 50.0f))
+        if (Physics.Raycast(my_Camera.ScreenPointToRay(touchPosition), out my_hit, 100
+            .0f))
         {
-            if (my_hit.collider.tag == "GameField")
-            {
-                targetPoint = my_hit.point;
-                Shoot();    //Disparar al my_hit.point
-            }
+            targetPoint = my_hit.point;
+            Shoot();    //Disparar al my_hit.point
             //Todos los posibles colliders a los cuales le puedo hacer touch
         }
     }
@@ -56,11 +54,11 @@ public class PlayerFire : MonoBehaviour
     void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
     {
         shootTime = 0.0f;
-        var scopeTarget = targetPoint;
-        var direction = (scopeTarget - transform.position).normalized;
+        var direction = (targetPoint - transform.position).normalized;
+        direction.y = 0;
         //Acceder al pool de las balas para darle la direccion al rigidbody
         Rigidbody bullet = BulletsPool.Instance.GetBullet();
         bullet.transform.position = transform.position;
-        bullet.AddForce(direction * bulletSpeed, ForceMode.Impulse);
+        bullet.AddForce(direction * bullet.GetComponent<BulletController>().my_Info.speed, ForceMode.Impulse);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BullletController : MonoBehaviour
+public class BulletController : MonoBehaviour
 {
     //Esta classe contiende todo lo necesario para crear los diferentes tipos de balas
     public BulletInfo my_Info;
@@ -23,7 +23,7 @@ public class BullletController : MonoBehaviour
         if(col.CompareTag("Enemy"))
         {
             //Se debe de hacer lo necesario: daño, return to pool, etc.
-            PoolsManager.Instance.ReleaseObject(col.gameObject);
+            col.gameObject.SendMessage("TakeDamage", my_Info.damage);
             BulletsPool.Instance.ReleaseBullet(my_RigidBody);          
         }
         if (col.CompareTag("Shreder"))

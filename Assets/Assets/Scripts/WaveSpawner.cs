@@ -65,7 +65,6 @@ public class WaveSpawner : MonoBehaviour
     {
         if (state == SpawnState.WAITING)
         {
-            Debug.Log(EnemyIsAlive());
             if(!EnemyIsAlive())
             {
                 //Begin a new Round
@@ -94,19 +93,20 @@ public class WaveSpawner : MonoBehaviour
         searchTime -= Time.deltaTime;   //Reduce el tiempo para buscar los enemigos
         if (searchTime <= 0.0f)
         {
-            searchTime = 1.0f;
+            searchTime = 1.5f;
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            Debug.Log(enemies.Length);
             int index = 0;
             while (index < enemies.Length)    //Si no encuentra ningun enemigo return false
             {
                 if (enemies[index].activeInHierarchy)
                 {
-                    searchTime = 1.0f;
                     index++; 
                 }
+                return true;
             }
             if (index == enemies.Length)
-                WaveCompleted();     
+                return false;     
         }
         return true;
     }

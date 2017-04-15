@@ -13,7 +13,7 @@ public class EnemyInfo : ScriptableObject {
     public string enemyName;
     public int index;   //Variable para almacenar la informacion de los pools.
     public float speed;
-    public float health;
+    public int health;
     public float lookRange;
     public float meleeRange;
     public float shootRange;

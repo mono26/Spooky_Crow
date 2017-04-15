@@ -13,4 +13,5 @@ public class BulletInfo : ScriptableObject {
     public string bulletName;
     public int index;   //Variable para almacenar la informacion de los pools.
     public float speed;
+    public int damage;
 }

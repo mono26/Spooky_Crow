@@ -27,11 +27,15 @@ public class AIStateController : MonoBehaviour
     public bool canMove = true;
     public bool aiActive = true;
 
+    public int health;
+
     void Awake()
     {
         seeker = GetComponent<Seeker>();
         rigidBody = GetComponent<Rigidbody>();
         aiAtack = GetComponent<AIAtack>();
+
+        health = enemyInfo.health;
     }
 	// Use this for initialization
 	void OnEnable ()
@@ -98,6 +102,7 @@ public class AIStateController : MonoBehaviour
         }
 
         currentState.UpdateState(this);
+
 	}
     void FixedUpdate()
     {
@@ -113,14 +118,13 @@ public class AIStateController : MonoBehaviour
         else
             return;
     }
-    public void Move(float speed)
+    public void Move(float speed)       //Metodo para mover el personaje en la direccion del target
     {
         if (canMove)
         {
-            Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);
+            Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);        //Se calcula e vector entre los dos puntos
             direction = direction.normalized;
             direction.y = 0.0f;
-            Debug.Log(direction);
             transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime);
             rigidBody.velocity += direction * speed * Time.deltaTime;
         }
@@ -134,12 +138,6 @@ public class AIStateController : MonoBehaviour
             Gizmos.color.Equals(currentState.sceneGuizmoColor);
             Gizmos.DrawWireSphere(eyes.position, enemyInfo.lookRange);
         }
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("Bullet"))
-            PoolsManager.Instance.ReleaseObject(gameObject);
     }
     public void OnPathComplete(Path p)
     {
@@ -180,5 +178,15 @@ public class AIStateController : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
         canMove = true;
+    }
+
+    public void TakeDamage(int damage)      //Este metodo se usa con el send mesagge para el daño y mirar si murio
+    {
+        Debug.Log("Estoy recibiendo daño");
+        health -= damage;
+        if (health <= 0)
+        {
+            PoolsManager.Instance.ReleaseObject(this.gameObject);
+        }
     }
 }

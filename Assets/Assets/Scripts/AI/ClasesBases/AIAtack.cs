@@ -16,7 +16,7 @@ public class AIAtack : MonoBehaviour
     public Collider clawsCollider;
     public Transform[] weapons;
 
-    public float speed;
+    public float shootSpeed;
 
     //Animaciones
 	
@@ -88,6 +88,6 @@ public class AIAtack : MonoBehaviour
     {
         var obj = BulletsPool.Instance.GetBullet();
         obj.transform.position = weapons[Random.Range(0, weapons.Length)].position;
-        obj.AddForce(obj.transform.forward * speed, ForceMode.Impulse);
+        obj.AddForce(weapons[Random.Range(0, weapons.Length)].forward * shootSpeed, ForceMode.Impulse);
     }
 }
