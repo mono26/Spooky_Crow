@@ -55,6 +55,7 @@ public class AIStateController : MonoBehaviour
                 case (EnemyInfo.EnemyType.BOSS):
                     {
                         //Assigna el target al inicio dependiendo del tipo
+                        target = GameManager.Instance.player.transform;
                         break;
                     }
             }

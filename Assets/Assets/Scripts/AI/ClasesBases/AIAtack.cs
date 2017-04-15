@@ -10,6 +10,7 @@ public class AIAtack : MonoBehaviour
     public float rangeAtackCD;
     [SerializeField]
     private float cdTimer1;
+    [SerializeField]
     private float cdTimer2;
 
     public Collider clawsCollider;
@@ -28,7 +29,11 @@ public class AIAtack : MonoBehaviour
             {
                 cdTimer1 -= Time.deltaTime;
             }
-            else
+            if (cdTimer2 > 0)
+            {
+                cdTimer2 -= Time.deltaTime;
+            }
+            else if(cdTimer1 <= 0 && cdTimer2 <= 0)
             {
                 atacking = false;
                 clawsCollider.enabled = false;
@@ -71,7 +76,7 @@ public class AIAtack : MonoBehaviour
         if (!atacking)
         {
             atacking = true;
-            cdTimer1 = rangeAtackCD;
+            cdTimer2 = rangeAtackCD;
             ShootWeapons();
             //Metodo para que dispare las armas
         }

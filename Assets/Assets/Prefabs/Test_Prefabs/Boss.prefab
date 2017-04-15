@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4267355091081588}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -35,9 +35,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4324935331975236}
   - component: {fileID: 33840112618166626}
-  - component: {fileID: 65613724988933032}
   - component: {fileID: 23258747530676268}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,10 +52,25 @@ GameObject:
   m_Component:
   - component: {fileID: 4441410654725276}
   - component: {fileID: 33303231893441256}
-  - component: {fileID: 65329131458316052}
   - component: {fileID: 23988360292104928}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1400986019213654
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4343009489108826}
+  - component: {fileID: 65444997405587746}
+  m_Layer: 11
+  m_Name: Claws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,15 +85,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4300657238569150}
   - component: {fileID: 54485028257019412}
-  - component: {fileID: 65293387159858896}
+  - component: {fileID: 135474306984101700}
   - component: {fileID: 114646151318193386}
   - component: {fileID: 114505643109589324}
   - component: {fileID: 114261869712170834}
   - component: {fileID: 114715247748436098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Boss
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92,9 +106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4451442447256992}
   - component: {fileID: 33767952271219676}
-  - component: {fileID: 135429822032749524}
   - component: {fileID: 23314409375157222}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693399255368238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9028597, y: 1.73, z: 2.53}
+  m_LocalPosition: {x: 0.3, y: 1.73, z: -9.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4451442447256992}
@@ -140,6 +153,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4451442447256992}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4343009489108826
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400986019213654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.738}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4451442447256992}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4441410654725276
 Transform:
@@ -167,6 +193,7 @@ Transform:
   - {fileID: 4324935331975236}
   - {fileID: 4441410654725276}
   - {fileID: 4267355091081588}
+  - {fileID: 4343009489108826}
   m_Father: {fileID: 4300657238569150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -302,41 +329,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65293387159858896
+--- !u!65 &65444997405587746
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693399255368238}
+  m_GameObject: {fileID: 1400986019213654}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65329131458316052
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269728310139376}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65613724988933032
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146987536084690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.6, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114261869712170834
 MonoBehaviour:
@@ -377,11 +380,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atacking: 0
-  meleeAtackCD: 0
-  rangeAtackCD: 0
+  meleeAtackCD: 2
+  rangeAtackCD: 1.5
   cdTimer1: 0
-  clawsCollider: {fileID: 0}
-  weapons: []
+  clawsCollider: {fileID: 65444997405587746}
+  weapons:
+  - {fileID: 4324935331975236}
+  - {fileID: 4441410654725276}
   speed: 0
 --- !u!114 &114646151318193386
 MonoBehaviour:
@@ -396,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyInfo: {fileID: 11400000, guid: 21d222032f3fab146a1bfb69788dcb1d, type: 2}
   eyes: {fileID: 4267355091081588}
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: 3ca9f2a9ad2af4a49a2b71558d427b53, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   aiAtack: {fileID: 0}
   aiAnimations: {fileID: 0}
@@ -429,15 +434,15 @@ MonoBehaviour:
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1
---- !u!135 &135429822032749524
+--- !u!135 &135474306984101700
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1818216514179218}
+  m_GameObject: {fileID: 1693399255368238}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}

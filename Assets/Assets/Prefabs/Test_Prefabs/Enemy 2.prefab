@@ -219,7 +219,7 @@ MonoBehaviour:
   aiAtack: {fileID: 0}
   aiAnimations: {fileID: 0}
   rigidBody: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 4874319383246148, guid: d4a69f60e22e44b4b8d16c55d7336c8c, type: 2}
   seeker: {fileID: 0}
   UpdateRate: 1
   pathIsEnded: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   meleeAtackCD: 0
   rangeAtackCD: 0
   cdTimer1: 0
+  cdTimer2: 0
   clawsCollider: {fileID: 65036334271560362}
   weapons: []
   speed: 0
