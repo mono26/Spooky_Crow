@@ -42,8 +42,7 @@ public class PlayerFire : MonoBehaviour
     void SummonRayCast()
     {
         RaycastHit my_hit = new RaycastHit();
-        if (Physics.Raycast(my_Camera.ScreenPointToRay(touchPosition), out my_hit, 100
-            .0f))
+        if (Physics.Raycast(my_Camera.ScreenPointToRay(touchPosition), out my_hit, 100.0f))
         {
             targetPoint = my_hit.point;
             Shoot();    //Disparar al my_hit.point
