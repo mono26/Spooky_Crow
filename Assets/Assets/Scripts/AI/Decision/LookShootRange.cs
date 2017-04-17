@@ -19,12 +19,15 @@ public class LookShootRange : AIDecision
         {
             if(colliders[0].CompareTag("Crow"))
             {
+                controller.my_NavMeshAgent.isStopped = true;        //Si el encuentra al cuervo en su rango de disparo para y dispara.
                 return true;
             }
+            controller.my_NavMeshAgent.isStopped = false;       //Si no lo encuentra sigue moviendose.
             return false;
         }
         else
         {
+            controller.my_NavMeshAgent.isStopped = false;       //Si no lo encuentra sigue moviendose.
             return false;
         }
     }

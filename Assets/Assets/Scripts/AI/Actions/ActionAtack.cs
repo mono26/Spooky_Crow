@@ -13,9 +13,9 @@ public class ActionAtack : AIAction
 
     private void Atack(AIStateController controller)
     {
-        if (controller.target != GameManager.Instance.player.transform)
+        if (controller.my_Target != GameManager.Instance.player.transform)
         {
-            controller.target = GameManager.Instance.player.transform;
+            controller.my_Target = GameManager.Instance.player.transform;
             return;
         }
         controller.aiAtack.NormalMeleeAtack();

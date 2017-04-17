@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
-[RequireComponent (typeof(Rigidbody), typeof(Seeker), typeof(AIAtack))]
+[RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent), typeof(AIAtack))]
 public class AIStateController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
@@ -14,33 +15,31 @@ public class AIStateController : MonoBehaviour
     //Catching
     public AIAtack aiAtack;
     public AIAnimations aiAnimations;
-    public Rigidbody rigidBody;     //Referecia al rigidBody del objeto
-    public Transform target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
-    public Seeker seeker;       //Referencia al seeker del objeto
-    //Seeker info y waypoint y su distancia.
-    public float UpdateRate = 2f;
-    public Path path;
-    public bool pathIsEnded;
-    public float nextWayPointDistance = 0.8f;       //Si la distancia es menor de 0.8 el objeto se deja de mover, random BUG!
-    public int currentWayPoint = 0;
+    public Rigidbody my_RigidBody;     //Referecia al rigidBody del objeto
+    public NavMeshAgent my_NavMeshAgent;
+    public Transform my_Target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
+
+    public float updateRate = 2f;
+    public float stopingDistanceProportion;
 
     public bool canMove = true;
     public bool aiActive = true;
 
     public int health;
+    public float turnSmooth;    //Valor para el smooth cuando se rota el objeto por medio de los quaternions
 
     void Awake()
     {
-        seeker = GetComponent<Seeker>();
-        rigidBody = GetComponent<Rigidbody>();
+        my_RigidBody = GetComponent<Rigidbody>();
         aiAtack = GetComponent<AIAtack>();
+        my_NavMeshAgent = GetComponent<NavMeshAgent>();
 
         health = enemyInfo.health;
     }
 	// Use this for initialization
 	void OnEnable ()
     {
-		if(!target)
+		if(!my_Target)
         {
             Debug.Log("There is no target for me" + this.name);
             //Execute SearchTargetCode;
@@ -48,24 +47,25 @@ public class AIStateController : MonoBehaviour
             {
                 case (EnemyInfo.EnemyType.STEALER):
                     {
-                        target = GameManager.Instance.house.transform;
+                        my_Target = GameManager.Instance.house.transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.ATACKER):
                     {
-                        target = GameManager.Instance.player.transform;
+                        my_Target = GameManager.Instance.player.transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.BOSS):
                     {
                         //Assigna el target al inicio dependiendo del tipo
-                        target = GameManager.Instance.player.transform;
+                        my_Target = GameManager.Instance.player.transform;
                         break;
                     }
             }
         }
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
-        StartCoroutine(UpdatePath());
+        my_NavMeshAgent.SetDestination(my_Target.position);
+        my_NavMeshAgent.isStopped = false;
+        StartCoroutine(UpdateDestination());
     }
 	
 	// Update is called once per frame
@@ -73,32 +73,20 @@ public class AIStateController : MonoBehaviour
     {
         if (!aiActive)
             return;
-        if (target == null)
+        if (my_Target == null)
         {
             Debug.Log("No hay target");
             return;
         }
-        if (path == null)
+        if (my_NavMeshAgent.pathPending)
         {
-            Debug.Log("No hay Path");
+            Debug.Log("PathPending");
             return;
         }
 
-        if (currentWayPoint >= path.vectorPath.Count)
+        if (my_NavMeshAgent.remainingDistance < my_NavMeshAgent.stoppingDistance * stopingDistanceProportion)
         {
-            if (pathIsEnded)
-                return;
-            Debug.Log("End of Path");
-            pathIsEnded = true;
-            return;
-        }
-        pathIsEnded = false;
-
-        var dist = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
-        if (dist < nextWayPointDistance)
-        {
-            currentWayPoint++;
-            return;
+            //Stop Code para que dejer de moverse
         }
 
         currentState.UpdateState(this);
@@ -110,23 +98,24 @@ public class AIStateController : MonoBehaviour
     }
     public void LookForRunAwayPoint()
     {
-        if (!target.CompareTag("RunAwayPoint"))
+        if (!my_Target.CompareTag("RunAwayPoint"))
         {
             var runIndex = Random.Range(0, GameManager.Instance.runAwayPoints.Length);
-            target = GameManager.Instance.runAwayPoints[runIndex];
+            my_Target = GameManager.Instance.runAwayPoints[runIndex];
         }
         else
             return;
     }
+    public void Stop()
+    {
+        my_NavMeshAgent.isStopped = true;
+    }
     public void Move(float speed)       //Metodo para mover el personaje en la direccion del target
     {
-        if (canMove)
+        if (my_NavMeshAgent.isStopped == false)
         {
-            Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position);        //Se calcula e vector entre los dos puntos
-            direction = direction.normalized;
-            direction.y = 0.0f;
-            transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime);
-            rigidBody.velocity += direction * speed * Time.deltaTime;
+            Quaternion targetLookRotation = Quaternion.LookRotation(my_NavMeshAgent.desiredVelocity);
+            my_RigidBody.rotation = Quaternion.Slerp(my_RigidBody.rotation, targetLookRotation, turnSmooth);
         }
         else
             return;
@@ -139,15 +128,6 @@ public class AIStateController : MonoBehaviour
             Gizmos.DrawWireSphere(eyes.position, enemyInfo.lookRange);
         }
     }
-    public void OnPathComplete(Path p)
-    {
-        if (!p.error)
-        {
-            path = p;
-            currentWayPoint = 0;
-            Debug.Log("Se completo un path");
-        }
-    }
     public void TransitionToState(AIState nextState)
     {
         if(nextState != remainState)
@@ -156,28 +136,29 @@ public class AIStateController : MonoBehaviour
         }
     }
 
-    IEnumerator UpdatePath()
+    IEnumerator UpdateDestination()
     {
-        if (target == null)
+        if (my_Target == null)
         {
             yield return false;
         }
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
-        yield return new WaitForSeconds(1 / UpdateRate); //Numero de Updates por segundo.
-        StartCoroutine(UpdatePath());
+        my_NavMeshAgent.SetDestination(my_Target.position);
+        yield return new WaitForSeconds(1 / updateRate); //Numero de Updates por segundo.
+        StartCoroutine(UpdateDestination());
     }
 
     public IEnumerator StartStealAndRun()   //Se ejecuta cuando encuentra a la casa y esta en el rango de ella
     {
-        canMove = false;
+        my_NavMeshAgent.isStopped = true;
         //Primero debo de ejecutar la animacion de robar y los metodos etc.
         //Buscar el punto de runaway
-        if (!target.CompareTag("RunAwayPoint"))
+        if (!my_Target.CompareTag("RunAwayPoint"))
         {
             LookForRunAwayPoint();
         }
         yield return new WaitForSeconds(1.5f);
         canMove = true;
+        my_NavMeshAgent.isStopped = false;      //Se le dice al agent que se mueva luego de que el codigo se haya ejecutado
     }
 
     public void TakeDamage(int damage)      //Este metodo se usa con el send mesagge para el daño y mirar si murio

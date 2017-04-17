@@ -13,9 +13,9 @@ public class ActionFollowPlayer : AIAction
 
     private void FollowPlayer(AIStateController controller)
     {
-        if (controller.target != GameManager.Instance.player.transform)
+        if (controller.my_Target != GameManager.Instance.player.transform)
         {
-            controller.target = GameManager.Instance.player.transform;
+            controller.my_Target = GameManager.Instance.player.transform;
             return;
         }
         //Si el target es igual al transforma de la casa el enemigo se mueve

@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerFire : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 touchPosition = Vector3.zero;
-    [SerializeField]
-    private Vector3 targetPoint = Vector3.zero;
+    private Vector3 clickPoint = Vector3.zero;
     [SerializeField]
     private Camera my_Camera;
 
@@ -16,18 +15,20 @@ public class PlayerFire : MonoBehaviour
 
     private float firingRate = 0.5f;
     private float bulletSpeed;
+    private const float sampleDistanceToPointer = 4f;
+    private RaycastHit my_RayHit;
+
     void Start()
     {
         my_Camera = FindCamera();
         bulletSpeed = 8f;
     }
-    void FixedUpdate()
+    void Update()
     {
         shootTime += Time.deltaTime;
-        if (Input.GetMouseButton(0) && shootTime >= firingRate)
+        if (Input.GetMouseButtonDown(0) && shootTime >= firingRate)
         {
-            touchPosition = Input.mousePosition;
-            SummonRayCast();
+            ClickToFire();
         }
         else
             return;
@@ -39,22 +40,24 @@ public class PlayerFire : MonoBehaviour
         else
             return Camera.main;
     }
-    void SummonRayCast()
+    void ClickToFire()
     {
-        RaycastHit my_hit = new RaycastHit();
-        if (Physics.Raycast(my_Camera.ScreenPointToRay(touchPosition), out my_hit, 100.0f))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out my_RayHit, 50.0f))
         {
-            targetPoint = my_hit.point;
-            Shoot();    //Disparar al my_hit.point
+            clickPoint = my_RayHit.point;
+            clickPoint.y = 0;
             //Todos los posibles colliders a los cuales le puedo hacer touch
         }
+        Shoot();    //Disparar al my_hit.point
     }
 
     void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
     {
         shootTime = 0.0f;
-        var direction = (targetPoint - transform.position).normalized;
+        var direction = clickPoint - transform.position;
         direction.y = 0;
+        direction = direction.normalized;
+        Debug.Log(direction);
         //Acceder al pool de las balas para darle la direccion al rigidbody
         Rigidbody bullet = BulletsPool.Instance.GetBullet();
         bullet.transform.position = transform.position;

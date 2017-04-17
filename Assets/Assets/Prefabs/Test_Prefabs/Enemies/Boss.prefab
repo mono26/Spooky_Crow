@@ -103,8 +103,7 @@ GameObject:
   - component: {fileID: 135474306984101700}
   - component: {fileID: 114646151318193386}
   - component: {fileID: 114505643109589324}
-  - component: {fileID: 114261869712170834}
-  - component: {fileID: 114715247748436098}
+  - component: {fileID: 195509902025937160}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Enemy
@@ -177,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693399255368238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.73, z: -9.47}
+  m_LocalPosition: {x: 0.3, y: 0.71, z: -11.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4451442447256992}
@@ -399,33 +398,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.6, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114261869712170834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693399255368238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  traversableTagsCompatibility:
-    tagsChange: -1
-    tagsSet: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &114505643109589324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -464,35 +436,15 @@ MonoBehaviour:
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   aiAtack: {fileID: 0}
   aiAnimations: {fileID: 0}
-  rigidBody: {fileID: 0}
-  target: {fileID: 4874319383246148, guid: d4a69f60e22e44b4b8d16c55d7336c8c, type: 2}
-  seeker: {fileID: 0}
-  UpdateRate: 2
-  pathIsEnded: 0
-  nextWayPointDistance: 3
-  currentWayPoint: 0
+  my_RigidBody: {fileID: 0}
+  my_NavMeshAgent: {fileID: 0}
+  my_Target: {fileID: 0}
+  updateRate: 2
+  stopingDistanceProportion: 0
   canMove: 1
   aiActive: 1
---- !u!114 &114715247748436098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693399255368238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothType: 0
-  subdivisions: 2
-  iterations: 2
-  strength: 0.5
-  uniformLength: 1
-  maxSegmentLength: 2
-  bezierTangentLength: 0.4
-  offset: 0.2
-  factor: 0.1
+  health: 0
+  turnSmooth: 0
 --- !u!135 &135474306984101700
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -505,3 +457,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195509902025937160
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693399255368238}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.15
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

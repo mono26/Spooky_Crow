@@ -13,7 +13,7 @@ public class ActionRunStealer : AIAction
 
     private void Run(AIStateController controller)
     {
-        if (!controller.target.CompareTag("RunAwayPoint"))
+        if (!controller.my_Target.CompareTag("RunAwayPoint"))
         {
             controller.LookForRunAwayPoint();
             return;

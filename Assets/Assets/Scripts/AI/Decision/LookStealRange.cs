@@ -19,13 +19,16 @@ public class LookStealRange : AIDecision
         {
             if(colliders[0].CompareTag("House"))
             {
+                controller.my_NavMeshAgent.isStopped = true;        //Si el encuentra al cuervo en su rango de robo para.
                 controller.StartCoroutine(controller.StartStealAndRun());   //Si encunetra la casa dentro de su rango de robar empieza el proceso de robar: animacion, metodos, etc.
                 return true;
             }
+            controller.my_NavMeshAgent.isStopped = false;       //Si no lo encuentra sigue moviendose.
             return false;
         }
         else
         {
+            controller.my_NavMeshAgent.isStopped = false;       //Si no lo encuentra sigue moviendose.
             return false;
         }
     }
