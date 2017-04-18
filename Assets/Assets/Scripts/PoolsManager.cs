@@ -13,7 +13,7 @@ public class PoolsManager : MonoBehaviour {
     //PoolCode
     public List<GameObject> objectPrefabs;  //Lista con los prefabs de los pools
     public List<List<GameObject>> pools = new List<List<GameObject>>();    //Lista que contiene los pools, lista de listas.
-    public List<int> listSizes;     //Lista con el tamaño de cada una de las otras listas
+    public List<int> listSizes;     //Lista con el tamaño de cada una de las otras listas, debe de estar ordenada igual que los prefabs
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class PoolsManager : MonoBehaviour {
         for (int i = 0; i < objectPrefabs.Count; i++)
         {
             pools.Add(new List<GameObject>());
-            listSizes.Add(5);
+            listSizes.Add(5);       //Para que el tamaño insial para cada una de las listas sea 5
         }
     }
     // Use this for initialization

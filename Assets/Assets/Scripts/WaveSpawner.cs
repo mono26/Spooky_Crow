@@ -32,7 +32,8 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform[] spawnPoints;   //Para almacenar los spawn points
 
-    void Awake()
+	// Use this for initialization
+	void Start ()
     {
         waveCountDown = timeBetweenWaves;
         state = SpawnState.COUNTING;
@@ -40,10 +41,6 @@ public class WaveSpawner : MonoBehaviour
             Debug.LogError("No spawn points");
         if (waves.Length == 0)
             Debug.LogError("No wave to spawn");
-    }
-	// Use this for initialization
-	void Start ()
-    {
         //Esta seccion del codigo solo sirve para asignar los index del pool al WaveInfo para el prefab contenido en el wave.enemy
         //Esta machetiado para que funcione solo si los enemy infos pertenecientes a cada prefab son los mismos y estan en el mismo orden tanto en el pool como en la wave.enemy
         for (int wave = 0; wave < waves.Length; wave++)
@@ -95,7 +92,6 @@ public class WaveSpawner : MonoBehaviour
         {
             searchTime = 1.5f;
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            Debug.Log(enemies.Length);
             int index = 0;
             while (index < enemies.Length)    //Si no encuentra ningun enemigo return false
             {

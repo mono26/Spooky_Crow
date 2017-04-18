@@ -12,8 +12,6 @@ public class LookStealRange : AIDecision
     }
     private bool StealRange(AIStateController controller)
     {
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookRange, Color.green);
-
         var colliders = Physics.OverlapSphere(controller.transform.position, 1.0f, 1 << 10);        //El segundo valor de entrada es unico. No pertenece a ninguna clase y debe de ser modificado aqui.
         if (colliders.Length > 0)
         {

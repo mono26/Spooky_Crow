@@ -12,8 +12,6 @@ public class LookShootRange : AIDecision
     }
     private bool ShootRange(AIStateController controller)
     {
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookRange, Color.green);
-
         var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.shootRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         if (colliders.Length > 0)
         {

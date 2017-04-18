@@ -23,24 +23,21 @@ public class AIAtack : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(atacking)
+        if (cdTimer1 > 0)
         {
-            if(cdTimer1 > 0)
-            {
-                cdTimer1 -= Time.deltaTime;
-            }
-            if (cdTimer2 > 0)
-            {
-                cdTimer2 -= Time.deltaTime;
-            }
-            else if(cdTimer1 <= 0 && cdTimer2 <= 0)
-            {
-                atacking = false;
-                clawsCollider.enabled = false;
-            }
+            cdTimer1 -= Time.deltaTime;
         }
-	}
-
+        if (cdTimer2 > 0)
+        {
+            cdTimer2 -= Time.deltaTime;
+        }
+        else if (cdTimer1 <= 0 && cdTimer2 <= 0)
+        {
+            atacking = false;
+            clawsCollider.enabled = false;
+        }
+    }
+    //Aqui estan los ataques de todos los posibles enemigos, por arquitectura es recomendable separar los ataques y almacenarlos en el enemyInfo
     public void NormalMeleeAtack()
     {
         if (cdTimer1 > 0)

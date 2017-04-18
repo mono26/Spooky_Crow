@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33441775498438664}
   - component: {fileID: 136180614251112260}
   - component: {fileID: 23800761919253208}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4601085517498938}
   - component: {fileID: 65236459250814998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SceneEnviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 33932692963805464}
   - component: {fileID: 136271324594819226}
   - component: {fileID: 23349737143138602}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4361100589093122}
   - component: {fileID: 65600965340613694}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shreder
   m_TagString: Shreder
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 33089392561627626}
   - component: {fileID: 136285323485355212}
   - component: {fileID: 23587779532538696}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 33425108881036880}
   - component: {fileID: 136713978592358168}
   - component: {fileID: 23065134228423910}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4868457658602194}
   - component: {fileID: 33109467730672168}
   - component: {fileID: 23216348052304352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
   m_TagString: GameField
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4530106044912522}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4868039393359202}
   - component: {fileID: 65493042212581708}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shreder (1)
   m_TagString: Shreder
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675689996414160}
   - component: {fileID: 65397690566250840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shreder (3)
   m_TagString: Shreder
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4787664998131246}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HouseArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 33227925555334552}
   - component: {fileID: 136648701282341502}
   - component: {fileID: 23722341794327216}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 33990476166648198}
   - component: {fileID: 136109760444072050}
   - component: {fileID: 23066874017527566}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4164797552128322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Terrain
   m_TagString: GameField
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 4489139145738908}
   - component: {fileID: 33931390786725484}
   - component: {fileID: 23407074150529594}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4898182802896034}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlaySpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 33247775311384666}
   - component: {fileID: 136394003932802970}
   - component: {fileID: 23141662660986676}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427454183970360}
   - component: {fileID: 65619342120806412}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shreder (2)
   m_TagString: Shreder
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 33239218619562004}
   - component: {fileID: 136361161577877254}
   - component: {fileID: 23468251702526834}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615215867659784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2542434, y: -0.1, z: 6.600114}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4868457658602194}
@@ -436,7 +436,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068125142586270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2542434, y: -0.69, z: -6.600114}
+  m_LocalPosition: {x: 0, y: -0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4787664998131246}
@@ -492,7 +492,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546791112055490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2542434, y: 0, z: 6.600114}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4489139145738908}
@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706188365286674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2542434, y: 0, z: 6.600114}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361100589093122}
@@ -994,7 +994,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 40, y: 1, z: 40}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65397690566250840
 BoxCollider:

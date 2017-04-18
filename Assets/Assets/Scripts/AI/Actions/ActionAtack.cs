@@ -18,6 +18,7 @@ public class ActionAtack : AIAction
             controller.my_Target = GameManager.Instance.player.transform;
             return;
         }
+        //Aqui se debe de ejecutar el metodo que activa la habilidad
         controller.aiAtack.NormalMeleeAtack();
     }
 }

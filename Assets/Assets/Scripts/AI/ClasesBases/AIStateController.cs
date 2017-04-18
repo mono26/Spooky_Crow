@@ -8,7 +8,6 @@ using UnityEngine.AI;
 public class AIStateController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
-    public Transform eyes;
 
     public AIState currentState;
     public AIState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
@@ -71,6 +70,8 @@ public class AIStateController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.DrawRay(transform.position, transform.forward.normalized * 1.5f, Color.red);
+
         if (!aiActive)
             return;
         if (my_Target == null)
@@ -106,27 +107,15 @@ public class AIStateController : MonoBehaviour
         else
             return;
     }
-    public void Stop()
-    {
-        my_NavMeshAgent.isStopped = true;
-    }
     public void Move(float speed)       //Metodo para mover el personaje en la direccion del target
     {
         if (my_NavMeshAgent.isStopped == false)
         {
             Quaternion targetLookRotation = Quaternion.LookRotation(my_NavMeshAgent.desiredVelocity);
-            my_RigidBody.rotation = Quaternion.Slerp(my_RigidBody.rotation, targetLookRotation, turnSmooth);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetLookRotation, turnSmooth);
         }
         else
             return;
-    }
-    void OnDrawGizmos()
-    {
-        if (currentState != null && eyes != null)
-        {
-            Gizmos.color.Equals(currentState.sceneGuizmoColor);
-            Gizmos.DrawWireSphere(eyes.position, enemyInfo.lookRange);
-        }
     }
     public void TransitionToState(AIState nextState)
     {

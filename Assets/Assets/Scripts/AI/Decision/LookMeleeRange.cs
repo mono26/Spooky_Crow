@@ -12,8 +12,6 @@ public class LookMeleeRange : AIDecision
     }
     private bool MeleeRange(AIStateController controller)
     {
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyInfo.lookRange, Color.green);
-
         var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.meleeRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         if (colliders.Length > 0)
         {
