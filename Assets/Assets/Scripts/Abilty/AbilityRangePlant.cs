@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AIComponents/Ability/Melee")]
-public class AbilityMeleeEnemy : AIAbility
+[CreateAssetMenu(menuName = "AIComponents/Ability/Range")]
+public class AbilityRangePlant : AIAbility
 {
     public float cdTime;
 
     public override void Ability(GameObject obj)
     {
-        MeleeAtack(obj);
+        RangeAtack(obj);
     }
 
-    private void MeleeAtack(GameObject obj)
+    private void RangeAtack(GameObject obj)
     {
         if (obj.GetComponent<AIPlantController>().cdTimer1 > 0)
             return;
@@ -25,5 +25,11 @@ public class AbilityMeleeEnemy : AIAbility
         }
         else
             return;
+    }
+    void ShootWeapons(GameObject obj)
+    {
+        var bullet = BulletsPool.Instance.GetBullet();
+        //bullet.transform.position = obj.GetComponent<AIPlantController>().weapons[Random.Range(0, weapons.Length)].position;      //Shoot point, lugar de donde sale el proyectil
+        //bullet.AddForce(obj.GetComponent<AIPlantController>().weapons[Random.Range(0, weapons.Length)].forward * shootSpeed, ForceMode.Impulse);
     }
 }

@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/ShootBoss")]
-public class ActionShootBoss : AIAction
+public class ActionShootBoss : AIEnemyAction
 { 
-    public override void DoAction(AIStateController controller)
+    public override void DoAction(AIEnemyController controller)
     {
         Atack(controller);
     }
 
-    private void Atack(AIStateController controller)
+    private void Atack(AIEnemyController controller)
     {
         if (controller.my_Target != GameManager.Instance.player.transform)
         {

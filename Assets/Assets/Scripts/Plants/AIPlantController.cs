@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AIPlantController : MonoBehaviour
 {
-    public TowerInfo my_TowerInfo;
+    public PlantInfo my_PlantInfo;
     public float cdTimer1;
     public float cdTimer2;
 
-    public AIState currentState;
-    public AIState remainState;
+    public AIPlantState currentState;
+    public AIPlantState remainState;
 
     public Transform my_Target;
     public Transform my_ShootPoint;
@@ -26,6 +26,23 @@ public class AIPlantController : MonoBehaviour
         if (cdTimer2 > 0)
         {
             cdTimer2 -= Time.deltaTime;
+        }
+
+        currentState.UpdateState(this);
+    }
+    private void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
+    {
+        my_PlantInfo.ability1.Ability(this.gameObject);
+    }
+    private void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
+    {
+        my_PlantInfo.ability2.Ability(this.gameObject);
+    }
+    public void TransitionToState(AIPlantState nextState)
+    {
+        if (nextState != remainState)
+        {
+            currentState = nextState;
         }
     }
 }

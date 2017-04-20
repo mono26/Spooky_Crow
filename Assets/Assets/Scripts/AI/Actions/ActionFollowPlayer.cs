@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/FollowPlayer")]
-public class ActionFollowPlayer : AIAction
+public class ActionFollowPlayer : AIEnemyAction
 { 
-    public override void DoAction(AIStateController controller)
+    public override void DoAction(AIEnemyController controller)
     {
         FollowPlayer(controller);
     }
 
-    private void FollowPlayer(AIStateController controller)
+    private void FollowPlayer(AIEnemyController controller)
     {
         if (controller.my_Target != GameManager.Instance.player.transform)
         {

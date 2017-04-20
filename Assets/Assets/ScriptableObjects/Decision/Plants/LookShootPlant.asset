@@ -8,7 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9d0c5b75d8aa4e895eab9122f4879, type: 3}
-  m_Name: PlantRange
+  m_Script: {fileID: 11500000, guid: a2dc2af9763a3314f8b27df5886e9d1f, type: 3}
+  m_Name: LookShootPlant
   m_EditorClassIdentifier: 
-  cdTime: 0

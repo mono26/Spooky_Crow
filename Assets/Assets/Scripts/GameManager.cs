@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    public GameObject[] enemyPrefabs;
+    public GameObject[] enemyPrefabs;       //Informacion necesaria para que el GameManager llene las listas de los pools
+    public GameObject[] towerPrefabs;       //Informacion necesaria para que el GameManager llene las listas de los pools y saber que plantas se pueden comprar.
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
     public int rondas;
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.
     public GameObject house;    ////Referencia a la casa para que puedan acceder a los targets.
 
+    public int money;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
+    public int health;
+
+    public PlantPoint[] towerPoints;
     void Awake()
     {
         if (instance == null)
@@ -53,5 +58,8 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
+    public void BuyPlant()
+    {
+        //Metodo al que se accede para comprar la planta
+    }
 }

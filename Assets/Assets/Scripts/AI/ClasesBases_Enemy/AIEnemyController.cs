@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.AI;
 
 [RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent), typeof(AIAtack))]
-public class AIStateController : MonoBehaviour
+public class AIEnemyController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
 
-    public AIState currentState;
-    public AIState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
+    public AIEnemyState currentState;
+    public AIEnemyState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     //Catching
     public AIAtack aiAtack;
     public AIAnimations aiAnimations;
@@ -24,7 +24,7 @@ public class AIStateController : MonoBehaviour
     public bool canMove = true;
     public bool aiActive = true;
 
-    public int health;
+    public int health;      //Debe de ser sacada del enemyInfo para ser almacenada aqui. Nunca modificar los valores del enemyInfo!
     public float turnSmooth;    //Valor para el smooth cuando se rota el objeto por medio de los quaternions
 
     void Awake()
@@ -117,7 +117,7 @@ public class AIStateController : MonoBehaviour
         else
             return;
     }
-    public void TransitionToState(AIState nextState)
+    public void TransitionToState(AIEnemyState nextState)
     {
         if(nextState != remainState)
         {

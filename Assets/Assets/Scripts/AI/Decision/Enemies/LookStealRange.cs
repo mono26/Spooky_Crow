@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Decision/LookStealRange")]
-public class LookStealRange : AIDecision
+public class LookStealRange : AIEnemyDecision
 {
-    public override bool Decide(AIStateController controller)
+    public override bool Decide(AIEnemyController controller)
     {
         bool targetVisible = StealRange(controller);
         return targetVisible;
     }
-    private bool StealRange(AIStateController controller)
+    private bool StealRange(AIEnemyController controller)
     {
         var colliders = Physics.OverlapSphere(controller.transform.position, 1.0f, 1 << 10);        //El segundo valor de entrada es unico. No pertenece a ninguna clase y debe de ser modificado aqui.
         if (colliders.Length > 0)

@@ -8,7 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9d0c5b75d8aa4e895eab9122f4879, type: 3}
-  m_Name: PlantRange
+  m_Script: {fileID: 11500000, guid: e4b3ffa385cac1647bfeb8f79a99adcc, type: 3}
+  m_Name: RemainState
   m_EditorClassIdentifier: 
-  cdTime: 0
+  aiActions: []
+  aiTransitions: []
+  sceneGuizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

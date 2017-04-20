@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/FollowHouse")]
-public class ActionFollowHouse : AIAction
+public class ActionFollowHouse : AIEnemyAction
 { 
-    public override void DoAction(AIStateController controller)
+    public override void DoAction(AIEnemyController controller)
     {
         FollowHouse(controller);
     }
 
-    private void FollowHouse(AIStateController controller)
+    private void FollowHouse(AIEnemyController controller)
     {
         if (controller.my_Target != GameManager.Instance.house.transform)
         {

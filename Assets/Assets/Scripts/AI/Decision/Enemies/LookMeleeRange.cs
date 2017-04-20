@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Decision/LookMeleeRange")]
-public class LookMeleeRange : AIDecision
+public class LookMeleeRange : AIEnemyDecision
 {
-    public override bool Decide(AIStateController controller)
+    public override bool Decide(AIEnemyController controller)
     {
         bool targetVisible = MeleeRange(controller);
         return targetVisible;
     }
-    private bool MeleeRange(AIStateController controller)
+    private bool MeleeRange(AIEnemyController controller)
     {
         var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.meleeRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         if (colliders.Length > 0)

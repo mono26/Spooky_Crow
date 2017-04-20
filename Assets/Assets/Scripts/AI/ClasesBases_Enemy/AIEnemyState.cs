@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/State")]
-public class AIState : ScriptableObject
+public class AIEnemyState : ScriptableObject
 {
-    public AIAction[] aiActions;
-    public AITransition[] aiTransitions;
+    public AIEnemyAction[] aiActions;
+    public AIEnemyTransition[] aiTransitions;
     public Color sceneGuizmoColor = Color.grey;
 
-    public void UpdateState(AIStateController controller)
+    public void UpdateState(AIEnemyController controller)
     {
         DoActions(controller);
         CheckTransitions(controller);
     }
 
-    private void DoActions(AIStateController controller)
+    private void DoActions(AIEnemyController controller)
     {
         for (int i = 0; i < aiActions.Length; i++)
         {
@@ -23,7 +23,7 @@ public class AIState : ScriptableObject
         }
     }
 
-    private void CheckTransitions(AIStateController controller)
+    private void CheckTransitions(AIEnemyController controller)
     {
         for (int i = 0; i < aiTransitions.Length; i++)
         {

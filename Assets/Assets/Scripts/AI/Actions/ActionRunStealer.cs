@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/ActionSteal")]
-public class ActionRunStealer : AIAction
+public class ActionRunStealer : AIEnemyAction
 { 
-    public override void DoAction(AIStateController controller)
+    public override void DoAction(AIEnemyController controller)
     {
         Run(controller);
     }
 
-    private void Run(AIStateController controller)
+    private void Run(AIEnemyController controller)
     {
         if (!controller.my_Target.CompareTag("RunAwayPoint"))
         {
