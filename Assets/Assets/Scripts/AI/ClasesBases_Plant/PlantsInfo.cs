@@ -17,8 +17,6 @@ public class PlantInfo : ScriptableObject {
     public int price;
     public AIAbility ability1;
     public AIAbility ability2;
-    public float cdTimer1;
-    public float cdTimer2;
     public float meleeRange;
     public float shootRange;
 }

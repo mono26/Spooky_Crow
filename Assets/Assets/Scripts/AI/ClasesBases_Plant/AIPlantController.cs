@@ -27,14 +27,14 @@ public class AIPlantController : MonoBehaviour
         {
             cdTimer2 -= Time.deltaTime;
         }
-
+        Debug.Log("Actualizando stado");
         currentState.UpdateState(this);
     }
-    private void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
+    public void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
     {
         my_PlantInfo.ability1.Ability(this.gameObject);
     }
-    private void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
+    public void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
     {
         my_PlantInfo.ability2.Ability(this.gameObject);
     }

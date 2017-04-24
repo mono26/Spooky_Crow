@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b3ffa385cac1647bfeb8f79a99adcc, type: 3}
   m_Name: MeleeAtackState
   m_EditorClassIdentifier: 
-  aiActions: []
-  aiTransitions: []
+  aiActions:
+  - {fileID: 11400000, guid: 883d7e140b835564f95accb7efa6f671, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: d793b20e9e9cf734189b81e7de1a7bdb, type: 2}
+    trueState: {fileID: 11400000, guid: 5f178d8a84ba17c41a95a2863b7aa9ff, type: 2}
+    falseState: {fileID: 11400000, guid: c30cce3bf4d4d7c42a3e770ec916c3db, type: 2}
   sceneGuizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

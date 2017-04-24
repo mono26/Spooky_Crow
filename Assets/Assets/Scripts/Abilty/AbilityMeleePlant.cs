@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AIComponents/Ability/Melee")]
 public class AbilityMeleePlant : AIAbility
 {
-    public float cdTime;
+    public float cdTime;        //Este es el cooldown de la habilidad, es especifico a la habilidad
 
     public override void Ability(GameObject obj)
     {
