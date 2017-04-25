@@ -431,7 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInfo: {fileID: 11400000, guid: 21d222032f3fab146a1bfb69788dcb1d, type: 2}
-  eyes: {fileID: 4267355091081588}
   currentState: {fileID: 11400000, guid: 3ca9f2a9ad2af4a49a2b71558d427b53, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   aiAtack: {fileID: 0}

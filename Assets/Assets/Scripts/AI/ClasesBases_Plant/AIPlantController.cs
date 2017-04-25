@@ -15,8 +15,6 @@ public class AIPlantController : MonoBehaviour
     public Transform my_ShootPoint;
     public Collider my_MeleeCollider;
 
-    public bool atacking;
-
     private void Update()
     {
         if (cdTimer1 > 0)
@@ -32,11 +30,21 @@ public class AIPlantController : MonoBehaviour
     }
     public void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
     {
-        my_PlantInfo.ability1.Ability(this.gameObject);
+        if (cdTimer1 <= 0)
+        {
+            my_PlantInfo.ability1.Ability(this.gameObject);
+        }
+        else
+            return;
     }
     public void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
     {
-        my_PlantInfo.ability2.Ability(this.gameObject);
+        if (cdTimer2 <= 0)
+        {
+            my_PlantInfo.ability2.Ability(this.gameObject);
+        }
+        else
+            return;
     }
     public void TransitionToState(AIPlantState nextState)
     {

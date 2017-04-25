@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "AIComponents/PlantInfo")]
-[System.Serializable]
-public class PlantInfo : ScriptableObject {
+public class PlantInfo : Info {
     public enum PlantType
     {
         FISICAL, MAGIC, HARD

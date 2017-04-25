@@ -15,13 +15,10 @@ public class AbilityMeleePlant : AIAbility
 
     private void MeleeAtack(GameObject obj)
     {
-        if (obj.GetComponent<AIPlantController>().cdTimer1 > 0)
-            return;
-        if (!obj.GetComponent<AIPlantController>().atacking)
+        if (obj.GetComponent<AIPlantController>().my_Target != null)        //Si no tiene target no deberia de disparar.
         {
-            obj.GetComponent<AIPlantController>().atacking = true;
-            obj.GetComponent<AIPlantController>().cdTimer1 = cdTime;
-            obj.GetComponent<AIPlantController>().my_MeleeCollider.enabled = true;
+             obj.GetComponent<AIPlantController>().cdTimer1 = cdTime;
+             //Debe de ir el resto del metodo de la planta para el melee
         }
         else
             return;
