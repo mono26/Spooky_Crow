@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject[] enemyPrefabs;       //Informacion necesaria para que el GameManager llene las listas de los pools
-    public GameObject[] towerPrefabs;       //Informacion necesaria para que el GameManager llene las listas de los pools y saber que plantas se pueden comprar.
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
+
+    [SerializeField]
+    private PlantBluePrint plantToBuild;       //La torre que se va a construir luego de dar click a uno de los botones.
     public int rondas;
 
     public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.
@@ -58,8 +60,15 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void BuyPlant()
+    public void BuildPlantOn()
     {
-        //Metodo al que se accede para comprar la planta
+        if(money < plantToBuild.price)
+        {
+            return;
+        }
+    }
+    public void SetPlantToBuild(PlantBluePrint plant)
+    {
+        plantToBuild = plant;
     }
 }

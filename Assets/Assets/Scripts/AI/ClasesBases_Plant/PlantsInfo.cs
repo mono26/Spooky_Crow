@@ -13,7 +13,6 @@ public class PlantInfo : Info {
     public int index;   //Variable para almacenar la informacion de los pools.
     public float speed;
     public int damage;
-    public int price;
     public AIAbility ability1;
     public AIAbility ability2;
     public float meleeRange;
