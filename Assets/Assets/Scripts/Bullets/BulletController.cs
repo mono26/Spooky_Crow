@@ -8,9 +8,14 @@ public class BulletController : MonoBehaviour
     //Esta classe contiende todo lo necesario para crear los diferentes tipos de balas
     public BulletInfo my_Info;
     public Rigidbody my_RigidBody;
-    public GameObject my_Parent;
+
     public GameObject my_Target;
+    public Vector3 targetPoint;
     public Vector3 my_Point;        //Solo sera asignado por el jugador para que las balas que el disppare vayan al click.
+
+    public bool player;
+    public bool plant;
+
     public int index;
 	// Use this for initialization
 	void Awake ()
@@ -21,16 +26,17 @@ public class BulletController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if(my_Parent == GameManager.Instance.player)        //Si esta condicion se cumple es porque le jugador fue el que la disparo
+        if (!player && plant)
+        {
+            MoveTowardsTarget();
+        }
+        else if (player && !plant)
         {
             MoveTowardsPoint();
         }
         else
-        {
-            MoveTowardsTarget();
-        }
-
-	}
+            BulletsPool.Instance.ReleaseBullet(my_RigidBody);
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -46,9 +52,17 @@ public class BulletController : MonoBehaviour
             BulletsPool.Instance.ReleaseBullet(my_RigidBody);
         }
     }
-    private void MoveTowardsPoint()
+    void MoveTowardsPoint()
     {
-        my_RigidBody.position = Vector3.MoveTowards(transform.position, my_Point, my_Info.speed * Time.fixedDeltaTime);
+        var dist = transform.position - targetPoint;
+        if (dist.sqrMagnitude < 0.15)
+        {
+            BulletsPool.Instance.ReleaseBullet(my_RigidBody);
+        }
+        else
+        {
+            my_RigidBody.position = Vector3.MoveTowards(transform.position, my_Target.transform.position, my_Info.speed * Time.fixedDeltaTime);
+        }
     }
     void MoveTowardsTarget()        //Este metodo sera usado cuando la bala sea disparada desde una torre
     {
@@ -56,7 +70,7 @@ public class BulletController : MonoBehaviour
         {
             my_RigidBody.position = Vector3.MoveTowards(transform.position, my_Target.transform.position, my_Info.speed * Time.fixedDeltaTime);
         }
-        else if(my_Target.activeInHierarchy)
+        else if(my_Target && !my_Target.activeInHierarchy)
         {
             BulletsPool.Instance.ReleaseBullet(my_RigidBody);
         }

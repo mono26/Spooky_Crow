@@ -5,29 +5,39 @@ using UnityEngine;
 public class PlantPoint : MonoBehaviour
 {
     public GameObject plant;
+    public Renderer m_Renderer;
     public bool towerON;
 
-    public void OnMouseDown()
+    [SerializeField]
+    private Color hoverColor;
+    [SerializeField]
+    private Color startColor;
+
+    void Start()
     {
-        if(!towerON && plant == null)
+
+    }
+    private void OnMouseDown()
+    {
+        if (!towerON && plant == null)
         {
+            Debug.Log("No hay planta");
+            GameObject plant = GameManager.Instance.GetPlantToBuild();
+            plant = Instantiate(plant, transform.position, Quaternion.identity);
             //Ejecutar codigo para comprar la torre
         }
         if(towerON && plant != null)
         {
+            Debug.Log("Ya hay una planta");
             //Ejecutar codigo para poder subir de nivel o vender la torre
         }
     }
-    private void BuyTower()
+    private void OnMouseEnter()
     {
-
+        m_Renderer.material.color = hoverColor;
     }
-    private void SellTower()
+    private void OnMouseExit()
     {
-
-    }
-    private void ActivateBuyMenu()
-    {
-
+        m_Renderer.material.color = startColor;
     }
 }

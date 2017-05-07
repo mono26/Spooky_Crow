@@ -83,8 +83,11 @@ public class AIAtack : MonoBehaviour
 
     void ShootWeapons()
     {
-        var obj = BulletsPool.Instance.GetBullet();
-        obj.transform.position = weapons[Random.Range(0, weapons.Length)].position;
-        obj.AddForce(weapons[Random.Range(0, weapons.Length)].forward * shootSpeed, ForceMode.Impulse);
+        var bullet = BulletsPool.Instance.GetBullet();
+        bullet.GetComponent<BulletController>().plant = false;       //Para que el bulletcontroller sepa como moverse
+        bullet.GetComponent<BulletController>().player = true;
+        bullet.GetComponent<BulletController>().targetPoint = GameManager.Instance.player.transform.position;
+        bullet.transform.position = weapons[Random.Range(0, weapons.Length)].position;
+        bullet.AddForce(weapons[Random.Range(0, weapons.Length)].forward * shootSpeed, ForceMode.Impulse);
     }
 }

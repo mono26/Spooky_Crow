@@ -224,7 +224,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 144879601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &144879601
@@ -634,7 +645,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1206845337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1206845337
@@ -744,7 +766,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1387401834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1387401834
@@ -829,11 +862,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114257591845004508, guid: 92363d25f82623b428e17f713a9489e1,
-        type: 2}
-      propertyPath: objectPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4656703478257932, guid: 92363d25f82623b428e17f713a9489e1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -865,11 +893,6 @@ Prefab:
     - target: {fileID: 4656703478257932, guid: 92363d25f82623b428e17f713a9489e1, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114257591845004508, guid: 92363d25f82623b428e17f713a9489e1,
-        type: 2}
-      propertyPath: objectPrefabs.Array.data[3]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92363d25f82623b428e17f713a9489e1, type: 2}
@@ -936,6 +959,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1714766146 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1741945308620780, guid: 92363d25f82623b428e17f713a9489e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1561899344}
+--- !u!114 &1714766152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714766146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842feb8f4db7c0d4a948786d8563f461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefabs: []
 --- !u!1 &1910363928
 GameObject:
   m_ObjectHideFlags: 0

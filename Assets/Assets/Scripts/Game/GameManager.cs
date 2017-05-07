@@ -71,4 +71,8 @@ public class GameManager : MonoBehaviour
     {
         plantToBuild = plant;
     }
+    public GameObject GetPlantToBuild()
+    {
+        return plantToBuild.prefab;
+    }
 }

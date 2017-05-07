@@ -26,7 +26,9 @@ public class AbilityRangePlant : AIAbility
     void ShootWeapons(GameObject obj)
     {
         var bullet = BulletsPool.Instance.GetBullet();
-        bullet.GetComponent<BulletController>().my_Parent = obj;      //Se le da el parent a la bala dependiento del objeto que la dispare
+        bullet.GetComponent<BulletController>().plant = true;       //Para que el bulletcontroller sepa como moverse
+        bullet.GetComponent<BulletController>().player = false;
+        //bullet.GetComponent<BulletController>().my_Parent = obj;      //Se le da el parent a la bala dependiento del objeto que la dispare
         bullet.GetComponent<BulletController>().my_Target = obj.GetComponent<AIPlantController>().my_Target.gameObject;        //Se le da el mismo target que el parent
         bullet.transform.position = obj.transform.position;
         bullet.transform.rotation = obj.transform.rotation;
