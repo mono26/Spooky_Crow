@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
 
-    [SerializeField]
-    private PlantBluePrint plantToBuild;       //La torre que se va a construir luego de dar click a uno de los botones.
+    public PlantBluePrint plantToBuild;       //La torre que se va a construir luego de dar click a uno de los botones.
     public int rondas;
 
     public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.

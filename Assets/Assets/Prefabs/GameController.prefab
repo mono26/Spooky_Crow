@@ -952,7 +952,8 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23997240593519236}
   towerON: 0
-  hoverColor: {r: 0.9191176, g: 0.08109864, b: 0.08109864, a: 0}
+  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114228752218694280
 MonoBehaviour:
@@ -968,7 +969,8 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23187619347794894}
   towerON: 0
-  hoverColor: {r: 0.9191176, g: 0.08109864, b: 0.08109864, a: 0}
+  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114257591845004508
 MonoBehaviour:
@@ -1021,7 +1023,8 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23018848354544508}
   towerON: 0
-  hoverColor: {r: 0.9191176, g: 0.08109864, b: 0.08109864, a: 0}
+  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114830411776880508
 MonoBehaviour:
@@ -1078,5 +1081,6 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23898625351702448}
   towerON: 0
-  hoverColor: {r: 0.9191176, g: 0.08109864, b: 0.08109864, a: 0}
+  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
