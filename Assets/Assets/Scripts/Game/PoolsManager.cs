@@ -45,7 +45,7 @@ public class PoolsManager : MonoBehaviour {
     private void AddObject(int index)      //Se le pasa el index que debe de ser igual para le pool y el objeto
     {
         GameObject obj = Instantiate(objectPrefabs[index]);
-        obj.GetComponent<AIEnemyController>().enemyInfo.index = index;       //Modifica el index del componente del objeto instanciado.
+        obj.GetComponent<AIEnemyController>().my_EnemyInfo.index = index;       //Modifica el index del componente del objeto instanciado.
         obj.gameObject.SetActive(false);
         pools[index].Add(obj);
     }
@@ -63,6 +63,6 @@ public class PoolsManager : MonoBehaviour {
     {
         //Cada GameObject deberia de tener informacion del pool al que esta asignado.
         obj.gameObject.SetActive(false);
-        pools[obj.GetComponent<AIEnemyController>().enemyInfo.index].Add(obj);
+        pools[obj.GetComponent<AIEnemyController>().my_EnemyInfo.index].Add(obj);
     }
 }

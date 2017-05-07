@@ -12,7 +12,6 @@ public class LookShootRangePlant : AIPlantDecision
     }
     private bool ShootRange(AIPlantController controller)
     {
-        Debug.Log("Buscando a quien disparar");
         var colliders = Physics.OverlapSphere(controller.transform.position, controller.my_PlantInfo.shootRange, 1 << 11);      //El segundo valor esta dentro de el enemyInfo
         //El tercer valor es para decirle al metodo en que layer buscar los colliders, es numero magico. Se puede optimizar
         if (colliders.Length > 0)

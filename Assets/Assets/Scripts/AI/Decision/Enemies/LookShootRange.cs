@@ -12,7 +12,7 @@ public class LookShootRange : AIEnemyDecision
     }
     private bool ShootRange(AIEnemyController controller)
     {
-        var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.shootRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
+        var colliders = Physics.OverlapSphere(controller.transform.position, controller.my_EnemyInfo.shootRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         if (colliders.Length > 0)
         {
             if(colliders[0].CompareTag("Crow"))

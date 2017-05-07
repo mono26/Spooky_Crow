@@ -12,7 +12,7 @@ public class LookMeleeRange : AIEnemyDecision
     }
     private bool MeleeRange(AIEnemyController controller)
     {
-        var colliders = Physics.OverlapSphere(controller.transform.position, controller.enemyInfo.meleeRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
+        var colliders = Physics.OverlapSphere(controller.transform.position, controller.my_EnemyInfo.meleeRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         if (colliders.Length > 0)
         {
             if(colliders[0].CompareTag("Crow"))

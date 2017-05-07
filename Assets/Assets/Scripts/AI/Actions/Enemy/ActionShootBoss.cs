@@ -18,6 +18,6 @@ public class ActionShootBoss : AIEnemyAction
             controller.my_Target = GameManager.Instance.player.transform;
             return;
         }
-        controller.aiAtack.BossRangedAtack();       //Metodo unico que esta dentro del script de aiAtack
+        controller.Ability2();       //Metodo unico que esta dentro del script de aiAtack
     }
 }

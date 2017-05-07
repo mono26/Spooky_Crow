@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
 
-[RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent), typeof(AIAtack))]
+[RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent))]
 public class AIEnemyController : MonoBehaviour
 {
-    public EnemyInfo enemyInfo;
+    public EnemyInfo my_EnemyInfo;
+    public float cdTimer1;
+    public float cdTimer2;
 
     public AIEnemyState currentState;
     public AIEnemyState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     //Catching
-    public AIAtack aiAtack;
     public AIAnimations aiAnimations;
     public Rigidbody my_RigidBody;     //Referecia al rigidBody del objeto
     public NavMeshAgent my_NavMeshAgent;
     public Transform my_Target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
+    public Transform[] my_ShootPoint;
+    public Collider my_MeleeCollider;
 
     public float updateRate = 2f;
     public float stopingDistanceProportion;
@@ -30,10 +33,9 @@ public class AIEnemyController : MonoBehaviour
     void Awake()
     {
         my_RigidBody = GetComponent<Rigidbody>();
-        aiAtack = GetComponent<AIAtack>();
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
 
-        health = enemyInfo.health;
+        health = my_EnemyInfo.health;
     }
 	// Use this for initialization
 	void OnEnable ()
@@ -42,7 +44,7 @@ public class AIEnemyController : MonoBehaviour
         {
             Debug.Log("There is no target for me" + this.name);
             //Execute SearchTargetCode;
-            switch (enemyInfo.my_Type)
+            switch (my_EnemyInfo.my_Type)
             {
                 case (EnemyInfo.EnemyType.STEALER):
                     {
@@ -66,7 +68,6 @@ public class AIEnemyController : MonoBehaviour
         my_NavMeshAgent.isStopped = false;
         StartCoroutine(UpdateDestination());
     }
-	
 	// Update is called once per frame
 	void Update ()
     {
@@ -89,14 +90,17 @@ public class AIEnemyController : MonoBehaviour
         {
             //Stop Code para que dejer de moverse
         }
-
+        if (cdTimer1 > 0)
+        {
+            cdTimer1 -= Time.deltaTime;
+        }
+        if (cdTimer2 > 0)
+        {
+            cdTimer2 -= Time.deltaTime;
+        }
         currentState.UpdateState(this);
 
 	}
-    void FixedUpdate()
-    {
-
-    }
     public void LookForRunAwayPoint()
     {
         if (!my_Target.CompareTag("RunAwayPoint"))
@@ -124,7 +128,6 @@ public class AIEnemyController : MonoBehaviour
             currentState = nextState;
         }
     }
-
     IEnumerator UpdateDestination()
     {
         if (my_Target == null)
@@ -135,7 +138,6 @@ public class AIEnemyController : MonoBehaviour
         yield return new WaitForSeconds(1 / updateRate); //Numero de Updates por segundo.
         StartCoroutine(UpdateDestination());
     }
-
     public IEnumerator StartStealAndRun()   //Se ejecuta cuando encuentra a la casa y esta en el rango de ella
     {
         my_NavMeshAgent.isStopped = true;
@@ -149,7 +151,6 @@ public class AIEnemyController : MonoBehaviour
         canMove = true;
         my_NavMeshAgent.isStopped = false;      //Se le dice al agent que se mueva luego de que el codigo se haya ejecutado
     }
-
     public void TakeDamage(int damage)      //Este metodo se usa con el send mesagge para el daño y mirar si murio
     {
         Debug.Log("Estoy recibiendo daño");
@@ -158,5 +159,23 @@ public class AIEnemyController : MonoBehaviour
         {
             PoolsManager.Instance.ReleaseObject(this.gameObject);
         }
+    }
+    public void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
+    {
+        if (cdTimer1 <= 0)
+        {
+            my_EnemyInfo.ability1.Ability(this.gameObject);
+        }
+        else
+            return;
+    }
+    public void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
+    {
+        if (cdTimer2 <= 0)
+        {
+            my_EnemyInfo.ability2.Ability(this.gameObject);
+        }
+        else
+            return;
     }
 }

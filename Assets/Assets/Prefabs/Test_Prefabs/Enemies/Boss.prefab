@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693399255368238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.71, z: -11.94}
+  m_LocalPosition: {x: -19.96, y: 0, z: 1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4451442447256992}
@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818216514179218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4324935331975236}
@@ -430,14 +430,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689d00c1a012d9c4f9535bc07221b010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInfo: {fileID: 11400000, guid: 21d222032f3fab146a1bfb69788dcb1d, type: 2}
+  my_EnemyInfo: {fileID: 11400000, guid: 21d222032f3fab146a1bfb69788dcb1d, type: 2}
+  cdTimer1: 0
+  cdTimer2: 0
   currentState: {fileID: 11400000, guid: 3ca9f2a9ad2af4a49a2b71558d427b53, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
-  aiAtack: {fileID: 0}
   aiAnimations: {fileID: 0}
   my_RigidBody: {fileID: 0}
   my_NavMeshAgent: {fileID: 0}
   my_Target: {fileID: 0}
+  my_ShootPoint:
+  - {fileID: 4324935331975236}
+  - {fileID: 4441410654725276}
+  my_MeleeCollider: {fileID: 0}
   updateRate: 2
   stopingDistanceProportion: 0
   canMove: 1
@@ -455,7 +460,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!195 &195509902025937160
 NavMeshAgent:
   m_ObjectHideFlags: 1

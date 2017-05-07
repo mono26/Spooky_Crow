@@ -19,6 +19,6 @@ public class ActionAtack : AIEnemyAction
             return;
         }
         //Aqui se debe de ejecutar el metodo que activa la habilidad
-        controller.aiAtack.NormalMeleeAtack();
+        controller.Ability1();
     }
 }

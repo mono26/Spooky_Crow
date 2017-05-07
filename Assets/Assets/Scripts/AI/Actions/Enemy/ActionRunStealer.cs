@@ -19,6 +19,6 @@ public class ActionRunStealer : AIEnemyAction
             return;
         }
         //Si el target es igual al transforma de la casa el enemigo se mueve
-        controller.Move(controller.enemyInfo.speed * 0.5f);
+        controller.Move(controller.my_EnemyInfo.speed * 0.5f);
     }
 }

@@ -211,10 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689d00c1a012d9c4f9535bc07221b010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInfo: {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
+  my_EnemyInfo: {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
+  cdTimer1: 0
+  cdTimer2: 0
   currentState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
-  aiAtack: {fileID: 0}
   aiAnimations: {fileID: 0}
   my_RigidBody: {fileID: 0}
   my_NavMeshAgent: {fileID: 0}

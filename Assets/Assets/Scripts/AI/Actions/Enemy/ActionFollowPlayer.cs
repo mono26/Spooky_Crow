@@ -19,6 +19,6 @@ public class ActionFollowPlayer : AIEnemyAction
             return;
         }
         //Si el target es igual al transforma de la casa el enemigo se mueve
-        controller.Move(controller.enemyInfo.speed);
+        controller.Move(controller.my_EnemyInfo.speed);
     }
 }

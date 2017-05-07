@@ -7,8 +7,6 @@ public class PlayerFire : MonoBehaviour
 {
     [SerializeField]
     private Vector3 clickPoint;
-    [SerializeField]
-    private Camera my_Camera;
 
     [SerializeField]
     private float shootTime;
@@ -16,11 +14,12 @@ public class PlayerFire : MonoBehaviour
     private float firingRate = 0.5f;
     private float bulletSpeed;
     private const float sampleDistanceToPointer = 4f;
+
+    private Ray my_Ray;
     private RaycastHit my_RayHit;
 
     void Start()
     {
-        my_Camera = FindCamera();
         bulletSpeed = 8f;
     }
     void Update()
@@ -33,36 +32,25 @@ public class PlayerFire : MonoBehaviour
         else
             return;
     }
-    Camera FindCamera()     //Para encontrar la camara
-    {
-        if (GetComponent<Camera>())
-            return GetComponent<Camera>();
-        else
-            return Camera.main;
-    }
     void ClickToFire()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out my_RayHit, 50.0f, 12))
+        my_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f))
         {
             clickPoint = my_RayHit.point;
-            clickPoint.y = 0;
             //Todos los posibles colliders a los cuales le puedo hacer touch
         }
         Shoot();    //Disparar al my_hit.point
     }
-
     void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
     {
         shootTime = 0.0f;
-        var direction = clickPoint - transform.position;
-        direction.y = 0;
-        direction = direction.normalized;
-        Debug.Log(direction);
-        //Acceder al pool de las balas para darle la direccion al rigidbody
         Rigidbody bullet = BulletsPool.Instance.GetBullet();
-        //bullet.GetComponent<BulletController>().my_Parent = this.gameObject;      //Se le da el parent a la bala dependiento del objeto que la dispare
-        bullet.GetComponent<BulletController>().my_Point = clickPoint;        //Se le da el mismo target que el parent
-        bullet.position = transform.position;
-        bullet.rotation = transform.rotation;
+        //Si el bool de plant es falso y el player veradero es que la bala fue disparada por un jugador o enemigo.
+        bullet.GetComponent<BulletController>().plant = false;       //Para que el bulletcontroller sepa como moverse
+        bullet.GetComponent<BulletController>().player = true;
+        bullet.GetComponent<BulletController>().my_Point = clickPoint;
+        bullet.transform.position = this.transform.position;
+        bullet.transform.rotation = this.transform.rotation;
     }
 }

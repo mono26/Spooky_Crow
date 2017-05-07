@@ -25,7 +25,6 @@ public class AIPlantController : MonoBehaviour
         {
             cdTimer2 -= Time.deltaTime;
         }
-        Debug.Log("Actualizando stado");
         currentState.UpdateState(this);
     }
     public void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
