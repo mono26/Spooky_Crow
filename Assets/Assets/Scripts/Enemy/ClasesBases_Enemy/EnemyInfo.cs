@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AIComponents/Enemy Info")]
+[CreateAssetMenu(menuName = "AIComponents/EnemyInfo")]
 public class EnemyInfo : Info {
     public enum EnemyType
     {

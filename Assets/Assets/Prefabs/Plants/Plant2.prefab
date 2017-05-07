@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4075618107998718}
   - component: {fileID: 114875673679395052}
   m_Layer: 0
-  m_Name: Tower1
+  m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0a455a1a20afc104fbc75587b768ff08, type: 2}
+  - {fileID: 2100000, guid: c2e3e83bac1b6b148a4180c6d9aefef2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1a47274258e1f43a4efc768188d1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_PlantInfo: {fileID: 11400000, guid: ba01c650ee1d4d345a7b45cbec4c0aa8, type: 2}
+  my_PlantInfo: {fileID: 11400000, guid: 4b34bb53cb2c1804daed0a637600115e, type: 2}
   cdTimer1: 0
   cdTimer2: 0
   currentState: {fileID: 11400000, guid: c30cce3bf4d4d7c42a3e770ec916c3db, type: 2}
@@ -200,7 +200,6 @@ MonoBehaviour:
   my_Target: {fileID: 0}
   my_ShootPoint: {fileID: 0}
   my_MeleeCollider: {fileID: 135572580202751468}
-  atacking: 0
 --- !u!135 &135572580202751468
 SphereCollider:
   m_ObjectHideFlags: 1

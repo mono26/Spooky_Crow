@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 54485028257019412}
   - component: {fileID: 135474306984101700}
   - component: {fileID: 114646151318193386}
-  - component: {fileID: 114505643109589324}
   - component: {fileID: 195509902025937160}
   m_Layer: 11
   m_Name: Boss
@@ -398,27 +397,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.6, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114505643109589324
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693399255368238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b00f800898051439e24a63ba5e2a3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atacking: 0
-  meleeAtackCD: 2
-  rangeAtackCD: 1.5
-  cdTimer1: 0
-  cdTimer2: 0
-  clawsCollider: {fileID: 65444997405587746}
-  weapons:
-  - {fileID: 4074599137574960}
-  - {fileID: 4344187808880382}
-  shootSpeed: 10
 --- !u!114 &114646151318193386
 MonoBehaviour:
   m_ObjectHideFlags: 1

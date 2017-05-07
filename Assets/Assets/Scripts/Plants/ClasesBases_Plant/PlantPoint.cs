@@ -34,9 +34,8 @@ public class PlantPoint : MonoBehaviour
             else
             {
                 Debug.Log("No hay planta");
-                GameObject plant = GameManager.Instance.GetPlantToBuild();
-                plant = Instantiate(plant, transform.position, Quaternion.identity);
                 GameManager.Instance.money -= GameManager.Instance.plantToBuild.price;
+                GameManager.Instance.BuildPlantOn(this.transform);
                 //Ejecutar codigo para comprar la torre
             }
         }

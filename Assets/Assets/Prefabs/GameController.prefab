@@ -278,6 +278,8 @@ GameObject:
   - component: {fileID: 114830411776880508}
   - component: {fileID: 114257591845004508}
   - component: {fileID: 114002455345527922}
+  - component: {fileID: 114165782005251372}
+  - component: {fileID: 114020012454694536}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -938,6 +940,20 @@ MonoBehaviour:
   bulletPrefab: {fileID: 54798220388213412, guid: 68eb93fef63558143b430562918b28e0,
     type: 2}
   size: 5
+--- !u!114 &114020012454694536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741945308620780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842feb8f4db7c0d4a948786d8563f461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantBluePrint:
+  - {fileID: 11400000, guid: de65a8cd3fe0de04d9652473a1cabfdd, type: 2}
+  - {fileID: 11400000, guid: a87e79e80913401469ff87f2bf91b9b2, type: 2}
 --- !u!114 &114157907433273892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -952,9 +968,24 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23997240593519236}
   towerON: 0
-  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
-  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
+  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
+--- !u!114 &114165782005251372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741945308620780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ebcf106853df44b97c6f939f8f79df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 1812961385654978, guid: a4c648ca23a74a046af2e91ac8e9af93, type: 2}
+  - {fileID: 1812961385654978, guid: d1e62196c98e9a84492e47ed120e7712, type: 2}
+  listSizes: 
 --- !u!114 &114228752218694280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -969,8 +1000,8 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23187619347794894}
   towerON: 0
-  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
-  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
+  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114257591845004508
 MonoBehaviour:
@@ -1006,7 +1037,7 @@ MonoBehaviour:
   rondas: 0
   player: {fileID: 0}
   house: {fileID: 0}
-  money: 0
+  money: 400
   health: 0
   towerPoints: []
 --- !u!114 &114545353984944862
@@ -1023,8 +1054,8 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23018848354544508}
   towerON: 0
-  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
-  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
+  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114830411776880508
 MonoBehaviour:
@@ -1081,6 +1112,6 @@ MonoBehaviour:
   plant: {fileID: 0}
   m_Renderer: {fileID: 23898625351702448}
   towerON: 0
-  noMoneyColor: {r: 0, g: 0, b: 0, a: 0}
-  yesMoneyColor: {r: 0, g: 0, b: 0, a: 0}
+  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
+  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
   startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}

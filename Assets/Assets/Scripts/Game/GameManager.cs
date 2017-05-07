@@ -59,12 +59,14 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void BuildPlantOn()
+    public void BuildPlantOn(Transform node)
     {
         if(money < plantToBuild.price)
         {
             return;
         }
+        GameObject plant = GetPlantToBuild();
+        plant.transform.position = node.position;
     }
     public void SetPlantToBuild(PlantBluePrint plant)
     {
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
     public GameObject GetPlantToBuild()
     {
-        return plantToBuild.prefab;
+        GameObject plant = PoolsManagerPlants.Instance.GetObject(plantToBuild.info.index);
+        return plant;
     }
 }

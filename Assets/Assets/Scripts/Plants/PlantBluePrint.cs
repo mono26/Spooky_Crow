@@ -7,5 +7,5 @@ using UnityEngine;
 public class PlantBluePrint : ScriptableObject
 {
     public int price;       
-    public GameObject prefab;
+    public PlantInfo info;
 }
