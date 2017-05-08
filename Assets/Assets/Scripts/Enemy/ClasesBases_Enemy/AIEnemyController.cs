@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent))]
 public class AIEnemyController : MonoBehaviour
@@ -15,6 +16,7 @@ public class AIEnemyController : MonoBehaviour
     public AIEnemyState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     //Catching
     public AIAnimations aiAnimations;
+    public Slider my_HealthBar;
     public Rigidbody my_RigidBody;     //Referecia al rigidBody del objeto
     public NavMeshAgent my_NavMeshAgent;
     public Transform my_Target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
@@ -67,6 +69,9 @@ public class AIEnemyController : MonoBehaviour
         my_NavMeshAgent.SetDestination(my_Target.position);
         my_NavMeshAgent.isStopped = false;
         StartCoroutine(UpdateDestination());
+
+        my_HealthBar.maxValue = health;
+        my_HealthBar.value = health;
     }
 	// Update is called once per frame
 	void Update ()
@@ -155,6 +160,7 @@ public class AIEnemyController : MonoBehaviour
     {
         Debug.Log("Estoy recibiendo daño");
         health -= damage;
+        my_HealthBar.value = health;
         if (health <= 0)
         {
             PoolsManager.Instance.ReleaseObject(this.gameObject);
