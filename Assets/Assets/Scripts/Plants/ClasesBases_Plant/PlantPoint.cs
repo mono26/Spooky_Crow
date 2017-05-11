@@ -51,6 +51,7 @@ public class PlantPoint : MonoBehaviour
         {
             return;
         }
+        //Si hay una planta que va a ser construida el punto en donde se puede ver la planta 
         if (GameManager.Instance.money < GameManager.Instance.plantToBuild.price)
         {
             m_Renderer.material.color = noMoneyColor;
@@ -64,5 +65,13 @@ public class PlantPoint : MonoBehaviour
     private void OnMouseExit()
     {
         m_Renderer.material.color = startColor;
+    }
+    public void SellPlant()
+    {
+        GameManager.Instance.money += plant.GetComponent<AIPlantController>().my_PlantInfo.price;
+    }
+    public void UpgradePlant()
+    {
+
     }
 }
