@@ -26,7 +26,7 @@ public class AIEnemyController : MonoBehaviour
     public float updateRate = 2f;
     public float stopingDistanceProportion;
 
-    public bool canMove = true;
+    public bool finishStealing = false;     //Valor por default porque cuando empieza no ha robado
     public bool aiActive = true;
 
     public int health;      //Debe de ser sacada del enemyInfo para ser almacenada aqui. Nunca modificar los valores del enemyInfo!
@@ -36,8 +36,6 @@ public class AIEnemyController : MonoBehaviour
     {
         my_RigidBody = GetComponent<Rigidbody>();
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
-
-        health = my_EnemyInfo.health;
     }
 	// Use this for initialization
 	void OnEnable ()
@@ -71,6 +69,7 @@ public class AIEnemyController : MonoBehaviour
         my_NavMeshAgent.updateRotation = false;
         StartCoroutine(UpdateDestination());
 
+        health = my_EnemyInfo.health;
         my_HealthBar.maxValue = health;
         my_HealthBar.value = health;
     }
@@ -144,18 +143,20 @@ public class AIEnemyController : MonoBehaviour
         yield return new WaitForSeconds(1 / updateRate); //Numero de Updates por segundo.
         StartCoroutine(UpdateDestination());
     }
-    public IEnumerator StartStealAndRun()   //Se ejecuta cuando encuentra a la casa y esta en el rango de ella
+    public IEnumerator Steal()   //Se ejecuta cuando encuentra a la casa y esta en el rango de ella
     {
         my_NavMeshAgent.isStopped = true;
+        finishStealing = false;
+        Debug.Log("Empiezo a robar");
         //Primero debo de ejecutar la animacion de robar y los metodos etc.
         //Buscar el punto de runaway
         if (!my_Target.CompareTag("RunAwayPoint"))
         {
             LookForRunAwayPoint();
         }
-        yield return new WaitForSeconds(1.5f);
-        canMove = true;
-        my_NavMeshAgent.isStopped = false;      //Se le dice al agent que se mueva luego de que el codigo se haya ejecutado
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Termine de robar");
+        finishStealing = true;
     }
     public void TakeDamage(int damage)      //Este metodo se usa con el send mesagge para el daño y mirar si murio
     {

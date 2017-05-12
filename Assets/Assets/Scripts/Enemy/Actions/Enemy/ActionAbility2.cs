@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "AIComponents/Actions/ShootBoss")]
-public class ActionShootBoss : AIEnemyAction
+[CreateAssetMenu (menuName = "AIComponents/Actions/Ranged")]
+public class ActionAbility2 : AIEnemyAction
 { 
     public override void DoAction(AIEnemyController controller)
     {

@@ -8,6 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaadf97071d35e46a87fc8809a70dde, type: 3}
-  m_Name: MeleeAtack
+  m_Script: {fileID: 11500000, guid: 7a6e1e79fcdc1ff44a58baad64898717, type: 3}
+  m_Name: EnemtSteal
   m_EditorClassIdentifier: 
+  cdTime: 0

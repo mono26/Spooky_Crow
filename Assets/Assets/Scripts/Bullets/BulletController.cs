@@ -55,7 +55,7 @@ public class BulletController : MonoBehaviour
     void MoveTowardsPoint()
     {
         var dist = transform.position - my_Point;
-        if (dist.sqrMagnitude < 0.15)
+        if (dist.sqrMagnitude < 0.1)
         {
             BulletsPool.Instance.ReleaseBullet(my_RigidBody);
         }

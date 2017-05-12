@@ -16,6 +16,8 @@ MonoBehaviour:
   index: 1
   speed: 5
   health: 2
+  ability1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
+  ability2: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
   lookRange: 5
   meleeRange: 2
   shootRange: 0
