@@ -68,6 +68,7 @@ public class AIEnemyController : MonoBehaviour
         }
         my_NavMeshAgent.SetDestination(my_Target.position);
         my_NavMeshAgent.isStopped = false;
+        my_NavMeshAgent.updateRotation = false;
         StartCoroutine(UpdateDestination());
 
         my_HealthBar.maxValue = health;

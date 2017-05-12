@@ -6,6 +6,6 @@ using UnityEngine;
 //Asset para poder almacenar el precio y el prefab de la torre
 public class PlantBluePrint : ScriptableObject
 {
-    public int price;       
-    public PlantInfo info;
+    public int price;
+    public AIPlantController plant;
 }

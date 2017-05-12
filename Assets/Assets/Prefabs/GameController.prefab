@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4126631924207998}
-  - component: {fileID: 114228752218694280}
   - component: {fileID: 65927137303390092}
+  - component: {fileID: 114708716811543556}
   m_Layer: 0
   m_Name: PlantPoint
   m_TagString: PlantPoint
@@ -52,7 +52,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4519441890986330}
   - component: {fileID: 33856277463698310}
-  - component: {fileID: 65007761686551482}
   - component: {fileID: 23898625351702448}
   m_Layer: 0
   m_Name: Cube (1)
@@ -70,7 +69,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4370481791693960}
   - component: {fileID: 33328514441966070}
-  - component: {fileID: 65702026829076702}
   - component: {fileID: 23018848354544508}
   m_Layer: 0
   m_Name: Cube (3)
@@ -163,7 +161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4060621444556988}
   - component: {fileID: 33022724390200724}
-  - component: {fileID: 65699191234482046}
   - component: {fileID: 23997240593519236}
   m_Layer: 0
   m_Name: Cube (2)
@@ -225,8 +222,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4706569346840726}
-  - component: {fileID: 114157907433273892}
   - component: {fileID: 65082380259441544}
+  - component: {fileID: 114554016486733452}
   m_Layer: 0
   m_Name: PlantPoint
   m_TagString: PlantPoint
@@ -242,8 +239,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4120494407723666}
-  - component: {fileID: 114974046269100416}
   - component: {fileID: 65385971834124430}
+  - component: {fileID: 114565329363156872}
   m_Layer: 0
   m_Name: PlantPoint
   m_TagString: PlantPoint
@@ -296,7 +293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4593132883540976}
   - component: {fileID: 33084954959343030}
-  - component: {fileID: 65933555377305138}
   - component: {fileID: 23187619347794894}
   m_Layer: 0
   m_Name: Cube
@@ -358,8 +354,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457478398847330}
-  - component: {fileID: 114545353984944862}
   - component: {fileID: 65365932251499088}
+  - component: {fileID: 114264453904199752}
   m_Layer: 0
   m_Name: PlantPoint
   m_TagString: PlantPoint
@@ -552,7 +548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607270112039928}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.23666672}
+  m_LocalPosition: {x: 0, y: 0, z: 0.26}
   m_LocalScale: {x: 0.2, y: 0.3333334, z: 1.0000002}
   m_Children:
   - {fileID: 4126631924207998}
@@ -830,18 +826,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157029130973964}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65007761686551482
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157029130973964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65082380259441544
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -878,30 +862,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5, z: 2}
   m_Center: {x: 0, y: -0.5, z: 0}
---- !u!65 &65699191234482046
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1484534539087862}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65702026829076702
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1237808315218814}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65927137303390092
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -914,18 +874,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5, z: 2}
   m_Center: {x: 0, y: -0.5, z: 0}
---- !u!65 &65933555377305138
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799253394554322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114002455345527922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -954,23 +902,6 @@ MonoBehaviour:
   plantBluePrint:
   - {fileID: 11400000, guid: de65a8cd3fe0de04d9652473a1cabfdd, type: 2}
   - {fileID: 11400000, guid: a87e79e80913401469ff87f2bf91b9b2, type: 2}
---- !u!114 &114157907433273892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729101481662348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 0}
-  m_Renderer: {fileID: 23997240593519236}
-  towerON: 0
-  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
-  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
-  startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114165782005251372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -986,23 +917,6 @@ MonoBehaviour:
   - {fileID: 1812961385654978, guid: a4c648ca23a74a046af2e91ac8e9af93, type: 2}
   - {fileID: 1812961385654978, guid: d1e62196c98e9a84492e47ed120e7712, type: 2}
   listSizes: 
---- !u!114 &114228752218694280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1074551142933364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 0}
-  m_Renderer: {fileID: 23187619347794894}
-  towerON: 0
-  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
-  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
-  startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
 --- !u!114 &114257591845004508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1019,6 +933,23 @@ MonoBehaviour:
   - {fileID: 1995082792655942, guid: df681acca9ba92f4f91913ec93f43195, type: 2}
   - {fileID: 1693399255368238, guid: dccf98badfc6ba14298ed191aea972aa, type: 2}
   listSizes: 
+--- !u!114 &114264453904199752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935594424289756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_PlantBluePrint: {fileID: 0}
+  my_Plant: {fileID: 0}
+  my_Rederer: {fileID: 23018848354544508}
+  noMoneyColor: {r: 0.9705882, g: 0.05709342, b: 0.05709342, a: 0}
+  yesMoneyColor: {r: 0.06920416, g: 0.9411765, b: 0.14738077, a: 0}
+  startColor: {r: 0.9705882, g: 0.9634515, b: 0.9634515, a: 0}
 --- !u!114 &114314537187241202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1034,29 +965,64 @@ MonoBehaviour:
   spawnPoints: []
   runAwayPoints: []
   plantToBuild: {fileID: 0}
+  selectedPlantPoint: {fileID: 0}
+  my_PlantUI: {fileID: 0}
   rondas: 0
   player: {fileID: 0}
   house: {fileID: 0}
   money: 400
   health: 0
-  towerPoints: []
---- !u!114 &114545353984944862
+--- !u!114 &114554016486733452
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1935594424289756}
+  m_GameObject: {fileID: 1729101481662348}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 0}
-  m_Renderer: {fileID: 23018848354544508}
-  towerON: 0
-  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
-  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
-  startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}
+  my_PlantBluePrint: {fileID: 0}
+  my_Plant: {fileID: 0}
+  my_Rederer: {fileID: 23997240593519236}
+  noMoneyColor: {r: 0.9705882, g: 0.05709342, b: 0.05709342, a: 0}
+  yesMoneyColor: {r: 0.06920416, g: 0.9411765, b: 0.14738077, a: 0}
+  startColor: {r: 0.9705882, g: 0.9634515, b: 0.9634515, a: 0}
+--- !u!114 &114565329363156872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736526664620716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_PlantBluePrint: {fileID: 0}
+  my_Plant: {fileID: 0}
+  my_Rederer: {fileID: 23898625351702448}
+  noMoneyColor: {r: 0.9705882, g: 0.05709342, b: 0.05709342, a: 0}
+  yesMoneyColor: {r: 0.06920416, g: 0.9411765, b: 0.14738077, a: 0}
+  startColor: {r: 0.9705882, g: 0.9634515, b: 0.9634515, a: 0}
+--- !u!114 &114708716811543556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074551142933364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_PlantBluePrint: {fileID: 0}
+  my_Plant: {fileID: 0}
+  my_Rederer: {fileID: 23187619347794894}
+  noMoneyColor: {r: 0.9705882, g: 0.05709342, b: 0.05709342, a: 0}
+  yesMoneyColor: {r: 0.06920416, g: 0.9411765, b: 0.14738077, a: 0}
+  startColor: {r: 0.9705882, g: 0.9634515, b: 0.9634515, a: 0}
 --- !u!114 &114830411776880508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1098,20 +1064,3 @@ MonoBehaviour:
   - {fileID: 4312133718958212}
   - {fileID: 4260860256175368}
   - {fileID: 4692625400127058}
---- !u!114 &114974046269100416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1736526664620716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 0}
-  m_Renderer: {fileID: 23898625351702448}
-  towerON: 0
-  noMoneyColor: {r: 0.9264706, g: 0.047685977, b: 0.047685977, a: 0}
-  yesMoneyColor: {r: 0.101373255, g: 0.9191176, b: 0.10701282, a: 0}
-  startColor: {r: 0.9411765, g: 0.9204152, b: 0.9204152, a: 0}

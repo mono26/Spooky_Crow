@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: BluePrintPlant2
   m_EditorClassIdentifier: 
   price: 150
-  info: {fileID: 11400000, guid: 4b34bb53cb2c1804daed0a637600115e, type: 2}
+  plant: {fileID: 114875673679395052, guid: d1e62196c98e9a84492e47ed120e7712, type: 2}

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlantPoint : MonoBehaviour
 {
-    public GameObject plant;
-    public Renderer m_Renderer;
-    public bool towerON;
+    public PlantBluePrint my_PlantBluePrint;
+    public GameObject my_Plant;
+    public Renderer my_Rederer;
 
     [SerializeField]
     private Color noMoneyColor;
@@ -17,15 +18,24 @@ public class PlantPoint : MonoBehaviour
 
     void Start()
     {
-
     }
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        if (my_Plant && my_PlantBluePrint)       //Si ya hay una planta y un blueprint se selecciona el nodo
+        {
+            Debug.Log("Ya hay una planta");
+            GameManager.Instance.SelectPlantPoint(this);
+            //Ejecutar codigo para poder subir de nivel o vender la torre
+        }
         if (GameManager.Instance.plantToBuild == null)
         {
             return;
         }
-        if (!towerON && plant == null)
+        if (!my_Plant && !my_PlantBluePrint)
         {
             if (GameManager.Instance.money < GameManager.Instance.plantToBuild.price)
             {
@@ -35,18 +45,18 @@ public class PlantPoint : MonoBehaviour
             {
                 Debug.Log("No hay planta");
                 GameManager.Instance.money -= GameManager.Instance.plantToBuild.price;
-                GameManager.Instance.BuildPlantOn(this.transform);
+                GameManager.Instance.BuildPlantOn(this);
                 //Ejecutar codigo para comprar la torre
             }
-        }
-        if(towerON && plant != null)
-        {
-            Debug.Log("Ya hay una planta");
-            //Ejecutar codigo para poder subir de nivel o vender la torre
         }
     }
     private void OnMouseEnter()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        Debug.Log("MouseEnter");
         if (GameManager.Instance.plantToBuild == null)
         {
             return;
@@ -54,21 +64,24 @@ public class PlantPoint : MonoBehaviour
         //Si hay una planta que va a ser construida el punto en donde se puede ver la planta 
         if (GameManager.Instance.money < GameManager.Instance.plantToBuild.price)
         {
-            m_Renderer.material.color = noMoneyColor;
+            my_Rederer.material.color = noMoneyColor;
         }
         else if (GameManager.Instance.money >= GameManager.Instance.plantToBuild.price)
         {
-            m_Renderer.material.color = yesMoneyColor;
+            my_Rederer.material.color = yesMoneyColor;
         }
 
     }
     private void OnMouseExit()
     {
-        m_Renderer.material.color = startColor;
+        my_Rederer.material.color = startColor;
     }
     public void SellPlant()
     {
-        GameManager.Instance.money += plant.GetComponent<AIPlantController>().my_PlantInfo.price;
+        GameManager.Instance.money += my_PlantBluePrint.price;
+        my_PlantBluePrint = null;
+        PoolsManagerPlants.Instance.ReleaseObject(my_Plant);
+        my_Plant = null;
     }
     public void UpgradePlant()
     {
