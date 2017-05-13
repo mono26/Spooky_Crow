@@ -13,6 +13,7 @@ public class EnemyInfo : Info {
     public int index;   //Variable para almacenar la informacion de los pools.
     public float speed;
     public int health;
+    public int reward;
     public AIAbility ability1;
     public AIAbility ability2;
     public float lookRange;

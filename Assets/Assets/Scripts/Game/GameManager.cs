@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,8 +24,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.
     public GameObject house;    ////Referencia a la casa para que puedan acceder a los targets.
 
-    public int money;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
-    public int health;
+    public Slider my_HealthBar;
+    public Text my_MoneyText;
+    public int playerMoney = 400;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
+    public int houseHealth = 800;
 
     void Awake()
     {
@@ -58,11 +61,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        my_HealthBar.maxValue = houseHealth;
+        my_HealthBar.value = houseHealth;
+        my_MoneyText.text = "$:" + playerMoney; 
     }
     public void BuildPlantOn(PlantPoint plantPoint)       //Luego de que se tenga una planta seleccionada cuando se escoja un nodo se construira ahi
     {
-        if(money < plantToBuild.price)
+        if(playerMoney < plantToBuild.price)
         {
             return;
         }
@@ -70,6 +75,8 @@ public class GameManager : MonoBehaviour
         plant.transform.position = plantPoint.transform.position;
         plantPoint.my_Plant = plant;
         plantPoint.my_PlantBluePrint = plantToBuild;
+        playerMoney -= plantToBuild.price;
+        my_MoneyText.text = "$:" + playerMoney;
     }
     public void SetPlantToBuild(PlantBluePrint plant)       //Metodo que usa el shopmanager para cambiar la planta que se va a construir
     {
@@ -97,5 +104,14 @@ public class GameManager : MonoBehaviour
     {
         selectedPlantPoint = null;
         my_PlantUI.HidePlantUI();
+    }
+    public void Steal(int stole)
+    {
+        houseHealth -= stole;
+        my_HealthBar.value = houseHealth;
+        if (houseHealth <= 0)
+        {
+            //GameOver Code
+        }
     }
 }

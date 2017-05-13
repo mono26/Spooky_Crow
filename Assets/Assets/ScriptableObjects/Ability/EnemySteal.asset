@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 99bdb9f8b2a582b48976bbea89054012, type: 3}
   m_Name: EnemySteal
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityStealEnemy
-  cdTime: 0
+  m_EditorClassIdentifier: 
+  cdTime: 25

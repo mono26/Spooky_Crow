@@ -37,14 +37,13 @@ public class PlantPoint : MonoBehaviour
         }
         if (!my_Plant && !my_PlantBluePrint)
         {
-            if (GameManager.Instance.money < GameManager.Instance.plantToBuild.price)
+            if (GameManager.Instance.playerMoney < GameManager.Instance.plantToBuild.price)
             {
                 return;
             }
             else
             {
                 Debug.Log("No hay planta");
-                GameManager.Instance.money -= GameManager.Instance.plantToBuild.price;
                 GameManager.Instance.BuildPlantOn(this);
                 //Ejecutar codigo para comprar la torre
             }
@@ -62,11 +61,11 @@ public class PlantPoint : MonoBehaviour
             return;
         }
         //Si hay una planta que va a ser construida el punto en donde se puede ver la planta 
-        if (GameManager.Instance.money < GameManager.Instance.plantToBuild.price)
+        if (GameManager.Instance.playerMoney < GameManager.Instance.plantToBuild.price)
         {
             my_Rederer.material.color = noMoneyColor;
         }
-        else if (GameManager.Instance.money >= GameManager.Instance.plantToBuild.price)
+        else if (GameManager.Instance.playerMoney >= GameManager.Instance.plantToBuild.price)
         {
             my_Rederer.material.color = yesMoneyColor;
         }
@@ -78,7 +77,7 @@ public class PlantPoint : MonoBehaviour
     }
     public void SellPlant()
     {
-        GameManager.Instance.money += my_PlantBluePrint.price;
+        GameManager.Instance.playerMoney += my_PlantBluePrint.price;
         my_PlantBluePrint = null;
         PoolsManagerPlants.Instance.ReleaseObject(my_Plant);
         my_Plant = null;

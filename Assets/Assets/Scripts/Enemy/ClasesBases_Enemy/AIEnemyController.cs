@@ -26,6 +26,7 @@ public class AIEnemyController : MonoBehaviour
     public float updateRate = 2f;
     public float stopingDistanceProportion;
 
+    public float stoleValue;
     public bool finishStealing = false;     //Valor por default porque cuando empieza no ha robado
     public bool aiActive = true;
 
@@ -155,6 +156,7 @@ public class AIEnemyController : MonoBehaviour
             LookForRunAwayPoint();
         }
         yield return new WaitForSeconds(2f);
+        GameManager.Instance.Steal(Random.Range(10, 50));
         Debug.Log("Termine de robar");
         finishStealing = true;
     }
@@ -165,6 +167,7 @@ public class AIEnemyController : MonoBehaviour
         my_HealthBar.value = health;
         if (health <= 0)
         {
+            //Drop o aumentar la plata.
             PoolsManager.Instance.ReleaseObject(this.gameObject);
         }
     }
@@ -185,5 +188,9 @@ public class AIEnemyController : MonoBehaviour
         }
         else
             return;
+    }
+    public void Die()
+    {
+
     }
 }

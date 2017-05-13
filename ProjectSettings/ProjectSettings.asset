@@ -646,17 +646,17 @@ PlayerSettings:
   cloudServicesEnabled:
     Analytics: 0
     Build: 0
-    Collab: 0
+    Collab: 1
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 0
+    UNet: 1
     Unity_Ads: 0
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: c14c63c6-feac-4de6-bf53-7944e00c9775
+  projectName: SpookyCrow
+  organizationId: nicolas-de-zubiria-cano
   cloudEnabled: 0
   enableNewInputSystem: 0
