@@ -38,6 +38,7 @@ public class PlayerFire : MonoBehaviour
         if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f))
         {
             clickPoint = my_RayHit.point;
+            clickPoint.y = 0f;
             //Todos los posibles colliders a los cuales le puedo hacer touch
         }
         Shoot();    //Disparar al my_hit.point

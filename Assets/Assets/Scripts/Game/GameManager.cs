@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public int playerMoney = 400;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
     public int houseHealth = 800;
 
+    public bool selectPlayer;
+
     void Awake()
     {
         if (instance == null)
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour
         GameObject plant = PoolsManagerPlants.Instance.GetObject(plantToBuild.plant.my_PlantInfo.index);
         return plant;
     }
-    public void SelectPlantPoint(PlantPoint plantPoint)
+    public void SelectPlantPoint(PlantPoint plantPoint)     //Metodo que se llamara cada vez que el jugador haga click sobre un plant point.
     {
         if(selectedPlantPoint == plantPoint)
         {
@@ -98,12 +100,27 @@ public class GameManager : MonoBehaviour
         }
         selectedPlantPoint = plantPoint;
         plantToBuild = null;
+        DeselectPlayer();
         my_PlantUI.SetPlantPoint(plantPoint);
+    }
+    public void SelectPlayer()
+    {
+        if(selectPlayer == true)        //Metodo que se llamara para poder mover el jugador con el click
+        {
+            return;
+        }
+        plantToBuild = null;
+        selectPlayer = true;
+        DeselectPlantPoint();
     }
     public void DeselectPlantPoint()        //Function for deselection the plantpoint
     {
         selectedPlantPoint = null;
         my_PlantUI.HidePlantUI();
+    }
+    public void DeselectPlayer()        //Function for deselection the plantpoint
+    {
+        selectPlayer = false;
     }
     public void Steal(int stole)
     {

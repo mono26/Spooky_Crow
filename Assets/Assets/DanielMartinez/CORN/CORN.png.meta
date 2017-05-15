@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 05726a27c428f4ca9ae37d381a8141a0
+timeCreated: 1494721742
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CORN_0
+    21300002: CORN_1
+    21300004: CORN_2
+    21300006: CORN_3
+    21300008: CORN_4
+    21300010: CORN_5
+    21300012: CORN_6
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CORN_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 156.35039
+        width: 530
+        height: 1519.6497
+      alignment: 9
+      pivot: {x: 0.4574417, y: 0.1484534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_1
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 1548
+        width: 76
+        height: 294
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_2
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1203
+        width: 179
+        height: 402
+      alignment: 9
+      pivot: {x: 0.85312754, y: 0.9492108}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_3
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1202
+        width: 179
+        height: 406
+      alignment: 9
+      pivot: {x: 0.18610948, y: 0.88057435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_4
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 731
+        width: 224
+        height: 588
+      alignment: 9
+      pivot: {x: 0.7821868, y: 0.45222214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_5
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 616
+        width: 290
+        height: 500
+      alignment: 9
+      pivot: {x: 0.28203547, y: 0.9073523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CORN_6
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 41
+        width: 710
+        height: 564
+      alignment: 9
+      pivot: {x: 0.5989199, y: 0.2633989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 97958083035136
+  assetBundleName: 
+  assetBundleVariant: 
