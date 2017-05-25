@@ -1,15 +1,15 @@
 fileFormatVersion: 2
 guid: c8b2b321800bc4d5d93083a7e3237e28
-timeCreated: 1494721298
+timeCreated: 1495131862
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ENEMY(1)_0
-    21300002: ENEMY(1)_1
-    21300004: ENEMY(1)_2
-    21300006: ENEMY(1)_3
-    21300008: ENEMY(1)_4
-    21300010: ENEMY(1)_5
+    21300000: ENEMY(1)_WingBig
+    21300002: ENEMY(1)_WingLittle
+    21300004: ENEMY(1)_Head
+    21300006: ENEMY(1)_Body
+    21300008: ENEMY(1)_Leg(L)
+    21300010: ENEMY(1)_Leg_R
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -46,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 140
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -76,33 +76,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ENEMY(1)_0
+      name: ENEMY(1)_WingBig
       rect:
         serializedVersion: 2
-        x: 401
-        y: 973
-        width: 143
-        height: 131
+        x: 399
+        y: 971
+        width: 147
+        height: 135
       alignment: 9
-      pivot: {x: 0.8258633, y: 0.23321487}
+      pivot: {x: 0.8169962, y: 0.24111916}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ENEMY(1)_1
+      name: ENEMY(1)_WingLittle
       rect:
         serializedVersion: 2
-        x: 713
-        y: 989
-        width: 85
-        height: 134
+        x: 711
+        y: 987
+        width: 89
+        height: 138
       alignment: 9
-      pivot: {x: 0.36294663, y: 0.09429203}
+      pivot: {x: 0.36910635, y: 0.10605168}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ENEMY(1)_2
+      name: ENEMY(1)_Head
       rect:
         serializedVersion: 2
         x: 845
@@ -115,20 +115,20 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ENEMY(1)_3
+      name: ENEMY(1)_Body
       rect:
         serializedVersion: 2
         x: 254
-        y: 115
+        y: 156
         width: 566
-        height: 746
+        height: 705
       alignment: 9
-      pivot: {x: 0.34220198, y: 0.21891037}
+      pivot: {x: 0.342202, y: 0.17348528}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ENEMY(1)_4
+      name: ENEMY(1)_Leg(L)
       rect:
         serializedVersion: 2
         x: 1233
@@ -136,12 +136,12 @@ TextureImporter:
         width: 256
         height: 414
       alignment: 9
-      pivot: {x: 0.9095564, y: 0.97836524}
+      pivot: {x: 0.9095564, y: 0.9783652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ENEMY(1)_5
+      name: ENEMY(1)_Leg_R
       rect:
         serializedVersion: 2
         x: 1631
@@ -149,12 +149,12 @@ TextureImporter:
         width: 213
         height: 433
       alignment: 9
-      pivot: {x: 0.8099268, y: 0.9753109}
+      pivot: {x: 0.8099268, y: 0.975311}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 97958054068224
+  userData: 97984953647104
   assetBundleName: 
   assetBundleVariant: 

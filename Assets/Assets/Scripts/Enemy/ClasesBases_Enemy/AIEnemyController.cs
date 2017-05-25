@@ -12,6 +12,11 @@ public class AIEnemyController : MonoBehaviour
     public float cdTimer1;
     public float cdTimer2;
 
+    [SerializeField]
+    public float cdTime1;
+    [SerializeField]
+    public float cdTime2;
+
     public AIEnemyState currentState;
     public AIEnemyState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     //Catching
@@ -37,11 +42,8 @@ public class AIEnemyController : MonoBehaviour
     {
         my_RigidBody = GetComponent<Rigidbody>();
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
-    }
-	// Use this for initialization
-	void OnEnable ()
-    {
-		if(!my_Target)
+
+        if (!my_Target)
         {
             Debug.Log("There is no target for me" + this.name);
             //Execute SearchTargetCode;
@@ -65,6 +67,37 @@ public class AIEnemyController : MonoBehaviour
                     }
             }
         }
+    }
+    private void Start()
+    {
+        if (!my_Target)
+        {
+            Debug.Log("There is no target for me" + this.name);
+            //Execute SearchTargetCode;
+            switch (my_EnemyInfo.my_Type)
+            {
+                case (EnemyInfo.EnemyType.STEALER):
+                    {
+                        my_Target = GameManager.Instance.house.transform;
+                        break;
+                    }
+                case (EnemyInfo.EnemyType.ATACKER):
+                    {
+                        my_Target = GameManager.Instance.player.transform;
+                        break;
+                    }
+                case (EnemyInfo.EnemyType.BOSS):
+                    {
+                        //Assigna el target al inicio dependiendo del tipo
+                        my_Target = GameManager.Instance.player.transform;
+                        break;
+                    }
+            }
+        }
+    }
+    // Use this for initialization
+    void OnEnable ()
+    {
         my_NavMeshAgent.SetDestination(my_Target.position);
         my_NavMeshAgent.isStopped = false;
         my_NavMeshAgent.updateRotation = false;
@@ -176,6 +209,7 @@ public class AIEnemyController : MonoBehaviour
         if (cdTimer1 <= 0)
         {
             my_EnemyInfo.ability1.Ability(this.gameObject);
+            cdTimer1 = cdTime1;
         }
         else
             return;
@@ -185,6 +219,7 @@ public class AIEnemyController : MonoBehaviour
         if (cdTimer2 <= 0)
         {
             my_EnemyInfo.ability2.Ability(this.gameObject);
+            cdTimer2 = cdTime2;
         }
         else
             return;

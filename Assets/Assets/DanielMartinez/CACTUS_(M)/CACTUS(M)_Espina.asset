@@ -13,16 +13,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ApiVersion: 3
   m_Sprite: {fileID: 21300012, guid: 7103bffc34fbf4f9e996d944951b4ed2, type: 3}
-  m_SharedMesh: {fileID: 43129721028004440}
+  m_SharedMesh: {fileID: 43749090777784872}
   m_SharedMaterials:
-  - {fileID: 21940351726549762}
+  - {fileID: 21280435430015546}
   pivotPoint: {x: 0, y: 0}
   texVertices: []
   edges: []
   holes: []
   indices: 
   bindPoses: []
---- !u!21 &21940351726549762
+--- !u!21 &21280435430015546
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!43 &43129721028004440
+--- !u!43 &43749090777784872
 Mesh:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +70,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 1.3875, y: 0.1625, z: 0}
+      m_Extent: {x: 0.70625, y: 0.09375, z: 0}
   m_Shapes:
     vertices: []
     shapes: []
@@ -154,7 +154,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 9a99b1bf6666263e000000000000000000000000000080bf9a99b13f6666263e000000000000000000000000000080bf9a99b1bf666626be000000000000000000000000000080bf9a99b13f666626be000000000000000000000000000080bf0000ab3e0080f53e0080e23e0080f53e0000ab3e0000ef3e0080e23e0000ef3e
+    _typelessdata: cdcc34bf0000c03d000000000000000000000000000080bfcdcc343f0000c03d000000000000000000000000000080bfcdcc34bf0000c0bd000000000000000000000000000080bfcdcc343f0000c0bd000000000000000000000000000080bf0080aa3e0000f63e0000e33e0000f63e0080aa3e0080ee3e0000e33e0080ee3e
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -209,12 +209,12 @@ Mesh:
     m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1.3875, y: 0.1625, z: 0}
+    m_Extent: {x: 0.70625, y: 0.09375, z: 0}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!114 &114442814944730976
+--- !u!114 &114312391061114620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -227,10 +227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PivotPoint: {x: 795, y: 969}
   m_Vertices:
-  - {x: 684, y: 982}
-  - {x: 906, y: 982}
-  - {x: 684, y: 956}
-  - {x: 906, y: 956}
+  - {x: 682, y: 984}
+  - {x: 908, y: 984}
+  - {x: 682, y: 954}
+  - {x: 908, y: 954}
   m_BoneWeights: []
   m_Edges:
   - index1: 0

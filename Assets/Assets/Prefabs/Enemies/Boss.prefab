@@ -213,13 +213,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4300657238569150}
   - component: {fileID: 54485028257019412}
-  - component: {fileID: 135474306984101700}
+  - component: {fileID: 65043014379553568}
   - component: {fileID: 114646151318193386}
   - component: {fileID: 195509902025937160}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Enemy
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -393,8 +393,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1571512330337054}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4300657238569150}
   m_RootOrder: 2
@@ -531,6 +531,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65043014379553568
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693399255368238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.08, y: 0.5, z: 7.41}
+  m_Center: {x: -1.29, y: 0.25, z: 0}
 --- !u!65 &65444997405587746
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -715,7 +727,8 @@ MonoBehaviour:
   my_MeleeCollider: {fileID: 0}
   updateRate: 2
   stopingDistanceProportion: 0
-  canMove: 1
+  stoleValue: 0
+  finishStealing: 0
   aiActive: 1
   health: 0
   turnSmooth: 0
@@ -740,18 +753,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!135 &135474306984101700
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693399255368238}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!195 &195509902025937160
 NavMeshAgent:
   m_ObjectHideFlags: 1

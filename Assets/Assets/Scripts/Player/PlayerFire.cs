@@ -12,15 +12,12 @@ public class PlayerFire : MonoBehaviour
     private float shootTime;
 
     private float firingRate = 0.5f;
-    private float bulletSpeed;
-    private const float sampleDistanceToPointer = 4f;
 
     private Ray my_Ray;
     private RaycastHit my_RayHit;
 
     void Start()
     {
-        bulletSpeed = 8f;
     }
     void Update()
     {

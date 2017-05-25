@@ -12,75 +12,55 @@ MonoBehaviour:
   m_Name: Warning
   m_EditorClassIdentifier: 
   m_PoseEntries:
-  - path: Hips
-    localPosition: {x: -0.7055669, y: 2.0920327, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.04240225, w: 0.9991007}
+  - path: Bones_CactusM/Base
+    localPosition: {x: -1.536211, y: -3.6053913, z: 2.2346609}
+    localRotation: {x: 0, y: 0, z: 0.7259788, w: 0.6877171}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Spine 1
-    localPosition: {x: 1.315166, y: 0.00000011920929, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.04551023, w: 0.9989639}
-    localScale: {x: 0.9999999, y: 0.99999994, z: 1}
-  - path: Hips/Spine 1/Neck
-    localPosition: {x: 1.2035699, y: -0.00000023841858, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.09800125, w: 0.9951863}
-    localScale: {x: 0.99999994, y: 0.9999999, z: 1}
-  - path: Hips/Spine 1/Neck/Head
-    localPosition: {x: 1.2315193, y: -0.00000047683716, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.0027234552, w: 0.99999636}
-    localScale: {x: 0.9999999, y: 0.99999994, z: 1}
-  - path: Hips/Spine 1/Neck/Head/Jaw
-    localPosition: {x: -0.2170254, y: -0.05831708, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.7055911, w: 0.7086193}
+  - path: Bones_CactusM/Base/Hip
+    localPosition: {x: 2.034469, y: -0.19568467, z: -0.09}
+    localRotation: {x: 0, y: 0, z: -0.07709723, w: 0.99702364}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Spine 1/Neck/Head/Jaw/Jaw 2
-    localPosition: {x: 0.57317114, y: 0, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.45858076, w: 0.88865274}
-    localScale: {x: 0.9999998, y: 0.9999998, z: 1}
-  - path: Hips/Tail 1
-    localPosition: {x: -0.326308, y: 0.0005617812, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.99847865, w: -0.05514009}
-    localScale: {x: 0.99999964, y: 0.9999997, z: 1}
-  - path: Hips/Tail 1/Tail 2
-    localPosition: {x: 1.1052525, y: -0.000021486543, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.09037119, w: 0.99590814}
-    localScale: {x: 0.99999964, y: 0.9999997, z: 1}
-  - path: Hips/Tail 1/Tail 2/Tail 3
-    localPosition: {x: 1.0915146, y: 0.000008612871, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.19546977, w: 0.98070973}
-    localScale: {x: 0.99999976, y: 0.99999976, z: 1}
-  - path: Hips/Tail 1/Tail 2/Tail 3/Tail 4
-    localPosition: {x: 0.96674544, y: 0.0000032000244, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.24936058, w: 0.96841073}
-    localScale: {x: 0.9999997, y: 0.9999997, z: 1}
-  - path: Hips/Upper Leg R
-    localPosition: {x: 0.250766, y: -0.0360143, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.5852901, w: 0.810824}
+  - path: Bones_CactusM/Base/Hip/Torso
+    localPosition: {x: 2.5800686, y: 0.000000016298145, z: -0.000024706125}
+    localRotation: {x: 0, y: 0, z: 0.033473037, w: 0.99943966}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg R/Leg R
-    localPosition: {x: 0.96838087, y: 0, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.57054704, w: 0.8212649}
+  - path: Bones_CactusM/Base/Hip/Torso/Hat
+    localPosition: {x: 2.6357212, y: -0.000000015832484, z: -0.00000023841858}
+    localRotation: {x: 0, y: 0, z: -0.13747829, w: 0.99050474}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg R/Leg R/Foot R
-    localPosition: {x: 1.0811353, y: 0.000000059604645, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.68409836, w: 0.7293898}
+  - path: Bones_CactusM/Base/Hip/Torso/Face
+    localPosition: {x: 0.11070993, y: 0.74902296, z: -0.42337537}
+    localRotation: {x: 0, y: 0, z: -0.07342872, w: 0.9973005}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg R/Leg R/Foot R/Fingers R
-    localPosition: {x: 0.47120526, y: -0.000000014901161, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.5037438, w: 0.86385316}
+  - path: Bones_CactusM/Base/Hip/Torso/Poncho(1)
+    localPosition: {x: -0.9731833, y: 0.875407, z: -0.7700552}
+    localRotation: {x: 0, y: 0, z: 0.95601255, w: 0.29332587}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg L
-    localPosition: {x: 1.0362393, y: -0.003654696, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.18974908, w: 0.9818326}
+  - path: Bones_CactusM/Base/Hip/Torso/Poncho(1)/Poncho(2)
+    localPosition: {x: 1.4139827, y: 0.000000059604645, z: 0.0009764433}
+    localRotation: {x: 0, y: 0, z: 0.09365248, w: 0.995605}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg L/Leg L
-    localPosition: {x: 1.0396693, y: 0.000000029802322, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.6330834, w: 0.7740837}
+  - path: Bones_CactusM/Base/Hip/Arm_R
+    localPosition: {x: 1.1499794, y: -1.501455, z: -0.97000086}
+    localRotation: {x: 0, y: 0, z: -0.77655286, w: 0.63005215}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg L/Leg L/Foot L
-    localPosition: {x: 1.0811353, y: 0.000000059604645, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.39007595, w: 0.92078274}
+  - path: Bones_CactusM/Base/Hip/Arm_R/ARm_R_2
+    localPosition: {x: 0.8400003, y: -0.00000011920929, z: 0.00000011920929}
+    localRotation: {x: 0, y: 0, z: -0.65664667, w: 0.7541983}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Hips/Upper Leg L/Leg L/Foot L/Fingers L
-    localPosition: {x: 0.47120526, y: -0.000000014901161, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.502456, w: 0.8646028}
+  - path: Bones_CactusM/Base/Hip/Arm_R/ARm_R_2/Arm_r_3
+    localPosition: {x: 1.1848962, y: 0.00000011920929, z: -0.0000027418137}
+    localRotation: {x: 0, y: 0, z: 0.15576082, w: 0.9877948}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L
+    localPosition: {x: 2.0099194, y: 1.4824355, z: -0.313996}
+    localRotation: {x: 0, y: 0, z: 0.7870708, w: 0.61686265}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L/Arm_L_2
+    localPosition: {x: 0.6727285, y: -0.000000059604645, z: -0.00000074505806}
+    localRotation: {x: 0, y: 0, z: 0.33987474, w: 0.94047076}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L/Arm_L_2/Aem_L_3
+    localPosition: {x: 0.94747347, y: 0, z: -0.0000019073486}
+    localRotation: {x: 0, y: 0, z: -0.40768817, w: 0.91312116}
     localScale: {x: 1, y: 1, z: 1}

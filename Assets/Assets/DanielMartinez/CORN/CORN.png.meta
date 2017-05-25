@@ -1,16 +1,16 @@
 fileFormatVersion: 2
 guid: 05726a27c428f4ca9ae37d381a8141a0
-timeCreated: 1494721742
+timeCreated: 1495127999
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CORN_0
-    21300002: CORN_1
-    21300004: CORN_2
-    21300006: CORN_3
-    21300008: CORN_4
-    21300010: CORN_5
-    21300012: CORN_6
+    21300000: CORN_Body
+    21300002: CORN_Clothes_R
+    21300004: CORN_Arm_L
+    21300006: CORN_Arm_R
+    21300008: CORN_Corn_L
+    21300010: CORN_Leave
+    21300012: CORN_body
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -77,46 +77,46 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CORN_0
+      name: CORN_Body
       rect:
         serializedVersion: 2
-        x: 231
-        y: 156.35039
-        width: 530
-        height: 1519.6497
+        x: 229
+        y: 166.2008
+        width: 533
+        height: 1512
       alignment: 9
-      pivot: {x: 0.4574417, y: 0.1484534}
+      pivot: {x: 0.4586193, y: 0.14268963}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_1
+      name: CORN_Clothes_R
       rect:
         serializedVersion: 2
-        x: 926
-        y: 1548
-        width: 76
-        height: 294
+        x: 924
+        y: 1546
+        width: 80
+        height: 298
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_2
+      name: CORN_Arm_L
       rect:
         serializedVersion: 2
         x: 1278
-        y: 1203
+        y: 1199
         width: 179
-        height: 402
+        height: 406
       alignment: 9
-      pivot: {x: 0.85312754, y: 0.9492108}
+      pivot: {x: 0.85312754, y: 0.9497112}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_3
+      name: CORN_Arm_R
       rect:
         serializedVersion: 2
         x: 1665
@@ -129,7 +129,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_4
+      name: CORN_Corn_L
       rect:
         serializedVersion: 2
         x: 885
@@ -142,20 +142,20 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_5
+      name: CORN_Leave
       rect:
         serializedVersion: 2
         x: 1302
         y: 616
-        width: 290
+        width: 305.53284
         height: 500
       alignment: 9
-      pivot: {x: 0.28203547, y: 0.9073523}
+      pivot: {x: 0.2676972, y: 0.9073523}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CORN_6
+      name: CORN_body
       rect:
         serializedVersion: 2
         x: 1054
@@ -163,12 +163,12 @@ TextureImporter:
         width: 710
         height: 564
       alignment: 9
-      pivot: {x: 0.5989199, y: 0.2633989}
+      pivot: {x: 0.5989199, y: 0.26339886}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 97958083035136
+  userData: 97984706510848
   assetBundleName: 
   assetBundleVariant: 

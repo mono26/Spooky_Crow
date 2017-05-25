@@ -21,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
         public float spawnRate;
         public int[] count;     //Cuanto se spawnea de cada enmigo
     }
+
     public Wave[] waves;        //Para alamacenar las diferentes waves.
     public int nextWave = 0;    //Para saber cual es la siguente Wave y comparar si es el maximo.
     public float timeBetweenWaves = 5.0f;      //Tiempo automatico para spawnear la siguiente oleada.
@@ -30,20 +31,16 @@ public class WaveSpawner : MonoBehaviour
 
     public SpawnState state;    //Para saber el estado del spawn     
 
-    public Transform[] spawnPoints;   //Para almacenar los spawn points
+    public int my_SpawnPoint = 0;
 
 	// Use this for initialization
 	void Start ()
     {
         waveCountDown = timeBetweenWaves;
         state = SpawnState.COUNTING;
-        if (spawnPoints.Length == 0)
-            Debug.LogError("No spawn points");
-        if (waves.Length == 0)
-            Debug.LogError("No wave to spawn");
         //Esta seccion del codigo solo sirve para asignar los index del pool al WaveInfo para el prefab contenido en el wave.enemy
         //Esta machetiado para que funcione solo si los enemy infos pertenecientes a cada prefab son los mismos y estan en el mismo orden tanto en el pool como en la wave.enemy
-        for (int wave = 0; wave < waves.Length; wave++)
+        /*for (int wave = 0; wave < waves.Length; wave++)
         {
             if (waves[wave].type == Wave.WaveType.SINGLE)
                 waves[wave].enemy[0].index = wave;
@@ -54,7 +51,7 @@ public class WaveSpawner : MonoBehaviour
                     waves[wave].enemy[enemy].index = enemy;
                 }
             }
-        }
+        }*/
 	}
 	
 	// Update is called once per frame
@@ -135,10 +132,11 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(EnemyInfo _enemy)
     {
-        var spawnIndex = Random.Range(0, spawnPoints.Length - 1);   //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
+        //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
         var obj = PoolsManager.Instance.GetObject(_enemy.index);
-        obj.transform.position = spawnPoints[spawnIndex].position;
-        obj.transform.rotation = spawnPoints[spawnIndex].rotation;
+        my_SpawnPoint = Random.Range(0, GameManager.Instance.spawnPoints.Length);
+        obj.transform.position = GameManager.Instance.spawnPoints[my_SpawnPoint].position;
+        obj.transform.rotation = Quaternion.identity;
     }
 
     void WaveCompleted()

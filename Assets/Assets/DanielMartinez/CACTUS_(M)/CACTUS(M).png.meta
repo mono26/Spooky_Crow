@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7103bffc34fbf4f9e996d944951b4ed2
-timeCreated: 1494723442
+timeCreated: 1495125726
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -50,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 160
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -83,7 +83,7 @@ TextureImporter:
       name: CACTUS(M)_Hat
       rect:
         serializedVersion: 2
-        x: 197
+        x: 197.00002
         y: 1538
         width: 478
         height: 385
@@ -148,12 +148,12 @@ TextureImporter:
       name: CACTUS(M)_Hand_R
       rect:
         serializedVersion: 2
-        x: 1585
-        y: 846
+        x: 1584.874
+        y: 846.2431
         width: 175
-        height: 327
+        height: 327.00006
       alignment: 9
-      pivot: {x: 0.210994, y: 0.84799784}
+      pivot: {x: 0.21171387, y: 0.8472542}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -161,10 +161,10 @@ TextureImporter:
       name: CACTUS(M)_Espina
       rect:
         serializedVersion: 2
-        x: 679
-        y: 951
-        width: 232
-        height: 36
+        x: 677
+        y: 949
+        width: 236
+        height: 40
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,6 +198,6 @@ TextureImporter:
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 97958192873472
+  userData: 97984542539776
   assetBundleName: 
   assetBundleVariant: 

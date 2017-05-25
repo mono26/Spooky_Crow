@@ -67,29 +67,15 @@ public class GameManager : MonoBehaviour
         my_HealthBar.value = houseHealth;
         my_MoneyText.text = "$:" + playerMoney; 
     }
-    public void BuildPlantOn(PlantPoint plantPoint)       //Luego de que se tenga una planta seleccionada cuando se escoja un nodo se construira ahi
-    {
-        if(playerMoney < plantToBuild.price)
-        {
-            return;
-        }
-        GameObject plant = GetPlantToBuild();
-        plant.transform.position = plantPoint.transform.position;
-        plantPoint.my_Plant = plant;
-        plantPoint.my_PlantBluePrint = plantToBuild;
-        playerMoney -= plantToBuild.price;
-        my_MoneyText.text = "$:" + playerMoney;
-    }
     public void SetPlantToBuild(PlantBluePrint plant)       //Metodo que usa el shopmanager para cambiar la planta que se va a construir
     {
         //Solo debe de haber uno al tiempo, no puede existir blueprint si se tiene un plantpoint seleccionado
         plantToBuild = plant;
         DeselectPlantPoint();
     }
-    public GameObject GetPlantToBuild()     //Metodo que se comunica con el pool para sacar la planta y retornarla en donde se uso.
+    public PlantBluePrint GetPlantToBuild()     //Metodo que se comunica con el pool para sacar la planta y retornarla en donde se uso.
     {
-        GameObject plant = PoolsManagerPlants.Instance.GetObject(plantToBuild.plant.my_PlantInfo.index);
-        return plant;
+        return plantToBuild;
     }
     public void SelectPlantPoint(PlantPoint plantPoint)     //Metodo que se llamara cada vez que el jugador haga click sobre un plant point.
     {

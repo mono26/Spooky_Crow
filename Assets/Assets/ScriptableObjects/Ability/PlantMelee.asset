@@ -11,4 +11,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968ba6e91fbed18489e5d03daa076c4b, type: 3}
   m_Name: PlantMelee
   m_EditorClassIdentifier: 
-  cdTime: 0

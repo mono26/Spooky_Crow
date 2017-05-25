@@ -11,4 +11,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f9d0c5b75d8aa4e895eab9122f4879, type: 3}
   m_Name: PlantRange
   m_EditorClassIdentifier: 
-  cdTime: 1.5

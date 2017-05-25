@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AIComponents/Ability/Range")]
 public class AbilityRangePlant : AIAbility
 {
-    public float cdTime;
-
     public override void Ability(GameObject obj)
     {
         RangeAtack(obj);
@@ -17,7 +15,6 @@ public class AbilityRangePlant : AIAbility
     {
         if (obj.GetComponent<AIPlantController>().my_Target != null)        //Si no tiene target no deberia de disparar.
         {
-             obj.GetComponent<AIPlantController>().cdTimer2 = cdTime;
              ShootWeapons(obj);
         }
         else

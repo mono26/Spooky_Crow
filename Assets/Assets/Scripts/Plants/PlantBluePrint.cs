@@ -7,5 +7,7 @@ using UnityEngine;
 public class PlantBluePrint : ScriptableObject
 {
     public int price;
+    public int upgradePrice;
     public AIPlantController plant;
+    public AIPlantController upgradePlant;
 }

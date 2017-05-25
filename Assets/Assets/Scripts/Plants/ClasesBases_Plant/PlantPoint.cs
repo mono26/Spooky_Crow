@@ -7,7 +7,7 @@ public class PlantPoint : MonoBehaviour
 {
     public PlantBluePrint my_PlantBluePrint;
     public GameObject my_Plant;
-    public Renderer my_Rederer;
+    public SpriteRenderer my_Rederer;
 
     [SerializeField]
     private Color noMoneyColor;
@@ -44,7 +44,7 @@ public class PlantPoint : MonoBehaviour
             else
             {
                 Debug.Log("No hay planta");
-                GameManager.Instance.BuildPlantOn(this);
+                BuildPlant(GameManager.Instance.GetPlantToBuild());
                 //Ejecutar codigo para comprar la torre
             }
         }
@@ -63,17 +63,30 @@ public class PlantPoint : MonoBehaviour
         //Si hay una planta que va a ser construida el punto en donde se puede ver la planta 
         if (GameManager.Instance.playerMoney < GameManager.Instance.plantToBuild.price)
         {
-            my_Rederer.material.color = noMoneyColor;
+            //my_Rederer.color = noMoneyColor;
         }
         else if (GameManager.Instance.playerMoney >= GameManager.Instance.plantToBuild.price)
         {
-            my_Rederer.material.color = yesMoneyColor;
+            //my_Rederer.color = yesMoneyColor;
         }
 
     }
     private void OnMouseExit()
     {
-        my_Rederer.material.color = startColor;
+        //my_Rederer.color = startColor;
+    }
+    public void BuildPlant(PlantBluePrint blueprint)       //Luego de que se tenga una planta seleccionada cuando se escoja un nodo se construira ahi
+    {
+        if (GameManager.Instance.playerMoney < blueprint.price)
+        {
+            return;
+        }
+        GameObject plant = PoolsManagerPlants.Instance.GetObject(blueprint.plant.my_PlantInfo.index);
+        plant.transform.position = transform.position;
+        my_Plant = plant;
+        my_PlantBluePrint = blueprint;
+        GameManager.Instance.playerMoney -= blueprint.price;
+        GameManager.Instance.my_MoneyText.text = "$:" + GameManager.Instance.playerMoney;
     }
     public void SellPlant()
     {
@@ -81,9 +94,20 @@ public class PlantPoint : MonoBehaviour
         my_PlantBluePrint = null;
         PoolsManagerPlants.Instance.ReleaseObject(my_Plant);
         my_Plant = null;
+        GameManager.Instance.my_MoneyText.text = "$:" + GameManager.Instance.playerMoney;
     }
     public void UpgradePlant()
     {
+        if (GameManager.Instance.playerMoney < my_PlantBluePrint.upgradePrice)
+        {
+            Debug.Log("Not enough money to upgrade that!");
+            return;
+        }
 
+        GameManager.Instance.playerMoney -= my_PlantBluePrint.upgradePrice;
+        PoolsManagerPlants.Instance.ReleaseObject(my_Plant);
+        my_Plant = PoolsManagerPlants.Instance.GetObject(my_PlantBluePrint.upgradePlant.my_PlantInfo.index);
+
+        
     }
 }

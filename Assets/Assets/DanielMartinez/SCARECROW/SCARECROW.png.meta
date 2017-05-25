@@ -1,16 +1,16 @@
 fileFormatVersion: 2
 guid: 487657622ae864b288d10d47ed3e7524
-timeCreated: 1494717728
+timeCreated: 1494906757
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SCARECROW_0
-    21300002: SCARECROW_1
-    21300004: SCARECROW_2
-    21300006: SCARECROW_3
-    21300008: SCARECROW_4
-    21300010: SCARECROW_5
-    21300012: SCARECROW_6
+    21300000: SCARECROW_Hat
+    21300002: SCARECROW_Head
+    21300004: SCARECROW_hand_L
+    21300006: SCARECROW_Body
+    21300008: SCARECROW_Hand_R
+    21300010: SCARECROW_Legs_L
+    21300012: SCARECROW_Leg_R
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 230
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -85,46 +85,46 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SCARECROW_0
+      name: SCARECROW_Hat
       rect:
         serializedVersion: 2
-        x: 21
-        y: 1440
-        width: 1243
-        height: 549
+        x: 19
+        y: 1438
+        width: 1247
+        height: 553
       alignment: 9
-      pivot: {x: 0.48476964, y: 0.1413721}
+      pivot: {x: 0.4848185, y: 0.14396615}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_1
+      name: SCARECROW_Head
       rect:
         serializedVersion: 2
-        x: 1302
+        x: 1309
         y: 1300
-        width: 706
+        width: 699
         height: 687
       alignment: 9
-      pivot: {x: 0.51892173, y: 0.075005546}
+      pivot: {x: 0.5141041, y: 0.075005546}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_2
+      name: SCARECROW_hand_L
       rect:
         serializedVersion: 2
-        x: 183
+        x: 183.00002
         y: 325
-        width: 353
+        width: 364.31946
         height: 780
       alignment: 9
-      pivot: {x: 0.6703109, y: 0.9634743}
+      pivot: {x: 0.6494842, y: 0.9634744}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_3
+      name: SCARECROW_Body
       rect:
         serializedVersion: 2
         x: 598
@@ -137,7 +137,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_4
+      name: SCARECROW_Hand_R
       rect:
         serializedVersion: 2
         x: 1661
@@ -150,33 +150,33 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_5
+      name: SCARECROW_Legs_L
       rect:
         serializedVersion: 2
-        x: 793.0009
+        x: 794.01154
         y: 26
-        width: 94.999084
-        height: 287
+        width: 93.98938
+        height: 288.99292
       alignment: 9
-      pivot: {x: 0.521048, y: 0.9429904}
+      pivot: {x: 0.515893, y: 0.9364875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SCARECROW_6
+      name: SCARECROW_Leg_R
       rect:
         serializedVersion: 2
         x: 1144
-        y: 79.999985
-        width: 77
-        height: 265
+        y: 80.999985
+        width: 79
+        height: 267
       alignment: 9
-      pivot: {x: 0.5883599, y: 0.93259746}
+      pivot: {x: 0.5734647, y: 0.92186636}
       border: {x: 3, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 97957820104704
+  userData: 97970202411008
   assetBundleName: 
   assetBundleVariant: 

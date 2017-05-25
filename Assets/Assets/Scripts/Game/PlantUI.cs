@@ -17,4 +17,9 @@ public class PlantUI : MonoBehaviour
     {
         my_UI.SetActive(false);
     }
+    public void Sell()
+    {
+        my_TargetPlantPoint.SellPlant();
+        GameManager.Instance.DeselectPlantPoint();
+    }
 }

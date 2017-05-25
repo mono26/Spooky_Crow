@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: CactusM_Idle
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones_CactusM/Base
+    localPosition: {x: -1.536211, y: -3.6053913, z: 2.2346609}
+    localRotation: {x: 0, y: 0, z: 0.7259788, w: 0.6877171}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip
+    localPosition: {x: 2.0042229, y: -0.32372308, z: -0.08477807}
+    localRotation: {x: 0, y: 0, z: -0.07813719, w: 0.99694264}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Torso
+    localPosition: {x: 2.5800812, y: 0.000000009313226, z: -0.00005030632}
+    localRotation: {x: 0, y: 0, z: -0.015742127, w: 0.99987614}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Torso/Hat
+    localPosition: {x: 2.6357377, y: 1.7462298e-10, z: -0.0000076293945}
+    localRotation: {x: 0, y: 0, z: -0.115656696, w: 0.99328923}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Torso/Face
+    localPosition: {x: 0.11070993, y: 0.74902296, z: -0.42337537}
+    localRotation: {x: 0, y: 0, z: -0.05361698, w: 0.99856156}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Torso/Poncho(1)
+    localPosition: {x: -0.9731833, y: 0.875407, z: -0.7700552}
+    localRotation: {x: 0, y: 0, z: 0.9837882, w: 0.17933443}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Torso/Poncho(1)/Poncho(2)
+    localPosition: {x: 1.4139827, y: 0.000000059604645, z: 0.0009764433}
+    localRotation: {x: 0, y: 0, z: 0.09365248, w: 0.995605}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_R
+    localPosition: {x: 1.3854437, y: -1.5033236, z: -1.0074736}
+    localRotation: {x: 0, y: 0, z: -0.9936684, w: 0.1123534}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_R/ARm_R_2
+    localPosition: {x: 0.8400003, y: -0.00000011920929, z: 0.00000011920929}
+    localRotation: {x: 0, y: 0, z: -0.58370423, w: 0.8119664}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_R/ARm_R_2/Arm_r_3
+    localPosition: {x: 1.1848962, y: 0.00000011920929, z: -0.0000027418137}
+    localRotation: {x: 0, y: 0, z: 0.32552695, w: 0.9455328}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L
+    localPosition: {x: 2.083063, y: 1.6406877, z: -0.32519555}
+    localRotation: {x: 0, y: 0, z: 0.87532115, w: 0.48354208}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L/Arm_L_2
+    localPosition: {x: 0.6727285, y: -0.000000059604645, z: -0.00000074505806}
+    localRotation: {x: 0, y: 0, z: 0.6489767, w: 0.7608083}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_CactusM/Base/Hip/Arm_L/Arm_L_2/Aem_L_3
+    localPosition: {x: 0.94747347, y: 0, z: -0.0000019073486}
+    localRotation: {x: 0, y: 0, z: -0.4076882, w: 0.9131212}
+    localScale: {x: 1, y: 1, z: 1}

@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 52044e1e221a44c63abc3a25cfb044b5
-timeCreated: 1494718961
+guid: ffcc48e6368cb446ead66297607bd82e
+timeCreated: 1495204784
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TOMATE_0
-    21300002: TOMATE_1
-    21300004: TOMATE_2
-    21300006: TOMATE_5
+    21300000: TOMATE_Body
+    21300002: TOMATE_Arm_L
+    21300004: TOMATE_Arm_R
+    21300006: TOMATE_Gorra
+    21300008: TOMATE_Hojas
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -44,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 285
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -74,59 +75,72 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TOMATE_0
+      name: TOMATE_Body
       rect:
         serializedVersion: 2
-        x: 322
-        y: 1700
-        width: 1397
-        height: 181
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TOMATE_1
-      rect:
-        serializedVersion: 2
-        x: 498
+        x: 438.49994
         y: 494
-        width: 1346
+        width: 1407
         height: 915
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.4682163, y: 0.15662996}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TOMATE_2
+      name: TOMATE_Arm_L
       rect:
         serializedVersion: 2
-        x: 85
-        y: 36
-        width: 729
-        height: 318
+        x: 136
+        y: 912
+        width: 176
+        height: 325
       alignment: 9
-      pivot: {x: 0.5, y: 0.504717}
+      pivot: {x: 0.4971591, y: 0.50461537}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TOMATE_5
+      name: TOMATE_Arm_R
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 372
+        width: 176
+        height: 325
+      alignment: 9
+      pivot: {x: 0.50284094, y: 0.51692307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: TOMATE_Gorra
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1698
+        width: 1401
+        height: 181
+      alignment: 9
+      pivot: {x: 0.49847054, y: 0.29142568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: TOMATE_Hojas
       rect:
         serializedVersion: 2
         x: 1090
-        y: 73.49999
+        y: 72
         width: 837
         height: 256
       alignment: 9
-      pivot: {x: 0.49999997, y: 0.47851565}
+      pivot: {x: 0.49522087, y: 0.3715697}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 97957900386304
+  userData: 97989737644032
   assetBundleName: 
   assetBundleVariant: 
