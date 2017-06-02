@@ -8,7 +8,11 @@ public class PlayerMove : MonoBehaviour
 {
     public Vector3 clickPoint;
     public Vector3 velocityVector;
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
     public bool isMoving;
+=======
+    public bool moving;
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
 
     public float my_Speed = 1;     //Is going to be in m/s and is initialized 1
     public float turnSmooth = 1;
@@ -54,7 +58,11 @@ public class PlayerMove : MonoBehaviour
                 my_Animator.SetBool("Walking", true);
                 my_NavMeshAgent.SetDestination(clickPoint);
                 my_NavMeshAgent.isStopped = false;
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
                 isMoving = true;
+=======
+                moving = true;
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
             }                            
         }
         Animate();
@@ -66,7 +74,11 @@ public class PlayerMove : MonoBehaviour
     }
     public void Animate()
     {
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
         if (!isMoving)
+=======
+        if (!moving)
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
         {
             return;
         }
@@ -99,12 +111,20 @@ public class PlayerMove : MonoBehaviour
             //Todos los posibles colliders a los cuales le puedo hacer touch
         }
     }
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
     public void StopPlayer()
     {
         my_Animator.SetBool("Walking", false);
         my_NavMeshAgent.SetDestination(transform.position);
         my_NavMeshAgent.isStopped = true;
         isMoving = false;
+=======
+    void StopPlayer()
+    {
+        my_Animator.SetBool("Walking", false);
+        my_NavMeshAgent.isStopped = true;
+        moving = false;
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Player/PlayerMove.cs
     }
     private void OnMouseDown()
     {

@@ -128,6 +128,10 @@ public class GameManager : MonoBehaviour
         GameIsOver = true;
         my_GameOverUI.SetActive(true);
     }
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Game/GameManager.cs
+=======
+
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Game/GameManager.cs
     public void WinLevel()
     {
         GameIsOver = true;

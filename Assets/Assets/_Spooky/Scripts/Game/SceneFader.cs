@@ -30,7 +30,10 @@ public class SceneFader : MonoBehaviour
             blackBackGround.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
+<<<<<<< HEAD
         blackBackGround.gameObject.SetActive(false);
+=======
+>>>>>>> origin/master
     }
 
     IEnumerator FadeOut(string scene)

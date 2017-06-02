@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -21,5 +22,13 @@ public class LevelManager : MonoBehaviour
     public void Select(string levelName)
     {
         fader.FadeTo(levelName);
+=======
+
+public class LevelManageer : MonoBehaviour
+{
+    public void SelectLevel(string levelName)
+    {
+
+>>>>>>> origin/master
     }
 }

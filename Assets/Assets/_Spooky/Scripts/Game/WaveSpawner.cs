@@ -27,9 +27,13 @@ public class WaveSpawner : MonoBehaviour
         public float spawnRate;
         public int[] count;     //Cuanto se spawnea de cada enmigo
     }
+
     public Wave[] waves;        //Para alamacenar las diferentes waves.
     public Text my_WaveText;
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
     public int my_NumberOfEnemies = 0;
+=======
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
     public int nextWave = 0;    //Para saber cual es la siguente Wave y comparar si es el maximo.
     public float timeBetweenWaves = 5.0f;      //Tiempo automatico para spawnear la siguiente oleada.
     public float waveCountDown;     //Tiempo para spawnear la oleada.
@@ -40,6 +44,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Awake()
     {
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
         if (instance == null)
         {
             instance = this;    //Parte del singleton en donde se asigna la unica instancia de la clase
@@ -52,6 +57,24 @@ public class WaveSpawner : MonoBehaviour
     {
         waveCountDown = timeBetweenWaves;
         state = SpawnState.COUNTING;
+=======
+        waveCountDown = timeBetweenWaves;
+        state = SpawnState.COUNTING;
+        //Esta seccion del codigo solo sirve para asignar los index del pool al WaveInfo para el prefab contenido en el wave.enemy
+        //Esta machetiado para que funcione solo si los enemy infos pertenecientes a cada prefab son los mismos y estan en el mismo orden tanto en el pool como en la wave.enemy
+        /*for (int wave = 0; wave < waves.Length; wave++)
+        {
+            if (waves[wave].type == Wave.WaveType.SINGLE)
+                waves[wave].enemy[0].index = wave;
+            else if(waves[wave].type == Wave.WaveType.MULTIPLE)
+            {
+                for (int enemy = 0; enemy < waves[wave].enemy.Length; enemy++)
+                {
+                    waves[wave].enemy[enemy].index = enemy;
+                }
+            }
+        }*/
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
 	}
 	// Update is called once per frame
 	void Update ()
@@ -84,8 +107,12 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)   //Debes de pasarle un wave
     {
         state = SpawnState.SPAWNING;    //Al inicio para poner el stado en spawning.
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
         my_WaveText.text = "Wave:" + (nextWave + 1);
         my_NumberOfEnemies = 0;
+=======
+        my_WaveText.text = "Wave:" + nextWave + 1;
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
         if (_wave.type == Wave.WaveType.SINGLE)
         {
             for (int i = 0; i < _wave.count[0]; i++)
@@ -116,7 +143,10 @@ public class WaveSpawner : MonoBehaviour
         my_SpawnPoint = Random.Range(0, GameManager.Instance.spawnPoints.Length);
         obj.transform.position = GameManager.Instance.spawnPoints[my_SpawnPoint].position;
         obj.transform.rotation = Quaternion.identity;
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
         my_NumberOfEnemies++;
+=======
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Game/WaveSpawner.cs
     }
     void WaveCompleted()
     {
