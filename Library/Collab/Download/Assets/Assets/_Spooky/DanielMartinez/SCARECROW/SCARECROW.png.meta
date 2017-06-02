@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 487657622ae864b288d10d47ed3e7524
+timeCreated: 1494906757
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SCARECROW_Hat
+    21300002: SCARECROW_Head
+    21300004: SCARECROW_hand_L
+    21300006: SCARECROW_Body
+    21300008: SCARECROW_Hand_R
+    21300010: SCARECROW_Legs_L
+    21300012: SCARECROW_Leg_R
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 230
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SCARECROW_Hat
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1438
+        width: 1247
+        height: 553
+      alignment: 9
+      pivot: {x: 0.4848185, y: 0.14396615}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_Head
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1300
+        width: 699
+        height: 687
+      alignment: 9
+      pivot: {x: 0.5141041, y: 0.075005546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_hand_L
+      rect:
+        serializedVersion: 2
+        x: 183.00002
+        y: 325
+        width: 364.31946
+        height: 780
+      alignment: 9
+      pivot: {x: 0.6494842, y: 0.9634744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_Body
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 403
+        width: 697
+        height: 800
+      alignment: 9
+      pivot: {x: 0.56544274, y: 0.37133795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_Hand_R
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 402
+        width: 304
+        height: 726
+      alignment: 9
+      pivot: {x: 0.35851207, y: 0.9803116}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_Legs_L
+      rect:
+        serializedVersion: 2
+        x: 794.01154
+        y: 26
+        width: 93.98938
+        height: 288.99292
+      alignment: 9
+      pivot: {x: 0.515893, y: 0.9364875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SCARECROW_Leg_R
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 80.999985
+        width: 79
+        height: 267
+      alignment: 9
+      pivot: {x: 0.5734647, y: 0.92186636}
+      border: {x: 3, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 97970202411008
+  assetBundleName: 
+  assetBundleVariant: 
