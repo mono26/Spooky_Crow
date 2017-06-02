@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickPoint: {x: 0, y: 0, z: 0}
+  my_Player: {fileID: 0}
   shootTime: 0
 --- !u!114 &114267041123472294
 MonoBehaviour:
@@ -1126,12 +1127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickPoint: {x: 0, y: 0, z: 0}
   velocityVector: {x: 0, y: 0, z: 0}
-  moving: 0
+  isMoving: 0
   my_Speed: 5
   turnSmooth: 1
   my_NavMeshAgent: {fileID: 0}
   my_Animator: {fileID: 0}
-  my_Sprite: {fileID: 4660899074187914}
+  my_Sprite: {fileID: 0}
   stopingDistanceProportion: 0
   maxHorizontal: 50
   maxVertical: 50

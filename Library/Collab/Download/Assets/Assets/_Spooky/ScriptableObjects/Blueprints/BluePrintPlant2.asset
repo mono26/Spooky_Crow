@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d686f01dbc89e3d44891120f3a0236ba, type: 3}
+  m_Name: BluePrintPlant2
+  m_EditorClassIdentifier: 
+  price: 150
+  plant: {fileID: 114875673679395052, guid: d1e62196c98e9a84492e47ed120e7712, type: 2}

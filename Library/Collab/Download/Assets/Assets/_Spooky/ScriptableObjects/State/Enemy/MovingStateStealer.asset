@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c9f27c8af26846a30bd3ba0c7f0ec, type: 3}
+  m_Name: MovingStateStealer
+  m_EditorClassIdentifier: 
+  aiActions:
+  - {fileID: 11400000, guid: 50f1eac51565e00469529da58ee4f89c, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: 2a895c7d42b1d744c86c70f89a623810, type: 2}
+    trueState: {fileID: 11400000, guid: fdf88fef80f3989479213e4ee0ea15ce, type: 2}
+    falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  sceneGuizmoColor: {r: 0.90344834, g: 1, b: 0, a: 1}
