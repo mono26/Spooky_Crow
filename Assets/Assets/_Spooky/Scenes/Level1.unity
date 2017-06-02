@@ -3646,6 +3646,10 @@ Prefab:
       propertyPath: my_MoneyText
       value: 
       objectReference: {fileID: 578380906}
+    - target: {fileID: 4928183594258784, guid: 92363d25f82623b428e17f713a9489e1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 51.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92363d25f82623b428e17f713a9489e1, type: 2}
   m_IsPrefabParent: 0

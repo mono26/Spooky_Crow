@@ -1132,7 +1132,7 @@ MonoBehaviour:
   turnSmooth: 1
   my_NavMeshAgent: {fileID: 0}
   my_Animator: {fileID: 0}
-  my_Sprite: {fileID: 0}
+  my_Sprite: {fileID: 4660899074187914}
   stopingDistanceProportion: 0
   maxHorizontal: 50
   maxVertical: 50

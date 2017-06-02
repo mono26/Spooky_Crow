@@ -17,11 +17,6 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]   //Para poder ver una clase en el editor
     public class Wave
     {
-        public enum WaveType
-        {
-            SINGLE, MULTIPLE    //Para crear waves con multiples enemigos.
-        }
-        public WaveType type;
         public string name;
         public EnemyInfo[] enemy;       //Alamcenar los distintos enemigos.
         public float spawnRate;
@@ -56,20 +51,21 @@ public class WaveSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (nextWave == waves.Length - 1)      //Para mirar si ya logro terminar todas las waves
+        {
+            GameManager.Instance.WinLevel();
+            this.enabled = false;
+        }
+
         if (state == SpawnState.WAITING)
         {
-            if(my_NumberOfEnemies > 0)
+            if(my_NumberOfEnemies <= 0)
             {
                 //Begin a new Round
                 WaveCompleted();
             }
         }
-        if (nextWave == waves.Length)      //Para mirar si ya logro terminar todas las waves
-        {
-            GameManager.Instance.WinLevel();
-            this.enabled = false;
-        }
-        if (waveCountDown <= 0.0f)
+        if (waveCountDown <= 0.0f && my_NumberOfEnemies == 0)
         {
             if(state != SpawnState.SPAWNING)    //Si cuando el conteo de spawn = 0 no esta en estado de spawn
             {
@@ -79,6 +75,7 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             waveCountDown -= Time.deltaTime;
+            waveCountDown = Mathf.Clamp(waveCountDown, 0f, Mathf.Infinity);
         }
 	}
     IEnumerator SpawnWave(Wave _wave)   //Debes de pasarle un wave
@@ -86,24 +83,12 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnState.SPAWNING;    //Al inicio para poner el stado en spawning.
         my_WaveText.text = "Wave:" + (nextWave + 1);
         my_NumberOfEnemies = 0;
-        if (_wave.type == Wave.WaveType.SINGLE)
+        for(int enemy = 0; enemy < _wave.enemy.Length; enemy++)
         {
-            for (int i = 0; i < _wave.count[0]; i++)
+            for (int count = 0; count < _wave.count[enemy]; count++)
             {
-                SpawnEnemy(_wave.enemy[0]);    //Should pass the correct enemy per wave
-                //SpawnEnemy(EnemyPool.Instance.GetEnemy());
+                SpawnEnemy(_wave.enemy[enemy]);
                 yield return new WaitForSeconds(1f / _wave.spawnRate);
-            }
-        }
-        else if(_wave.type == Wave.WaveType.MULTIPLE)
-        {
-            for(int enemy = 0; enemy < _wave.enemy.Length; enemy++)
-            {
-                for (int count = 0; count < _wave.count[enemy]; count++)
-                {
-                    SpawnEnemy(_wave.enemy[enemy]);
-                    yield return new WaitForSeconds(1f / _wave.spawnRate);
-                }
             }
         }
         state = SpawnState.WAITING;
