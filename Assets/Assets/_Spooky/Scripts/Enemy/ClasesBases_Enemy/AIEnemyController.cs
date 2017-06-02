@@ -230,4 +230,17 @@ public class AIEnemyController : MonoBehaviour
         GameManager.Instance.GiveMoney(my_EnemyInfo.reward);
         PoolsManager.Instance.ReleaseObject(this.gameObject);
     }
+    public void Escape()
+    {
+        WaveSpawner.Instance.my_NumberOfEnemies--;
+        PoolsManager.Instance.ReleaseObject(this.gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("RunAwayPoint"))
+        {
+            Escape();
+        }
+        else return;
+    }
 }

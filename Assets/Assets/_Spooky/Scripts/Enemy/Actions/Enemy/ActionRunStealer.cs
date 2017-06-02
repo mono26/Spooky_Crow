@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AIComponents/Actions/ActionSteal")]
 public class ActionRunStealer : AIEnemyAction
