@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Enemy1Idle
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones_Enemy(1)/Body
+    localPosition: {x: -0.9522152, y: -0.20566273, z: -0.2580073}
+    localRotation: {x: 0, y: 0, z: 0.48100355, w: 0.8767187}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Wing(2)
+    localPosition: {x: 2.102039, y: 0.6397424, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.15605111, w: 0.98774904}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Wing(1)
+    localPosition: {x: 1.7441667, y: 0.8655295, z: 0.000000059604645}
+    localRotation: {x: 0, y: 0, z: 0.67296827, w: 0.7396714}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Neck
+    localPosition: {x: 2.8368745, y: 0, z: -0.000000059604645}
+    localRotation: {x: 0, y: 0, z: -0.034401875, w: 0.9994081}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Neck/Head
+    localPosition: {x: 1.3379434, y: 0.29645422, z: -0.17724657}
+    localRotation: {x: -0, y: -0, z: 0.16127393, w: 0.98690975}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Neck/Head/Mouth
+    localPosition: {x: -0.08264139, y: -1.2593528, z: 0.0019526482}
+    localRotation: {x: 0, y: 0, z: -0.9371558, w: 0.3489112}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1L
+    localPosition: {x: 0.24307223, y: 0.17172611, z: -0.6562013}
+    localRotation: {x: 0, y: 0, z: -0.973741, w: 0.22765876}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1L/Leg_2L
+    localPosition: {x: 0.8200008, y: 0.0000007748604, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.36018082, w: 0.93288255}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1L/Leg_2L/Leg_3L
+    localPosition: {x: 0.87000036, y: 0.00000074505806, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.560116, w: 0.8284142}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1R
+    localPosition: {x: 0.70896465, y: -0.7821249, z: 0.2788086}
+    localRotation: {x: 0, y: 0, z: -0.9574372, w: 0.28864166}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1R/Leg_2R
+    localPosition: {x: 0.720001, y: 0.00000047683716, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.334488, w: 0.94240004}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones_Enemy(1)/Body/Leg_1R/Leg_2R/Leg_3R
+    localPosition: {x: 0.8500017, y: 0.000000692904, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.5246253, w: 0.85133326}
+    localScale: {x: 1, y: 1, z: 1}

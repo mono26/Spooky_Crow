@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: TomateIdle
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Tomate/Bones_Tomate/Hip
+    localPosition: {x: -2.7319908, y: 0.4941221, z: -0.91}
+    localRotation: {x: 0, y: 0, z: 0.7020101, w: 0.712167}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Torso
+    localPosition: {x: 1.5900943, y: 0, z: -0.000011622906}
+    localRotation: {x: 0, y: 0, z: -0.018979251, w: 0.9998199}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Gorra
+    localPosition: {x: 2.3, y: 0.57, z: 0.000000059604645}
+    localRotation: {x: 0, y: 0, z: 0.725063, w: 0.6886826}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Hojas
+    localPosition: {x: 2.79, y: -0.67, z: 0.47}
+    localRotation: {x: 0, y: 0, z: 0.49887815, w: 0.86667216}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_R
+    localPosition: {x: 1.2552707, y: -2.0611095, z: -0.46597666}
+    localRotation: {x: 0, y: 0, z: -0.8404288, w: 0.541922}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_R/Arm_R_2
+    localPosition: {x: 0.41362077, y: 0.0000004172325, z: -0.0000005364418}
+    localRotation: {x: 0, y: 0, z: -0.7285742, w: 0.6849669}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_R/Arm_R_2/Arm_R_3
+    localPosition: {x: 0.5836399, y: -0.000000059604645, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7262688, w: 0.68741083}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_L
+    localPosition: {x: 1.3822696, y: 1.9485948, z: 0.033046663}
+    localRotation: {x: 0, y: 0, z: 0.81050706, w: 0.5857289}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_L/Arm_L2
+    localPosition: {x: 0.53, y: -0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7149732, w: 0.69915193}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Tomate/Bones_Tomate/Hip/Arm_L/Arm_L2/Arm_L_3
+    localPosition: {x: 0.5999998, y: -0.0000004172325, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.62721294, w: 0.7788479}
+    localScale: {x: 1, y: 1, z: 1}

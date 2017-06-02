@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Enemy2Idle
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Enemy(2)_Bones/Body
+    localPosition: {x: -0.6969075, y: -0.72954184, z: 0.000000059604645}
+    localRotation: {x: 0, y: 0, z: 0.1319952, w: 0.9912504}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Head
+    localPosition: {x: 1.8697205, y: 0.35520253, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.39772445, w: 0.9175049}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Head/Mouth
+    localPosition: {x: -0.13028671, y: -0.47902972, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.6339007, w: 0.7734145}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1L
+    localPosition: {x: 0.11735568, y: -0.01975958, z: -0}
+    localRotation: {x: 0, y: 0, z: -0.8006792, w: 0.5990934}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1L/Leg_2L
+    localPosition: {x: 0.6000002, y: 0.00000017881393, z: -0.000000059604645}
+    localRotation: {x: 0, y: 0, z: -0.5296777, w: 0.84819907}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1L/Leg_2L/Leg_3L
+    localPosition: {x: 0.49000025, y: 0.000000603497, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.65023345, w: 0.7597345}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1R
+    localPosition: {x: 0.36310863, y: -0.20780382, z: 0.29895514}
+    localRotation: {x: 0, y: 0, z: -0.75618476, w: 0.6543582}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1R/Leg_2R
+    localPosition: {x: 0.5800004, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.40584388, w: 0.91394246}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Leg_1R/Leg_2R/Leg_3R
+    localPosition: {x: 0.6100005, y: 0.00000028312206, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.5746548, w: 0.8183959}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Wing(1)
+    localPosition: {x: 0.69260645, y: -0.13701165, z: -0}
+    localRotation: {x: 0, y: 0, z: -0.7761895, w: 0.6304997}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Enemy(2)_Bones/Body/Wing(2)
+    localPosition: {x: 1.0119152, y: -0.35061216, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.72472525, w: 0.6890379}
+    localScale: {x: 1, y: 1, z: 1}
