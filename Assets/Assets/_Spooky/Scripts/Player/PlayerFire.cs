@@ -20,7 +20,10 @@ public class PlayerFire : MonoBehaviour
 
     void Awake()
     {
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Player/PlayerFire.cs
         my_Player = GetComponent<PlayerMove>();
+=======
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Player/PlayerFire.cs
     }
     void Update()
     {

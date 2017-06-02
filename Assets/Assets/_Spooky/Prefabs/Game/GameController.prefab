@@ -1391,6 +1391,8 @@ MonoBehaviour:
   playerMoney: 400
   houseHealth: 800
   selectPlayer: 0
+  my_GameOverUI: {fileID: 0}
+  my_CompleteLevelUI: {fileID: 0}
 --- !u!114 &114499532524609200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1489,6 +1491,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
     spawnRate: 0.5
     count: 1e000000
+  my_WaveText: {fileID: 0}
   nextWave: 0
   timeBetweenWaves: 5
   waveCountDown: 0

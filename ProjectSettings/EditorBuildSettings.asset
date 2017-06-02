@@ -6,14 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: 
+    path: Assets/Assets/Scenes/Main_Mech.unity
     guid: 496e9eb391fae144ab4fe380f3f2d3f6
   - enabled: 1
-    path: Assets/Assets/_Spooky/Scenes/MainMenu.unity
-    guid: 0f8e25bc14ab91b4cbc14b5d8665ca2b
-  - enabled: 1
-    path: Assets/Assets/_Spooky/Scenes/LevelSelect.unity
-    guid: 9a2b164121385264a901dd6fbdf635ad
-  - enabled: 1
-    path: Assets/Assets/_Spooky/Scenes/Level1.unity
+    path: Assets/Assets/Scenes/Level1.unity
     guid: 1a93a977f8e5db143b2d325e34f85c2a

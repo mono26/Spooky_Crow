@@ -226,7 +226,10 @@ public class AIEnemyController : MonoBehaviour
     }
     public void Die()
     {
+<<<<<<< HEAD:Assets/Assets/_Spooky/Scripts/Enemy/ClasesBases_Enemy/AIEnemyController.cs
         WaveSpawner.Instance.my_NumberOfEnemies--;
+=======
+>>>>>>> origin/master:Assets/Assets/_Spooky/Scripts/Enemy/ClasesBases_Enemy/AIEnemyController.cs
         GameManager.Instance.GiveMoney(my_EnemyInfo.reward);
         PoolsManager.Instance.ReleaseObject(this.gameObject);
     }
