@@ -492,8 +492,8 @@ GameObject:
   - component: {fileID: 54214353148953266}
   - component: {fileID: 65783984701173894}
   - component: {fileID: 95357951907595842}
-  - component: {fileID: 114075596285737968}
   - component: {fileID: 195965070773479216}
+  - component: {fileID: 114075596285737968}
   m_Layer: 11
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -913,6 +913,7 @@ MonoBehaviour:
   cdTime2: 25
   currentState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  originalState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
   my_Animator: {fileID: 0}
   my_HealthBar: {fileID: 114226018979002264}
   my_RigidBody: {fileID: 0}

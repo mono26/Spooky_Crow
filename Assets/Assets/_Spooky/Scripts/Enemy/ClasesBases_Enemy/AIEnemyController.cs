@@ -19,6 +19,7 @@ public class AIEnemyController : MonoBehaviour
 
     public AIEnemyState currentState;
     public AIEnemyState remainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
+    public AIEnemyState originalState;
     //Catching
     public Animator my_Animator;
     public Slider my_HealthBar;
@@ -77,6 +78,7 @@ public class AIEnemyController : MonoBehaviour
                     }
             }
         }
+        currentState = originalState;
 
         my_NavMeshAgent.isStopped = false;
         my_NavMeshAgent.updateRotation = false;

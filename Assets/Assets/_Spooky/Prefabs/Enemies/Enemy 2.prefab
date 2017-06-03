@@ -899,6 +899,7 @@ MonoBehaviour:
   cdTime2: 1.5
   currentState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  originalState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
   my_Animator: {fileID: 0}
   my_HealthBar: {fileID: 114815286411170938}
   my_RigidBody: {fileID: 0}
