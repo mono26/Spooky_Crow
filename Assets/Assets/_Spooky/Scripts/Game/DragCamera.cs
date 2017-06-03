@@ -15,10 +15,10 @@ public class DragCamera : MonoBehaviour
     {
         Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.z);
 
-        float left = Screen.width * 0.4f;
-        float right = Screen.width - (Screen.width * 0.2f);
-        float down = Screen.height * 0.4f;
-        float up = Screen.width - (Screen.height * 0.2f);
+        float left = Screen.width * 0.45f;
+        float right = Screen.width - (Screen.width * 0.45f);
+        float down = Screen.height * 0.45f;
+        float up = Screen.width - (Screen.height * 0.45f);
 
         if (mousePosition.x < left)
         {

@@ -51,7 +51,7 @@ public class WaveSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (nextWave == waves.Length - 1)      //Para mirar si ya logro terminar todas las waves
+        if (nextWave == waves.Length)      //Para mirar si ya logro terminar todas las waves
         {
             GameManager.Instance.WinLevel();
             this.enabled = false;

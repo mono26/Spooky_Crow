@@ -27,6 +27,10 @@ public class PlayerFire : MonoBehaviour
         shootTime += Time.deltaTime;
         if (Input.GetMouseButtonDown(0) && shootTime >= firingRate)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             if (!my_Player.isMoving)
                 ClickToFire();
             else

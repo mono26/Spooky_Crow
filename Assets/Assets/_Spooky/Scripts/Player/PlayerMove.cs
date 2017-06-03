@@ -106,15 +106,6 @@ public class PlayerMove : MonoBehaviour
         my_NavMeshAgent.isStopped = true;
         isMoving = false;
     }
-    private void OnMouseDown()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-        Debug.Log("Le di click al player");
-        GameManager.Instance.SelectPlayer();
-    }
     void RotatePlayer()
     {
         var direccion = clickPoint - transform.position;
