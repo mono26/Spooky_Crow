@@ -46,9 +46,9 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
         Debug.DrawRay(transform.position, transform.forward.normalized * 1.5f, Color.blue);
-        if (GameManager.Instance.selectPlayer)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (GameManager.Instance.selectPlayer)
             {
                 ClickToMovePlayer();
                 my_Animator.SetBool("Walking", true);
@@ -113,14 +113,6 @@ public class PlayerMove : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(direccion);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, turnSmooth);
-    }
-    public void MovePlayer(float vertical, float horizontal)       //Metodo usado para mover al jugador, giroscopio, test teclas
-    {
-        var forces = Vector3.zero;
-        forces += Vector3.forward * horizontal * my_Speed;
-        forces += Vector3.right * vertical * my_Speed;
-        my_RigidBody.position += forces * Time.deltaTime;
-
     }
     void ClampPosition()        //Method for clamping character inside moving plane
     {

@@ -24,12 +24,7 @@ public class PlayerInput : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {   
-        
-
         vertical = Input.GetAxis("Horizontal") * movSpeed;
         horizontal = Input.GetAxis("Vertical") * movSpeed;
-
-        my_PlayerMove.MovePlayer(vertical, horizontal);
-    
     }
 }

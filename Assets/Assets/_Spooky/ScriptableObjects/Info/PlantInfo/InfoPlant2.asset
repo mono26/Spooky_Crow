@@ -19,4 +19,4 @@ MonoBehaviour:
   ability1: {fileID: 11400000, guid: 97931688da841b848a04210c32c4f279, type: 2}
   ability2: {fileID: 11400000, guid: dd7b12ef7a635ca49b9d8d1f52c1b8ad, type: 2}
   meleeRange: 2
-  shootRange: 5
+  shootRange: 10

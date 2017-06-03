@@ -45,64 +45,42 @@ public class AIEnemyController : MonoBehaviour
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
         my_Animator = transform.GetComponent<Animator>();
 
-        if (!my_Target)
-        {
-            Debug.Log("There is no target for me" + this.name);
-            //Execute SearchTargetCode;
-            switch (my_EnemyInfo.my_Type)
-            {
-                case (EnemyInfo.EnemyType.STEALER):
-                    {
-                        my_Target = GameManager.Instance.house.transform;
-                        break;
-                    }
-                case (EnemyInfo.EnemyType.ATACKER):
-                    {
-                        my_Target = GameManager.Instance.player.transform;
-                        break;
-                    }
-                case (EnemyInfo.EnemyType.BOSS):
-                    {
-                        //Assigna el target al inicio dependiendo del tipo
-                        my_Target = GameManager.Instance.player.transform;
-                        break;
-                    }
-            }
-        }
     }
     private void Start()
     {
-        if (!my_Target)
-        {
-            Debug.Log("There is no target for me" + this.name);
-            //Execute SearchTargetCode;
-            switch (my_EnemyInfo.my_Type)
-            {
-                case (EnemyInfo.EnemyType.STEALER):
-                    {
-                        my_Target = GameManager.Instance.house.transform;
-                        break;
-                    }
-                case (EnemyInfo.EnemyType.ATACKER):
-                    {
-                        my_Target = GameManager.Instance.player.transform;
-                        break;
-                    }
-                case (EnemyInfo.EnemyType.BOSS):
-                    {
-                        //Assigna el target al inicio dependiendo del tipo
-                        my_Target = GameManager.Instance.player.transform;
-                        break;
-                    }
-            }
-        }
+
     }
     // Use this for initialization
     void OnEnable ()
     {
-        my_NavMeshAgent.SetDestination(my_Target.position);
+        if (!my_Target)
+        {
+            Debug.Log("There is no target for me" + this.name);
+            //Execute SearchTargetCode;
+            switch (my_EnemyInfo.my_Type)
+            {
+                case (EnemyInfo.EnemyType.STEALER):
+                    {
+                        my_Target = GameManager.Instance.house.transform;
+                        break;
+                    }
+                case (EnemyInfo.EnemyType.ATACKER):
+                    {
+                        my_Target = GameManager.Instance.player.transform;
+                        break;
+                    }
+                case (EnemyInfo.EnemyType.BOSS):
+                    {
+                        //Assigna el target al inicio dependiendo del tipo
+                        my_Target = GameManager.Instance.player.transform;
+                        break;
+                    }
+            }
+        }
+
         my_NavMeshAgent.isStopped = false;
         my_NavMeshAgent.updateRotation = false;
+        my_NavMeshAgent.SetDestination(my_Target.position);
         StartCoroutine(UpdateDestination());
 
         health = my_EnemyInfo.health;

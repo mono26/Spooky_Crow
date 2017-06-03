@@ -15,6 +15,9 @@ public class PoolsManager : MonoBehaviour {
     public List<List<GameObject>> pools = new List<List<GameObject>>();    //Lista que contiene los pools, lista de listas.
     public List<int> listSizes;     //Lista con el tamaño de cada una de las otras listas, debe de estar ordenada igual que los prefabs
 
+    [SerializeField]
+    Transform poolsPosition;
+
     private void Awake()
     {
         if (instance == null)
@@ -44,18 +47,19 @@ public class PoolsManager : MonoBehaviour {
 	}
     private void AddObject(int index)      //Se le pasa el index que debe de ser igual para le pool y el objeto
     {
-        GameObject obj = Instantiate(objectPrefabs[index]);
+        GameObject obj = Instantiate(objectPrefabs[index], poolsPosition.position, poolsPosition.rotation);
         obj.GetComponent<AIEnemyController>().my_EnemyInfo.index = index;       //Modifica el index del componente del objeto instanciado.
         obj.gameObject.SetActive(false);
         pools[index].Add(obj);
     }
-    public GameObject GetObject(int index)      //Se le pasa el index que debe de ser igual para le pool y el objeto
+    public GameObject GetObject(int index, Transform target)      //Se le pasa el index que debe de ser igual para le pool y el objeto
     {
         if (pools[index].Count == 0)
             AddObject(index);    //Si no hay ningun GameObject lo añade.
         var list = pools[index];    //Referencia al pool especifico
         GameObject enemy = list[list.Count - 1];      //Se hace una referencia GameObject en la ultima posicion de la list, funciona como un queue
         list.RemoveAt(list.Count - 1);    //Se remueve el GameObject de la lista
+        SetPosition(enemy, target);
         enemy.gameObject.SetActive(true);    //Se activa el GameObject
         return enemy;
     }
@@ -64,5 +68,10 @@ public class PoolsManager : MonoBehaviour {
         //Cada GameObject deberia de tener informacion del pool al que esta asignado.
         obj.gameObject.SetActive(false);
         pools[obj.GetComponent<AIEnemyController>().my_EnemyInfo.index].Add(obj);
+    }
+    public void SetPosition(GameObject obj, Transform target)
+    {
+        obj.transform.position = target.position;
+        obj.transform.rotation = target.rotation;
     }
 }

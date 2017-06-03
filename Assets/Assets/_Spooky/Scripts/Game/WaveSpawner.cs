@@ -31,7 +31,7 @@ public class WaveSpawner : MonoBehaviour
 
     public SpawnState state;    //Para saber el estado del spawn     
 
-    public int my_SpawnPoint = 0;
+    public Transform my_SpawnPoint;
 
     private void Awake()
     {
@@ -97,10 +97,9 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(EnemyInfo _enemy)
     {
         //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
-        var obj = PoolsManager.Instance.GetObject(_enemy.index);
-        my_SpawnPoint = Random.Range(0, GameManager.Instance.spawnPoints.Length);
-        obj.transform.position = GameManager.Instance.spawnPoints[my_SpawnPoint].position;
-        obj.transform.rotation = Quaternion.identity;
+        var random = Random.Range(0, GameManager.Instance.spawnPoints.Length);
+        my_SpawnPoint = GameManager.Instance.spawnPoints[random];
+        GameObject pooledEnemy = PoolsManager.Instance.GetObject(_enemy.index, my_SpawnPoint);
         my_NumberOfEnemies++;
     }
     void WaveCompleted()
