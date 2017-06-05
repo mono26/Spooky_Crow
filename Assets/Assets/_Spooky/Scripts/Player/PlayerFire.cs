@@ -27,13 +27,17 @@ public class PlayerFire : MonoBehaviour
         shootTime += Time.deltaTime;
         if (Input.GetMouseButtonDown(0) && shootTime >= firingRate)
         {
+            if(DragCamera.Instance.cameraDragging)
+            {
+                return;
+            }
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
             if (!my_Player.isMoving)
                 ClickToFire();
-            else
+            else if (my_Player.isMoving)
                 my_Player.StopPlayer();
         }
         else
@@ -56,7 +60,7 @@ public class PlayerFire : MonoBehaviour
     void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
     {
         shootTime = 0.0f;
-        Rigidbody bullet = BulletsPool.Instance.GetBullet();
+        GameObject bullet = BulletsPool.Instance.GetBullet();
         //Si el bool de plant es falso y el player veradero es que la bala fue disparada por un jugador o enemigo.
         bullet.GetComponent<BulletController>().plant = false;       //Para que el bulletcontroller sepa como moverse
         bullet.GetComponent<BulletController>().player = true;

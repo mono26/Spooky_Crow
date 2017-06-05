@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-[RequireComponent (typeof(Rigidbody), typeof(NavMeshAgent))]
+[RequireComponent (typeof(NavMeshAgent))]
 public class AIEnemyController : MonoBehaviour
 {
     public EnemyInfo my_EnemyInfo;
@@ -23,7 +23,6 @@ public class AIEnemyController : MonoBehaviour
     //Catching
     public Animator my_Animator;
     public Slider my_HealthBar;
-    public Rigidbody my_RigidBody;     //Referecia al rigidBody del objeto
     public NavMeshAgent my_NavMeshAgent;
     public Transform my_Target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
     public Collider my_MeleeCollider;
@@ -42,7 +41,6 @@ public class AIEnemyController : MonoBehaviour
 
     void Awake()
     {
-        my_RigidBody = GetComponent<Rigidbody>();
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
         my_Animator = transform.GetComponent<Animator>();
 
@@ -105,6 +103,10 @@ public class AIEnemyController : MonoBehaviour
         {
             Debug.Log("PathPending");
             return;
+        }
+        if(my_NavMeshAgent.velocity.magnitude < 0.1f)
+        {
+            my_NavMeshAgent.isStopped = false;
         }
 
         if (my_NavMeshAgent.remainingDistance < my_NavMeshAgent.stoppingDistance * stopingDistanceProportion)

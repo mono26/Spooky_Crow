@@ -13,11 +13,9 @@ public class PlayerMove : MonoBehaviour
     public float my_Speed = 1;     //Is going to be in m/s and is initialized 1
     public float turnSmooth = 1;
 
-    private Rigidbody my_RigidBody;
     public NavMeshAgent my_NavMeshAgent;
     public Animator my_Animator;
     public Transform my_Sprite;
-    public float stopingDistanceProportion;
 
     public float maxHorizontal;
     public float maxVertical;
@@ -28,7 +26,6 @@ public class PlayerMove : MonoBehaviour
 
     void Awake()
     {
-        my_RigidBody = GetComponent<Rigidbody>();
         my_NavMeshAgent = GetComponent<NavMeshAgent>();
         my_Animator = transform.GetComponent<Animator>();
     }
@@ -38,31 +35,25 @@ public class PlayerMove : MonoBehaviour
         my_NavMeshAgent.isStopped = false;
         my_NavMeshAgent.updateRotation = false;
         my_NavMeshAgent.speed = my_Speed;
+        my_NavMeshAgent.acceleration = my_Speed;
     }
     private void Update()
     {
-        if (my_NavMeshAgent.remainingDistance < my_NavMeshAgent.stoppingDistance * stopingDistanceProportion)
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.selectPlayer)
         {
-            StopPlayer();
-        }
-        Debug.DrawRay(transform.position, transform.forward.normalized * 1.5f, Color.blue);
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (GameManager.Instance.selectPlayer)
-            {
-                ClickToMovePlayer();
-                my_Animator.SetBool("Walking", true);
-                my_NavMeshAgent.SetDestination(clickPoint);
-                my_NavMeshAgent.isStopped = false;
-                isMoving = true;
-            }                            
+            ClickToMovePlayer();                         
         }
         Animate();
+
+        if (Vector3.Distance(transform.position, clickPoint) < my_NavMeshAgent.stoppingDistance && isMoving)
+        {
+            Debug.Log(Vector3.Distance(transform.position, clickPoint));
+            StopPlayer();
+        }
     }
     void FixedUpdate()
     {
         ClampPosition();
-        //velocityVector = my_RigidBody.velocity;
     }
     public void Animate()
     {
@@ -83,44 +74,41 @@ public class PlayerMove : MonoBehaviour
     {
         //Necesito mirar que el click no sea encima del jugador para que no se mueva y se deseleccione.
         //Primero seleccionar y luego mover.
-        if(!GameManager.Instance.selectPlayer)
+        if (GameManager.Instance.selectPlayer)
         {
-            return;
-        }
-        my_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f, clickMoveLayer))
-        {
-            if(Vector3.Distance(transform.position, my_RayHit.point) > 5f)
+            my_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f))
             {
-                clickPoint = my_RayHit.point;
-                clickPoint.y = 0f;
-                GameManager.Instance.DeselectPlayer();
+                if (Vector3.Distance(transform.position, my_RayHit.point) > 5f)
+                {
+                    clickPoint = my_RayHit.point;
+                    clickPoint.y = 0f;
+                    GameManager.Instance.DeselectPlayer();
+                }
+                //Todos los posibles colliders a los cuales le puedo hacer touch
             }
-            //Todos los posibles colliders a los cuales le puedo hacer touch
+            my_NavMeshAgent.ResetPath();
+            my_NavMeshAgent.isStopped = false;
+            isMoving = true;
+            my_NavMeshAgent.SetDestination(clickPoint);
+            my_Animator.SetBool("Walking", true);
         }
+        else return;
     }
     public void StopPlayer()
     {
         my_Animator.SetBool("Walking", false);
-        my_NavMeshAgent.SetDestination(transform.position);
-        my_NavMeshAgent.isStopped = true;
-        isMoving = false;
-    }
-    void RotatePlayer()
-    {
-        var direccion = clickPoint - transform.position;
-        direccion.y = 0.0f;
-        Quaternion lookRotation = Quaternion.LookRotation(direccion);
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, turnSmooth);
+        //my_NavMeshAgent.SetDestination(transform.position);
+        //my_NavMeshAgent.isStopped = true;
+        //isMoving = false;
     }
     void ClampPosition()        //Method for clamping character inside moving plane
     {
-        my_RigidBody.position = new Vector3
+        transform.position = new Vector3
             (
-                Mathf.Clamp(my_RigidBody.position.x, -maxHorizontal, maxHorizontal),
-                my_RigidBody.position.y,
-                Mathf.Clamp(my_RigidBody.position.z, -maxVertical, maxVertical)
+                Mathf.Clamp(transform.position.x, -maxHorizontal, maxHorizontal),
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, -maxVertical, maxVertical)
             );
     }
 }

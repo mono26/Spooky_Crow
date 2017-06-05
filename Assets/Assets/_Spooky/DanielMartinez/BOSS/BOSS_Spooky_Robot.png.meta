@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: d161e371a8c0b4f59ae55c6b10e1c316
+timeCreated: 1496512159
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BOSSRobot_Picoarriba
+    21300002: BOSSRobot_alaizq
+    21300004: BOSSRobot_alaDer
+    21300006: BOSSRobot_Picoabajo
+    21300008: BOSS_Spooky_Robot_4
+    21300010: BOSSRobot_Pieizquierda
+    21300012: BOSSRobot_PieDerecha
+    21300014: BOSSRobot_vidrio
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 160
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BOSSRobot_Picoarriba
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1233
+        width: 608
+        height: 774
+      alignment: 9
+      pivot: {x: 0.99819505, y: 0.35324466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_alaizq
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1867
+        width: 220
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_alaDer
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1854
+        width: 196
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_Picoabajo
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 853
+        width: 417
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSS_Spooky_Robot_4
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 982
+        width: 973
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_Pieizquierda
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 75
+        width: 474
+        height: 663
+      alignment: 9
+      pivot: {x: 0.43609664, y: 0.9568664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_PieDerecha
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 45
+        width: 474
+        height: 663
+      alignment: 9
+      pivot: {x: 0.42810857, y: 0.9511556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BOSSRobot_vidrio
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 30
+        width: 887
+        height: 866
+      alignment: 9
+      pivot: {x: 0.6152531, y: 0.05404066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

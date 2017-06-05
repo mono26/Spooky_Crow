@@ -7,7 +7,7 @@ public class Shredder : MonoBehaviour {
     {
         if(col.CompareTag("Bullet"))
         {
-            BulletsPool.Instance.ReleaseBullet(col.GetComponent<Rigidbody>());
+            BulletsPool.Instance.ReleaseBullet(col.gameObject);
         }
     }
 }

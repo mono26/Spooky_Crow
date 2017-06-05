@@ -99,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
         //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
         var random = Random.Range(0, GameManager.Instance.spawnPoints.Length);
         my_SpawnPoint = GameManager.Instance.spawnPoints[random];
-        GameObject pooledEnemy = PoolsManager.Instance.GetObject(_enemy.index, my_SpawnPoint);
+        PoolsManager.Instance.GetObject(_enemy.index, my_SpawnPoint);
         my_NumberOfEnemies++;
     }
     void WaveCompleted()

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: bedfafdc24f22104ca67c54af82f2c0d
-timeCreated: 1496355804
+timeCreated: 1496529568
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
-  executionOrder: 0
+  executionOrder: -50
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

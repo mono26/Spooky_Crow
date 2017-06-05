@@ -155,7 +155,6 @@
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Decision\LookShootRangePlant.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PlantBluePrint.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Player\PlayerFire.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Player\PlayerInput.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Player\PlayerMove.cs" />
   </ItemGroup>
   <ItemGroup>

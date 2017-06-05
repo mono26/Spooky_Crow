@@ -3,6 +3,11 @@ using System.Collections;
 
 public class DragCamera : MonoBehaviour
 {
+    private static DragCamera instance;
+    public static DragCamera Instance
+    {
+        get { return instance; }
+    }
     public float dragSpeed = 2;
     private Vector3 dragOrigin;
 
@@ -11,53 +16,62 @@ public class DragCamera : MonoBehaviour
     public float maxHorizontal;
     public float maxVertical;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;    //Parte del singleton en donde se asigna la unica instancia de la clase
+        }
+        else
+            Destroy(gameObject);
+    }
     void Update()
     {
-        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.z);
-
-        float left = Screen.width * 0.45f;
-        float right = Screen.width - (Screen.width * 0.45f);
-        float down = Screen.height * 0.45f;
-        float up = Screen.width - (Screen.height * 0.45f);
-
-        if (mousePosition.x < left)
+        if (Input.GetMouseButtonDown(0))
         {
-            cameraDragging = true;
+            dragOrigin = Input.mousePosition;
+            return;
         }
-        else if (mousePosition.x > right)
+        if (Input.GetMouseButton(0))
         {
-            cameraDragging = true;
-        }
-        if (mousePosition.y < down)
-        {
-            cameraDragging = true;
-        }
-        else if (mousePosition.y > up)
-        {
-            cameraDragging = true;
-        }
-        if (cameraDragging)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                dragOrigin = Input.mousePosition;
-                return;
-            }
-            if (!Input.GetMouseButton(0)) return;
-
             Vector3 pos = Camera.main.ScreenToViewportPoint(dragOrigin - Input.mousePosition);
-            Vector3 move = new Vector3(pos.x * dragSpeed, 0, pos.y * dragSpeed);
 
-            transform.Translate(move, Space.Self);
+            if (pos.x < -0.035f || pos.x > 0.035f)
+            {
+                cameraDragging = true;
+            }
+            else if (pos.x > -0.035f && pos.x < 0.035f)
+            {
+                cameraDragging = false;
+            }
+            if (pos.y < -1f || pos.y > 1f)
+            {
+                cameraDragging = true;
+            }
+            else if (pos.y > -0.035f && pos.y < 0.035f)
+            {
+                cameraDragging = false;
+            }
 
-            transform.position = new Vector3
-    (
-        Mathf.Clamp(transform.position.x, -maxHorizontal, maxHorizontal),
-        transform.position.y,
-        Mathf.Clamp(transform.position.z, -maxVertical, maxVertical)
-    );
+            if (cameraDragging)
+            {
+                if (!Input.GetMouseButton(0)) return;
+
+                Vector3 move = new Vector3(pos.x * dragSpeed, 0, pos.y * dragSpeed);
+
+                transform.Translate(move, Space.Self);
+
+                transform.position = new Vector3
+                    (
+                        Mathf.Clamp(transform.position.x, -maxHorizontal, maxHorizontal),
+                        transform.position.y,
+                        Mathf.Clamp(transform.position.z, -maxVertical, maxVertical)
+                    );
+            }
+        }
+        else
+        {
+            cameraDragging = false;
         }
     }
-
-
 }
