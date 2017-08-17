@@ -1,75 +1,38 @@
-﻿
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class BulletController : AIController
 {
-    //Esta classe contiende todo lo necesario para crear los diferentes tipos de balas
-    public BulletInfo my_Info;
+    public int daño;
+    //public float speed;
+   // public Vector3 movingDirection;
+    public float deadTimer;
 
-    public GameObject my_Target;
-    public Vector3 my_Point;        //Solo sera asignado por el jugador para que las balas que el disppare vayan al click.
+    public Info bulletInfo;
 
-    public bool player;
-    public bool plant;
+   // public Rigidbody my_RigidBody;
 
-    public int index;
-	// Use this for initialization
-	void Awake ()
+    private void Awake()
+    {
+       // my_RigidBody = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        deadTimer -= Time.deltaTime;
+        if(deadTimer < 0)
+        {
+            PoolsManagerBullets.Instance.ReleaseBullet(gameObject);
+       }
+    }
+    public void SetTimer()
     {
 
-	}	
-	// Update is called once per frame
-	void FixedUpdate ()
-    {
-        if (!player && plant)
-        {
-            MoveTowardsTarget();
-        }
-        else if (player && !plant)
-        {
-            MoveTowardsPoint();
-        }
-        else
-            BulletsPool.Instance.ReleaseBullet(this.gameObject);
+        deadTimer = 10f;    // este es el valor que asigne en el editor
+ 
     }
-    void OnTriggerEnter(Collider col)
+  /*  public void AddForce()
     {
-        if(col.CompareTag("Enemy"))
-        {
-            //Se debe de hacer lo necesario: daño, return to pool, etc.
-            col.gameObject.SendMessage("TakeDamage", my_Info.damage);
-            BulletsPool.Instance.ReleaseBullet(this.gameObject);          
-        }
-        if (col.CompareTag("Shreder"))
-        {
-            //Se debe de hacer lo necesario: daño, return to pool, etc.
-            BulletsPool.Instance.ReleaseBullet(this.gameObject);
-        }
-    }
-    void MoveTowardsPoint()
-    {
-        var dist = transform.position - my_Point;
-        if (dist.sqrMagnitude < 0.1)
-        {
-            BulletsPool.Instance.ReleaseBullet(this.gameObject);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, my_Point, my_Info.speed * Time.fixedDeltaTime);
-        }
-    }
-    void MoveTowardsTarget()        //Este metodo sera usado cuando la bala sea disparada desde una torre
-    {
-        if (my_Target && my_Target.activeInHierarchy)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, my_Target.transform.position, my_Info.speed * Time.fixedDeltaTime);
-        }
-        else if(my_Target && !my_Target.activeInHierarchy)
-        {
-            BulletsPool.Instance.ReleaseBullet(this.gameObject);
-        }
-    }
+        my_RigidBody.AddForce(movingDirection * speed,ForceMode.Impulse);
+    }*/
 }

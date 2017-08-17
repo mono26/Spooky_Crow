@@ -456,7 +456,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4418477595017464}
-  - component: {fileID: 54214353148953266}
   - component: {fileID: 65771630473830378}
   - component: {fileID: 95928840497176920}
   - component: {fileID: 114075596285737968}
@@ -793,21 +792,6 @@ Transform:
   m_Father: {fileID: 4216429393126122}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!54 &54214353148953266
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995082792655942}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65036334271560362
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -827,7 +811,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995082792655942}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.03, y: 2, z: 3.68}
@@ -895,24 +879,19 @@ MonoBehaviour:
   my_EnemyInfo: {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
   cdTimer1: 0
   cdTimer2: 0
-  cdTime1: 1.5
-  cdTime2: 1.5
   currentState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   originalState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
   my_Animator: {fileID: 0}
   my_HealthBar: {fileID: 114815286411170938}
   my_NavMeshAgent: {fileID: 0}
-  my_Target: {fileID: 0}
-  my_MeleeCollider: {fileID: 0}
+  my_Target: {fileID: 4874319383246148, guid: d4a69f60e22e44b4b8d16c55d7336c8c, type: 2}
   my_Sprite: {fileID: 4434048376047416}
   updateRate: 2
-  stopingDistanceProportion: 0
   stoleValue: 0
   finishStealing: 0
   aiActive: 1
   health: 0
-  turnSmooth: 0
 --- !u!114 &114076515840684448
 MonoBehaviour:
   m_ObjectHideFlags: 1

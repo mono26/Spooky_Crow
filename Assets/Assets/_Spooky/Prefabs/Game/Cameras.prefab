@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4597362151823628}
-  - component: {fileID: 114551055961940702}
+  - component: {fileID: 114475374224651672}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -93,7 +93,7 @@ Camera:
   far clip plane: 45
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 27
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -123,7 +123,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103366145593688}
   m_Enabled: 1
---- !u!114 &114551055961940702
+--- !u!114 &114475374224651672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,13 +131,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1138027534223046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf25efc874ee9a40a762093d1af4bee, type: 3}
+  m_Script: {fileID: 11500000, guid: bedfafdc24f22104ca67c54af82f2c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_PlayerToFollow: {fileID: 0}
-  speed: 5
-  moveTemp: {x: 0, y: 0, z: 0}
-  movementThreshold: 5
+  dragSpeed: 1
+  cameraDragging: 1
+  maxHorizontal: 12
+  maxVertical: 12
 --- !u!124 &124530390362399784
 Behaviour:
   m_ObjectHideFlags: 1

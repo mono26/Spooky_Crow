@@ -23,7 +23,7 @@ public class WaveSpawner : MonoBehaviour
         public int[] count;     //Cuanto se spawnea de cada enmigo
     }
     public Wave[] waves;        //Para alamacenar las diferentes waves.
-    public Text my_WaveText;
+    public Image my_WaveBar;
     public int my_NumberOfEnemies = 0;
     public int nextWave = 0;    //Para saber cual es la siguente Wave y comparar si es el maximo.
     public float timeBetweenWaves = 5.0f;      //Tiempo automatico para spawnear la siguiente oleada.
@@ -47,7 +47,8 @@ public class WaveSpawner : MonoBehaviour
     {
         waveCountDown = timeBetweenWaves;
         state = SpawnState.COUNTING;
-	}
+        my_WaveBar.fillAmount = (float)(nextWave) / (float)(waves.Length);
+    }
 	// Update is called once per frame
 	void Update ()
     {
@@ -81,7 +82,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)   //Debes de pasarle un wave
     {
         state = SpawnState.SPAWNING;    //Al inicio para poner el stado en spawning.
-        my_WaveText.text = "Wave:" + (nextWave + 1);
+        my_WaveBar.fillAmount = (float)(nextWave +1)/(float)(waves.Length);
         my_NumberOfEnemies = 0;
         for(int enemy = 0; enemy < _wave.enemy.Length; enemy++)
         {
@@ -99,7 +100,7 @@ public class WaveSpawner : MonoBehaviour
         //Generar un spawn aleatorio, - 1 porque el lenght se cuenta desde 1 no desde 0
         var random = Random.Range(0, GameManager.Instance.spawnPoints.Length);
         my_SpawnPoint = GameManager.Instance.spawnPoints[random];
-        PoolsManager.Instance.GetObject(_enemy.index, my_SpawnPoint);
+        PoolsManagerEnemies.Instance.GetObject(_enemy.enemyIndex, my_SpawnPoint);
         my_NumberOfEnemies++;
     }
     void WaveCompleted()

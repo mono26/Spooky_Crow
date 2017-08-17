@@ -11,3 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6e1e79fcdc1ff44a58baad64898717, type: 3}
   m_Name: EnemyMelee
   m_EditorClassIdentifier: 
+  fightCloud: {fileID: 114441778702960644, guid: 94ff279c2940ad642a99eb2cf97ddb6f,
+    type: 2}

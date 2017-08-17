@@ -7,6 +7,10 @@ public class LevelManager : MonoBehaviour
 
     public Button[] levelButtons;
 
+    public string menuSceneName = "MainMenu";
+    public string nextLevel = "Level02";
+    public int levelToUnlock = 2;
+
     void Start()
     {
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);

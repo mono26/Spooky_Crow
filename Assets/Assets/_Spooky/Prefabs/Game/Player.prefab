@@ -373,9 +373,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4874319383246148}
   - component: {fileID: 65071409682040436}
-  - component: {fileID: 54738685711241956}
-  - component: {fileID: 195514897628092902}
+  - component: {fileID: 54121788574922758}
   - component: {fileID: 95935255567475074}
+  - component: {fileID: 195911491770870878}
   - component: {fileID: 114878060451274310}
   - component: {fileID: 114041624318060010}
   m_Layer: 9
@@ -767,7 +767,7 @@ Transform:
   m_Father: {fileID: 4286932445830118}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 177.863}
---- !u!54 &54738685711241956
+--- !u!54 &54121788574922758
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -775,8 +775,8 @@ Rigidbody:
   m_GameObject: {fileID: 1906506307335678}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -789,7 +789,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906506307335678}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.97, y: 2.5, z: 5.078452}
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: e1770a3cc35b7430ab81345e0d8ec4f2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: e68e6cf639cfb4108b88d17035124c0d, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -863,9 +863,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04198a7e2ff92b4a909b67d9652df41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickPoint: {x: 0, y: 0, z: 0}
-  my_Player: {fileID: 114878060451274310}
-  shootTime: 0
+  shootCooldown: 0
+  shootTransform: {fileID: 0}
+  velocidadAtaque: 0.5
+  moveForce: 10
+  bulletP: {fileID: 0}
 --- !u!114 &114267041123472294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -880,7 +882,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: 1aa85a7c7cb4b4d569322f9b93ef02b2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -900,7 +902,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: d22b93332cb4c4f518dbfcd7c0ee93f8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -969,7 +971,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: 7e9dc6e8d89bb4685b8b71bd600282d4, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -990,7 +992,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: 71ba16b567ccf432cb0422e30a9416bf, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -1027,7 +1029,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: 72327ccb187324c028c366d91be03e53, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_SortingLayerID: 1320173373
   m_SortingOrder: 0
   m_Bones: []
@@ -1126,14 +1128,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickPoint: {x: 0, y: 0, z: 0}
-  velocityVector: {x: 0, y: 0, z: 0}
   isMoving: 0
-  my_Speed: 5
+  velocidadMovimiento: 1
   turnSmooth: 1
   my_NavMeshAgent: {fileID: 0}
   my_Animator: {fileID: 0}
   my_Sprite: {fileID: 4660899074187914}
-  stopingDistanceProportion: 1
+  my_RigidBody: {fileID: 0}
   maxHorizontal: 50
   maxVertical: 50
   clickMoveLayer:
@@ -1507,7 +1508,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.59549016, y: 0.06942686, z: -0.00000041996827}
     m_Extent: {x: 0.7007379, y: 0.17530927, z: 0.00000058810974}
   m_DirtyAABB: 0
---- !u!195 &195514897628092902
+--- !u!195 &195911491770870878
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1515,16 +1516,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 1906506307335678}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 5
-  m_Acceleration: 8
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.2
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.8
+  m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

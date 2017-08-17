@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d161e371a8c0b4f59ae55c6b10e1c316
-timeCreated: 1496512159
+timeCreated: 1496783887
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -81,12 +81,12 @@ TextureImporter:
       name: BOSSRobot_Picoarriba
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1233
-        width: 608
-        height: 774
+        x: 112
+        y: 1226
+        width: 622
+        height: 788
       alignment: 9
-      pivot: {x: 0.99819505, y: 0.35324466}
+      pivot: {x: 0.98698163, y: 0.355852}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -94,12 +94,12 @@ TextureImporter:
       name: BOSSRobot_alaizq
       rect:
         serializedVersion: 2
-        x: 1406
-        y: 1867
-        width: 220
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1399
+        y: 1860
+        width: 234
+        height: 161
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -107,12 +107,12 @@ TextureImporter:
       name: BOSSRobot_alaDer
       rect:
         serializedVersion: 2
-        x: 1743
-        y: 1854
-        width: 196
-        height: 169
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1736
+        y: 1847
+        width: 210
+        height: 183
+      alignment: 9
+      pivot: {x: 0.48569745, y: 0.4835872}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -120,12 +120,12 @@ TextureImporter:
       name: BOSSRobot_Picoabajo
       rect:
         serializedVersion: 2
-        x: 390
-        y: 853
-        width: 417
-        height: 343
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 383
+        y: 846
+        width: 431
+        height: 357
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -133,12 +133,12 @@ TextureImporter:
       name: BOSS_Spooky_Robot_4
       rect:
         serializedVersion: 2
-        x: 996
-        y: 982
-        width: 973
-        height: 853
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 991
+        y: 977
+        width: 983
+        height: 863
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -146,12 +146,12 @@ TextureImporter:
       name: BOSSRobot_Pieizquierda
       rect:
         serializedVersion: 2
-        x: 50
-        y: 75
-        width: 474
-        height: 663
+        x: 43
+        y: 68
+        width: 488
+        height: 677
       alignment: 9
-      pivot: {x: 0.43609664, y: 0.9568664}
+      pivot: {x: 0.4379299, y: 0.9474186}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -159,12 +159,12 @@ TextureImporter:
       name: BOSSRobot_PieDerecha
       rect:
         serializedVersion: 2
-        x: 579
-        y: 45
-        width: 474
-        height: 663
+        x: 572
+        y: 38
+        width: 488
+        height: 677
       alignment: 9
-      pivot: {x: 0.42810857, y: 0.9511556}
+      pivot: {x: 0.430171, y: 0.9418259}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -172,17 +172,17 @@ TextureImporter:
       name: BOSSRobot_vidrio
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 30
-        width: 887
-        height: 866
+        x: 1129
+        y: 23
+        width: 901
+        height: 880
       alignment: 9
-      pivot: {x: 0.6152531, y: 0.05404066}
+      pivot: {x: 0.61346227, y: 0.061135463}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 
+  userData: 98093228228608
   assetBundleName: 
   assetBundleVariant: 

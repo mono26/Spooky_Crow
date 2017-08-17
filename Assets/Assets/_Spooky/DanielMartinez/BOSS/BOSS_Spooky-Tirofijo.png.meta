@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8e71fc177fa0743a9a92fc075292bf6e
-timeCreated: 1496511936
+timeCreated: 1502302073
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,8 +13,8 @@ TextureImporter:
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
-    sRGBTexture: 1
+    enableMipMap: 0
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: 0
     mipBias: -1
     wrapMode: -1
   nPOTScale: 0
@@ -59,7 +59,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -67,7 +67,23 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -79,12 +95,12 @@ TextureImporter:
       name: BOSS_PicoArriba
       rect:
         serializedVersion: 2
-        x: 388
-        y: 1543
-        width: 224
-        height: 285
+        x: 384
+        y: 1539
+        width: 231
+        height: 294
       alignment: 9
-      pivot: {x: 0.9008394, y: 0.8138225}
+      pivot: {x: 0.8908573, y: 0.80251515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -92,12 +108,12 @@ TextureImporter:
       name: BOSS_PicoAbajo
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1323
-        width: 168
-        height: 211
+        x: 460
+        y: 1314
+        width: 170
+        height: 226
       alignment: 9
-      pivot: {x: 0.97221553, y: 0.99128383}
+      pivot: {x: 0.9960719, y: 0.9653137}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -105,12 +121,12 @@ TextureImporter:
       name: BOSS_Ala1
       rect:
         serializedVersion: 2
-        x: 1279
-        y: 1726
-        width: 114
-        height: 84
+        x: 1275
+        y: 1721
+        width: 112
+        height: 94
       alignment: 9
-      pivot: {x: 0.8494627, y: 0.11654808}
+      pivot: {x: 0.900346, y: 0.15734084}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -118,12 +134,12 @@ TextureImporter:
       name: BOSS_Pico2
       rect:
         serializedVersion: 2
-        x: 1606
-        y: 1444
-        width: 120
-        height: 65
+        x: 1601
+        y: 1439
+        width: 131
+        height: 74
       alignment: 9
-      pivot: {x: 0.0196757, y: 0.65648663}
+      pivot: {x: 0.05619148, y: 0.64421123}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -131,12 +147,12 @@ TextureImporter:
       name: BOSS_Cuerpo
       rect:
         serializedVersion: 2
-        x: 257
-        y: 98
-        width: 661
-        height: 877
+        x: 251
+        y: 99
+        width: 668
+        height: 879
       alignment: 9
-      pivot: {x: 0.5511485, y: 0.15047137}
+      pivot: {x: 0.554355, y: 0.14899136}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -144,17 +160,17 @@ TextureImporter:
       name: BOSS_trapo
       rect:
         serializedVersion: 2
-        x: 1488
-        y: 283
-        width: 259
-        height: 447
+        x: 1485
+        y: 282
+        width: 252
+        height: 452
       alignment: 9
-      pivot: {x: 0.92642176, y: 0.9559705}
+      pivot: {x: 0.96406, y: 0.94760805}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 
+  userData: 98093360742400
   assetBundleName: 
   assetBundleVariant: 

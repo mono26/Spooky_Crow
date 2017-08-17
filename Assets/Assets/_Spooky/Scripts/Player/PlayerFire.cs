@@ -2,48 +2,95 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using CnControls;
 
 public class PlayerFire : MonoBehaviour
 {
-    [SerializeField]
+   /* [SerializeField]
     private Vector3 clickPoint;
     [SerializeField]
-    private PlayerMove my_Player;
+    private PlayerMove my_Player; */
 
     [SerializeField]
-    private float shootTime;
+    private float shootCooldown;
 
-    private float firingRate = 0.5f;
+	[SerializeField]
+	private Transform shootTransform;
 
-    private Ray my_Ray;
-    private RaycastHit my_RayHit;
+    [SerializeField]
+    private float velocidadAtaque = 15f;
+	[SerializeField]
+	private float moveForce = 6.5f;
+
+	private Vector3 shootDirection;
+
+	public BulletController playerBullet;
+
+	private float horizontalAxis;
+	private float verticalAxis;
+   // private Ray my_Ray;
+   // private RaycastHit my_RayHit;
 
     void Awake()
     {
-        my_Player = GetComponent<PlayerMove>();
+       // my_Player = GetComponent<PlayerMove>();
+
     }
-    void Update()
+    void FixedUpdate()
     {
-        shootTime += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0) && shootTime >= firingRate)
-        {
-            if(DragCamera.Instance.cameraDragging)
-            {
-                return;
-            }
-            if (EventSystem.current.IsPointerOverGameObject())
-            {
-                return;
-            }
-            if (!my_Player.isMoving)
-                ClickToFire();
-            else if (my_Player.isMoving)
-                my_Player.StopPlayer();
-        }
-        else
-            return;
+		horizontalAxis = CnInputManager.GetAxis ("Horizontal");
+		verticalAxis = CnInputManager.GetAxis ("Vertical");
+
+		if (shootCooldown >= 0)
+			shootCooldown -= Time.deltaTime;
+
+		if (horizontalAxis != 0 || verticalAxis != 0) {
+			FireWithJoystick (horizontalAxis, verticalAxis);
+			RotateTransform (horizontalAxis, verticalAxis );
+
+//			Debug.Log ("H= " + horizontalAxis+ "V= " +verticalAxis );
+		}
     }
-    void ClickToFire()
+ 
+	public void FireWithJoystick(float h, float v)
+    {
+        if (shootCooldown > 0.0f)
+        {
+            return;
+        }
+
+		shootDirection = new Vector3(h, 0, v);
+
+        shootCooldown = velocidadAtaque;
+        GameObject bullet = PoolsManagerBullets.Instance.GetBullet(playerBullet.bulletInfo.objectIndex);
+
+		//GameObject bullet = Instantiate (bulletP, shootTransform.position, shootTransform.rotation) as GameObject;
+
+		bullet.transform.position = shootTransform.position;
+        bullet.transform.rotation = shootTransform.transform.rotation;
+		bullet.GetComponent <Rigidbody > ().AddForce(shootTransform.forward * moveForce , ForceMode.Impulse);
+
+		bullet.GetComponent<BulletController>().SetTimer();
+
+		Debug.DrawRay (shootTransform.position, shootTransform.forward * 20, Color.green, 10);
+
+	//	Debug.Log (shootDirection);
+	//	Debug.DrawRay (transform.position, shootDirection, Color.red, 10, false);
+
+        //Se le da la direccion en la cual esta manipulando el joystick
+        //bullet.GetComponent<BulletController>().SetDirection(direction);
+    }
+
+	public void RotateTransform(float posX, float posZ){
+	
+		float rotY = Mathf.Atan2(posX, posZ) * Mathf.Rad2Deg;
+		shootTransform.rotation = Quaternion.Euler(0f, rotY , 0f);        
+
+		//Debug.DrawRay(shootTransform .position, shootTransform .forward* 10, Color.red, 5);
+
+	}
+
+	/*  void ClickToFire()
     {
         my_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f))
@@ -56,16 +103,15 @@ public class PlayerFire : MonoBehaviour
         {
             Shoot();    //Disparar al my_hit.point
         }
-    }
-    void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
+    }*/
+	
+		
+  /*  void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
     {
-        shootTime = 0.0f;
+        shootCooldown = 0.0f;
         GameObject bullet = BulletsPool.Instance.GetBullet();
         //Si el bool de plant es falso y el player veradero es que la bala fue disparada por un jugador o enemigo.
-        bullet.GetComponent<BulletController>().plant = false;       //Para que el bulletcontroller sepa como moverse
-        bullet.GetComponent<BulletController>().player = true;
-        bullet.GetComponent<BulletController>().my_Point = clickPoint;
         bullet.transform.position = this.transform.position;
         bullet.transform.rotation = this.transform.rotation;
-    }
+    } */
 }

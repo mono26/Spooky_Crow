@@ -5,7 +5,6 @@ using System.Collections;
 
 public class SceneFader : MonoBehaviour
 {
-
     public Image blackBackGround;
     public AnimationCurve fadeCurve;
 
@@ -47,5 +46,4 @@ public class SceneFader : MonoBehaviour
 
         SceneManager.LoadScene(scene);
     }
-
 }

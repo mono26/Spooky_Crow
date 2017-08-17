@@ -489,7 +489,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4418477595017464}
-  - component: {fileID: 54214353148953266}
   - component: {fileID: 65783984701173894}
   - component: {fileID: 95357951907595842}
   - component: {fileID: 195965070773479216}
@@ -823,21 +822,6 @@ Transform:
   m_Father: {fileID: 4438378577641274}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.7960005}
---- !u!54 &54214353148953266
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995082792655942}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65783984701173894
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -909,24 +893,19 @@ MonoBehaviour:
   my_EnemyInfo: {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
   cdTimer1: 0
   cdTimer2: 0
-  cdTime1: 1.5
-  cdTime2: 25
   currentState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
   remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   originalState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
   my_Animator: {fileID: 0}
   my_HealthBar: {fileID: 114226018979002264}
   my_NavMeshAgent: {fileID: 0}
-  my_Target: {fileID: 0}
-  my_MeleeCollider: {fileID: 0}
+  my_Target: {fileID: 4672713523621844, guid: 3b0f3047593465b4cbd3d72b81df7ec2, type: 2}
   my_Sprite: {fileID: 4154231872887214}
   updateRate: 2
-  stopingDistanceProportion: 0
   stoleValue: 0
   finishStealing: 0
   aiActive: 1
   health: 0
-  turnSmooth: 0
 --- !u!114 &114133672366123822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1680,7 +1659,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 8
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120

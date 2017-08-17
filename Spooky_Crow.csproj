@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -78,6 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Spooky_Crow.Plugins.csproj">
+      <Project>{FDC26D09-68A7-95C5-FC54-B6A48508B1B0}</Project>
+      <Name>Spooky_Crow.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Anima2D\Examples\Scripts\CharacterMotion.cs" />
     <Compile Include="Assets\Anima2D\Examples\Scripts\Follow.cs" />
     <Compile Include="Assets\Anima2D\Examples\Scripts\SkinnedMeshCombiner.cs" />
@@ -104,58 +110,100 @@
     <Compile Include="Assets\Anima2D\Scripts\SpriteMeshInstance.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Bullets\BulletController.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Bullets\BulletInfo.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Bullets\BulletsPool.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Abilty\Enemy\AbilityMeleeEnemy.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Abilty\Enemy\AbilityRangeEnemy.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Abilty\Enemy\AbilityStealEnemy.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Actions\Enemy\ActionAbility1.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Actions\Enemy\ActionAbility2.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Actions\Enemy\ActionFollowHouse.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Actions\Enemy\ActionFollowPlayer.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Actions\Enemy\ActionRunStealer.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIAbility.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIAnimations.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIEnemyAction.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIEnemyController.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIEnemyDecision.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIEnemyState.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\AIEnemyTransition.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ClasesBases_Enemy\EnemyInfo.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Decision\Enemies\DecisionLook.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Decision\Enemies\FinishStealing.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Decision\Enemies\LookMeleeRange.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Decision\Enemies\LookShootRange.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\Decision\Enemies\LookStealRange.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\DragCamera.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\EndOfLevel.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Bullets\DropPool.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Bullets\PoolsManagerBullets.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\AIEnemyController.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\AbilityDestroyPlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\AbilityMeleeEnemy.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\AbilityRangeEnemy.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\AbilityStealEnemy.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ActionAbility1.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ActionAbility2.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ActionFollowHouse.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ActionFollowPlayer.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\ActionRunStealer.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\DecisionLook.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\EnemyInfo.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\FinishStealing.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\LookMeleeRange.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\LookStealRange.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\PoolsManagerEnemies.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIAbility.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIAction.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIController.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIDecision.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIState.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AITransition.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\CameraDrag.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\CameraFollow.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\Drop.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\FightCloud.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\GameManager.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\House.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\Info.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\LevelManager.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\MainMenu.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\PlantUI.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\PoolsManager.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\PoolsManagerPlants.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\SceneFader.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\ShopManager.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\Shredder.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\UIManager.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\WaveSpawner.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Ability\AbilityMeleePlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Ability\AbilityRangePlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Actions\ActionMeleeAtack.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Actions\ActionShootPlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\AIPlantAction.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\AIPlantController.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\AIPlantDecision.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\AIPlantState.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\AIPlantTransition.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\PlantInfo.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ClasesBases_Plant\PlantPoint.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Decision\LookMeleeRangePlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\Decision\LookShootRangePlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AIPlantController.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AbilityMeleePlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AbilityRangePlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ActionMeleeAtack.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ActionShootPlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\LookMeleeRangePlant.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\LookShootRangePlant.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PlantBluePrint.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PlantInfo.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PlantPoint.cs" />
+    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PoolsManagerPlants.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Player\PlayerFire.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+    <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\VFX_Killer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Anima2D\Examples\Shaders\Unlit-Alpha-Cull-off.shader" />
@@ -164,6 +212,47 @@
     <None Include="Assets\Anima2D\Readme.txt" />
     <None Include="Assets\Anima2D\Version.txt" />
     <None Include="Assets\Assets\_Spooky\Fonts\font info.txt" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+    <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\ToDoList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

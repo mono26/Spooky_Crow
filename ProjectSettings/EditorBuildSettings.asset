@@ -17,3 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/_Spooky/Scenes/Level1.unity
     guid: 1a93a977f8e5db143b2d325e34f85c2a
+  - enabled: 1
+    path: Assets/Assets/_Spooky/Scenes/Level2.unity
+    guid: b67b02f75da451d4eb91742c35d19932
+  - enabled: 1
+    path: Assets/Assets/_Spooky/Scenes/Level3.unity
+    guid: 6fd73b32c31cc214f9f129ebc89232e0
