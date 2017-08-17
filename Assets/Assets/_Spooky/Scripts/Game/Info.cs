@@ -12,5 +12,7 @@ public abstract class Info : ScriptableObject
     public AIAbility ability1;
     public AIAbility ability2;
 
+    public BulletController bullet;
+
     public float range;
 }

@@ -9,24 +9,24 @@ using UnityEngine.UI;
 public class AIEnemyController : AIController
 {
     //Cada habilidad debe de contener su cooldown propio
-    public EnemyInfo my_EnemyInfo;
+    public EnemyInfo enemyInfo;
     public float ability1CDTimer;
     public float ability2CDTimer;     
 
     public AIState enemyCurrentState;
-    public AIState EnemyRemainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
+    public AIState enemyRemainState;    //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     public AIState enemyOriginalState;
     //Catching
-    public Animator my_Animator;
-    public Slider my_HealthBar;
-    public NavMeshAgent my_NavMeshAgent;
-    public Transform my_Target;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
-    public Transform my_Sprite;        //Es un game object para poder flipear el sprite con el scale sin alterar el collider del parent.
+    public Animator enemyAnimator;
+    public Slider enemyHealthBar;
+    public NavMeshAgent enemyNavMesh;
+    public Transform enemyTarget;        //Referencia al target del objeto, player o house se le puede preguntar al game manager por medio del singleton.
+    public Transform enemySprite;        //Es un game object para poder flipear el sprite con el scale sin alterar el collider del parent.
 
     public float updateRate = 2f;
 
     public float stoleValue;
-    public bool finishStealing = false;     //Valor por default porque cuando empieza no ha robado
+    public bool enemyFinishStealing = false;     //Valor por default porque cuando empieza no ha robado
 
     public int health;      //Debe de ser sacada del enemyInfo para ser almacenada aqui. Nunca modificar los valores del enemyInfo!
 
@@ -35,23 +35,35 @@ public class AIEnemyController : AIController
 	public GameObject smokeExplosion;
 	public float[] smokeRotations;
 
+    public AIEnemyController()
+    {
+        objectAnimator = enemyAnimator;
+        objectCDTimer1 = ability1CDTimer;
+        objectCDTimer2 = ability2CDTimer;
+        objectCurrentState = enemyCurrentState;
+        objectFinishedStealing = enemyFinishStealing;
+        objectInfo = enemyInfo;
+        objectNavMesh = enemyNavMesh;
+        objectOriginalState = enemyOriginalState;
+        objectRemainState = enemyRemainState;
+        objectSprite = enemySprite;
+        objectTarget = enemyTarget;
+    }
     void Awake()
     {
-        my_NavMeshAgent = GetComponent<NavMeshAgent>();
-        my_Animator = transform.GetComponent<Animator>();
-
-
+        enemyNavMesh = GetComponent<NavMeshAgent>();
+        enemyAnimator = transform.GetComponent<Animator>();
     }
     private void Start()
     {
-
+        
     }
     // Use this for initialization
     void OnEnable ()
     {
         InitializeEnemy();
 
-        if (!my_Target)
+        if (!enemyTarget)
         {
             SearchForEnemy();
         }
@@ -63,37 +75,37 @@ public class AIEnemyController : AIController
 
         enemyCurrentState = enemyOriginalState;
 
-        my_NavMeshAgent.isStopped = false;
-        my_NavMeshAgent.updateRotation = false;
-        my_NavMeshAgent.SetDestination(my_Target.position);
+        enemyNavMesh.isStopped = false;
+        enemyNavMesh.updateRotation = false;
+        enemyNavMesh.SetDestination(enemyTarget.position);
         StartCoroutine(UpdateDestination());
 
-        health = my_EnemyInfo.enemyHealthPoints;
-        my_HealthBar.maxValue = health;
-        my_HealthBar.value = health;
+        health = enemyInfo.enemyHealthPoints;
+        enemyHealthBar.maxValue = health;
+        enemyHealthBar.value = health;
     }
     private void SearchForEnemy()
     {
-        if (!my_Target)
+        if (!enemyTarget)
         {
             Debug.Log("There is no target for me" + this.name);
             //Execute SearchTargetCode;
-            switch (my_EnemyInfo.my_Type)
+            switch (enemyInfo.my_Type)
             {
                 case (EnemyInfo.EnemyType.STEALER):
                     {
-                        my_Target = GameManager.Instance.stealPoints[Random.Range(0, 5)].transform;
+                        enemyTarget = GameManager.Instance.stealPoints[Random.Range(0, 5)].transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.ATACKER):
                     {
-                        my_Target = GameManager.Instance.player.transform;
+                        enemyTarget = GameManager.Instance.player.transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.BOSS):
                     {
                         //Assigna el target al inicio dependiendo del tipo
-                        my_Target = GameManager.Instance.player.transform;
+                        enemyTarget = GameManager.Instance.player.transform;
                         break;
                     }
             }
@@ -101,47 +113,47 @@ public class AIEnemyController : AIController
     }
     public void Animate()
     {
-        if (!my_Target)
+        if (!enemyTarget)
         {
             return;
         }
-        if(my_EnemyInfo.my_Type == EnemyInfo.EnemyType.BOSS)
+        if(enemyInfo.my_Type == EnemyInfo.EnemyType.BOSS)
         {
-            if (transform.position.x <= my_Target.position.x)
+            if (transform.position.x <= enemyTarget.position.x)
             {
-                my_Sprite.localScale = new Vector3(-1, 1, 1);
+                enemySprite.localScale = new Vector3(-1, 1, 1);
             }
-            else if (transform.position.x > my_Target.position.x)
+            else if (transform.position.x > enemyTarget.position.x)
             {
-                my_Sprite.localScale = new Vector3(1, 1, 1);
+                enemySprite.localScale = new Vector3(1, 1, 1);
             }
         }
         else
         {
-            if (transform.position.x <= my_Target.position.x)
+            if (transform.position.x <= enemyTarget.position.x)
             {
-                my_Sprite.localScale = new Vector3(1, 1, 1);
+                enemySprite.localScale = new Vector3(1, 1, 1);
             }
-            else if (transform.position.x > my_Target.position.x)
+            else if (transform.position.x > enemyTarget.position.x)
             {
-                my_Sprite.localScale = new Vector3(-1, 1, 1);
+                enemySprite.localScale = new Vector3(-1, 1, 1);
             }
         }
     }
     public override void TransitionToState(AIState nextState)
     {
-        if(nextState != EnemyRemainState)
+        if(nextState != enemyRemainState)
         {
             enemyCurrentState = nextState;
         }
     }
     IEnumerator UpdateDestination()
     {
-        if (my_Target == null)
+        if (enemyTarget == null)
         {
             yield return false;
         }
-        my_NavMeshAgent.SetDestination(my_Target.position);
+        enemyNavMesh.SetDestination(enemyTarget.position);
         enemyCurrentState.UpdateState(this);
         Animate();
         yield return new WaitForSeconds(1 / updateRate); //Numero de Updates por segundo.
@@ -151,39 +163,26 @@ public class AIEnemyController : AIController
     {
         Debug.Log("Estoy recibiendo daño");
         health -= damage;
-        my_HealthBar.value = health;
+        enemyHealthBar.value = health;
         if (health <= 0)
         {
             //Drop o aumentar la plata.
             Die();
         }
     }
-    public void Ability1()     //Esta es la abilidad melee, contenida en myPlantInfo
-    {
-        if (objectCDTimer1 <= 0)
-        {
-            objectCDTimer1 = my_EnemyInfo.enemyAbility1.abilityCooldown;
-        }
-        else
-            return;
-    }
-    public void Ability2()     //Esta es la abilidad ranged, contenida en myPlantInfo
-    {
-        if (ability2CDTimer <= 0)
-        {
-            ability2CDTimer = objectCDTimer1 = my_EnemyInfo.enemyAbility2.abilityCooldown;
-            my_Animator.SetTrigger("Ability2");
-        }
-        else
-            return;
-    }
     public override void CastAbility2()
     {
-        my_EnemyInfo.enemyAbility2.Ability(this);
+        if(ability2CDTimer <= 0)
+        {
+            enemyInfo.enemyAbility2.Ability(this);
+        }
     }
     public override void CastAbility1()
     {
-        my_EnemyInfo.enemyAbility1.Ability(this);
+        if (ability1CDTimer <= 0)
+        {
+            enemyInfo.enemyAbility1.Ability(this);
+        }
     }
     public void Die()
     {
@@ -193,7 +192,7 @@ public class AIEnemyController : AIController
         WaveSpawner.Instance.my_NumberOfEnemies--;
         var drop = DropPool.Instance.GetDrop();
         drop.transform.position = this.transform.position;
-        drop.GetComponent<Drop>().SetReward(my_EnemyInfo.enemyReaward);
+        drop.GetComponent<Drop>().SetReward(enemyInfo.enemyReaward);
         PoolsManagerEnemies.Instance.ReleaseObject(this.gameObject);
     }
     public void Escape()

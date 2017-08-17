@@ -125,8 +125,6 @@
     <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\DecisionLook.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\EnemyInfo.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\FinishStealing.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\LookMeleeRange.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\LookStealRange.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Enemy\PoolsManagerEnemies.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIAbility.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIAction.cs" />
@@ -146,10 +144,6 @@
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\UIManager.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\WaveSpawner.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AIPlantController.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AbilityMeleePlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\AbilityRangePlant.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ActionMeleeAtack.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\ActionShootPlant.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\LookMeleeRangePlant.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\LookShootRangePlant.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Plants\PlantBluePrint.cs" />

@@ -5,20 +5,32 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
+    [HideInInspector]
     public Info objectInfo;
 
-    public AIController objectBullet;
+    [HideInInspector]
     public NavMeshAgent objectNavMesh;
+    [HideInInspector]
+    public Animator objectAnimator;
+    [HideInInspector]
+    public Transform objectSprite;
 
+    [HideInInspector]
     public float objectCDTimer1;
+    [HideInInspector]
     public float objectCDTimer2;
 
+    [HideInInspector]
     public AIState objectCurrentState;
+    [HideInInspector]
     public AIState objectRemainState;
+    [HideInInspector]
     public AIState objectOriginalState;
 
+    [HideInInspector]
     public Transform objectTarget;
 
+    [HideInInspector]
     public bool objectFinishedStealing;
 
     public virtual void CastAbility1()
