@@ -33,10 +33,7 @@ public class CameraFollow : MonoBehaviour
         player = FindObjectOfType<PlayerMove>().transform;
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
 
-        topLimit = topLimit.GetComponent<Transform>();
-        bottomLimit = bottomLimit.GetComponent<Transform>();
-        leftLimit = leftLimit.GetComponent<Transform>();
-        rightLimit = rightLimit.GetComponent<Transform>();
+        SetLimits();
 
         transform.position = new Vector3(0,30,0);
     }
@@ -48,7 +45,7 @@ public class CameraFollow : MonoBehaviour
         FollowPlayer();
     }
 
-    void FollowPlayer()
+    private void FollowPlayer()
     {
         float posX = transform.position.x;
         float posZ = transform.position.z;
@@ -62,6 +59,12 @@ public class CameraFollow : MonoBehaviour
         posZ = Mathf.Clamp(posZ, bottomLimit.position.z, topLimit.position.z);
         posX = Mathf.Clamp(posX, leftLimit.position.x, rightLimit.position.x);
        transform.position = new Vector3(posX,  30, posZ);
-
+    }
+    private void SetLimits()
+    {
+        topLimit = topLimit.GetComponent<Transform>();
+        bottomLimit = bottomLimit.GetComponent<Transform>();
+        leftLimit = leftLimit.GetComponent<Transform>();
+        rightLimit = rightLimit.GetComponent<Transform>();
     }
 }

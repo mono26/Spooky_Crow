@@ -132,7 +132,6 @@
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIDecision.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AIState.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\AITransition.cs" />
-    <Compile Include="Assets\Assets\_Spooky\Scripts\Game\CameraDrag.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\CameraFollow.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\Drop.cs" />
     <Compile Include="Assets\Assets\_Spooky\Scripts\Game\FightCloud.cs" />
