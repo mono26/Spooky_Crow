@@ -45,7 +45,7 @@ public class PlantPoint : MonoBehaviour
         my_Plant = plant;
         my_PlantBluePrint = blueprint;
         GameManager.Instance.playerMoney -= blueprint.price;
-        GameManager.Instance.my_MoneyText.text = "$:" + GameManager.Instance.playerMoney;
+        GameManager.Instance.gameMoneyText.text = "$:" + GameManager.Instance.playerMoney;
     }
     public void SellPlant()
     {
@@ -53,7 +53,7 @@ public class PlantPoint : MonoBehaviour
         my_PlantBluePrint = null;
         PoolsManagerPlants.Instance.ReleasePlant(my_Plant);
         my_Plant = null;
-        GameManager.Instance.my_MoneyText.text = "$:" + GameManager.Instance.playerMoney;
+        GameManager.Instance.gameMoneyText.text = "$:" + GameManager.Instance.playerMoney;
     }
     public void UpgradePlant()
     {

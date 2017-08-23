@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4154231872887214}
   m_Layer: 0
-  m_Name: Enemy1 (1)
+  m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -890,22 +890,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689d00c1a012d9c4f9535bc07221b010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_EnemyInfo: {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
-  cdTimer1: 0
-  cdTimer2: 0
-  currentState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
-  remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
-  originalState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
-  my_Animator: {fileID: 0}
-  my_HealthBar: {fileID: 114226018979002264}
-  my_NavMeshAgent: {fileID: 0}
-  my_Target: {fileID: 4672713523621844, guid: 3b0f3047593465b4cbd3d72b81df7ec2, type: 2}
-  my_Sprite: {fileID: 4154231872887214}
+  objectInfo: {fileID: 0}
+  objectNavMesh: {fileID: 0}
+  objectAnimator: {fileID: 0}
+  objectSprite: {fileID: 0}
+  objectCDTimer1: 0
+  objectCDTimer2: 0
+  objectCurrentState: {fileID: 0}
+  objectRemainState: {fileID: 0}
+  objectOriginalState: {fileID: 0}
+  objectTarget: {fileID: 0}
+  objectFinishedStealing: 0
+  enemyInfo: {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
+  ability1CDTimer: 0
+  ability2CDTimer: 0
+  enemyCurrentState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
+  enemyRemainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  enemyOriginalState: {fileID: 11400000, guid: b8e63586f05d5e441bfbf6e764442a3a, type: 2}
+  enemyAnimator: {fileID: 0}
+  enemyHealthBar: {fileID: 114226018979002264}
+  enemyNavMesh: {fileID: 0}
+  enemyTarget: {fileID: 0}
+  enemySprite: {fileID: 4154231872887214}
   updateRate: 2
   stoleValue: 0
-  finishStealing: 0
-  aiActive: 1
+  enemyFinishStealing: 0
   health: 0
+  feathersParticle: {fileID: 0}
+  smokeExplosion: {fileID: 0}
+  smokeRotations: []
 --- !u!114 &114133672366123822
 MonoBehaviour:
   m_ObjectHideFlags: 1

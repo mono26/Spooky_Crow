@@ -13,17 +13,16 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    public GameObject[] enemyPrefabs;       //Informacion necesaria para que el GameManager llene las listas de los pools
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
 
     public PlantPoint selectedPlantPoint;
 
-    public GameObject player;   //Referencia al jugador para que puedan acceder a los targets.
-    public GameObject[] stealPoints;    ////Referencia a la casa para que puedan acceder a los targets.
+    public GameObject playerSpooky;   //Referencia al jugador para que puedan acceder a los targets.
+    public GameObject[] houseStealPoints;    ////Referencia a la casa para que puedan acceder a los targets.
 
-    public Image my_HealthBar;
-    public Text my_MoneyText;
+    public Image gameHealthBar;
+    public Text gameMoneyText;
     public int playerMoney = 400;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
     public float currentHouseHealth = 800;
     public float gameTime;
@@ -41,33 +40,48 @@ public class GameManager : MonoBehaviour
         {
             instance = this;    //Parte del singleton en donde se asigna la unica instancia de la clase
         }
-        else
-            Destroy(gameObject);
+        else Destroy(gameObject);
+
         //Si ambas referencias no han sido asignadas por en el editor las debe de encontrar.
-        if (player == null || stealPoints == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Crow");
-            stealPoints = GameObject.FindGameObjectsWithTag("StealPoint");
-        }
+        LookForPlayerAndHousePoints();
         //Para buscar todos los runaway y spawn points
+        LookForRunAwayPoints();
+        LookForSpawnPoints();
+    }
+    void Start()
+    {
+        gameHealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
+        //gameMoneyText.text = "$:" + playerMoney; 
+    }
+
+    //Metodos privados 
+    private void LookForSpawnPoints()
+    {
         var sp = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        var rp = GameObject.FindGameObjectsWithTag("RunAwayPoint");
         spawnPoints = new Transform[sp.Length];
-        runAwayPoints = new Transform[rp.Length];
         for (int i = 0; i < sp.Length; i++)
         {
             spawnPoints[i] = sp[i].GetComponent<Transform>();
         }
+    }
+    private void LookForRunAwayPoints()
+    {
+        var rp = GameObject.FindGameObjectsWithTag("RunAwayPoint");
+        runAwayPoints = new Transform[rp.Length];
         for (int i = 0; i < rp.Length; i++)
         {
             runAwayPoints[i] = rp[i].GetComponent<Transform>();
         }
     }
-    void Start()
+    private void LookForPlayerAndHousePoints()
     {
-        my_HealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
-        my_MoneyText.text = "$:" + playerMoney; 
+        if (playerSpooky == null || houseStealPoints == null)
+        {
+            playerSpooky = GameObject.FindGameObjectWithTag("Crow");
+            houseStealPoints = GameObject.FindGameObjectsWithTag("StealPoint");
+        }
     }
+    //Metodos publicos
     public void SelectPlantPoint(PlantPoint plantPoint)     //Metodo que se llamara cada vez que el jugador haga click sobre un plant point.
     {
         if(selectedPlantPoint == plantPoint)
@@ -101,7 +115,7 @@ public class GameManager : MonoBehaviour
     public void LoseHealth(int stole)
     {
         currentHouseHealth -= stole;
-        my_HealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
+        gameHealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
         if (currentHouseHealth <= 0)
         {
             //GameOver Code
@@ -111,7 +125,7 @@ public class GameManager : MonoBehaviour
     public void GiveMoney(int reward)
     {
         playerMoney += reward;
-        my_MoneyText.text = "$:" + playerMoney;
+        gameMoneyText.text = "$:" + playerMoney;
     }
     void GameOver()
     {
@@ -132,5 +146,9 @@ public class GameManager : MonoBehaviour
         });
         GameIsOver = true;
         my_CompleteLevelUI.SetActive(true);
+    }
+    public void PauseGame()
+    {
+        //codigo para pausar el juego.
     }
 }

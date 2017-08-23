@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 198386395648706334}
   - component: {fileID: 199860208448265556}
   m_Layer: 0
-  m_Name: NormalBullet
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,8 +112,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a264fae66414cd4429a8bc3905769aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectInfo: {fileID: 0}
+  objectNavMesh: {fileID: 0}
+  objectAnimator: {fileID: 0}
+  objectSprite: {fileID: 0}
+  objectCDTimer1: 0
+  objectCDTimer2: 0
+  objectCurrentState: {fileID: 0}
+  objectRemainState: {fileID: 0}
+  objectOriginalState: {fileID: 0}
+  objectTarget: {fileID: 0}
+  objectFinishedStealing: 0
   "da\xF1o": 1
   deadTimer: 10
+  bulletInfo: {fileID: 11400000, guid: 1e5e46dd38c55494791bdc3b0fb3481b, type: 2}
 --- !u!198 &198386395648706334
 ParticleSystem:
   m_ObjectHideFlags: 1

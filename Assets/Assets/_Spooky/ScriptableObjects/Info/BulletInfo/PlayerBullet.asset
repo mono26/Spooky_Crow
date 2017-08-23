@@ -9,10 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe0b344f73d9eb408297651182936a1, type: 3}
-  m_Name: NormalBullet
+  m_Name: PlayerBullet
   m_EditorClassIdentifier: 
+  objectName: 
+  objectIndex: 0
+  objectSpeed: 0
+  ability1: {fileID: 0}
+  ability2: {fileID: 0}
+  bullet: {fileID: 0}
+  range: 0
   my_Type: 0
   bulletName: 
-  index: 0
-  speed: 50
-  damage: 1
+  bulletIndex: 0
+  bulletSpeed: 0
+  bulletDamage: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class BulletInfo : Info {
     public float bulletSpeed;
     public int bulletDamage;
 
-    public BulletInfo()
+    public override void InitializeInfo()
     {
         objectName = bulletName;
         objectIndex = bulletIndex;

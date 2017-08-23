@@ -16,8 +16,12 @@ public class AbilityMeleeEnemy : AIAbility
         if (controller.objectTarget != null)        //Si no tiene target no deberia de disparar.
         {
             //Debe de ir el resto del metodo de la planta para el melee
-            FightCloud.Instance.SetFight(GameManager.Instance.player, controller.gameObject);
+            FightCloud.Instance.SetFight(GameManager.Instance.playerSpooky, controller.gameObject);
         }
         else return;
+    }
+    public override void InitializeAbility()
+    {
+        throw new NotImplementedException();
     }
 }

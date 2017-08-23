@@ -8,13 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17c9f27c8af26846a30bd3ba0c7f0ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
   m_Name: MovingStateStealer
   m_EditorClassIdentifier: 
   aiActions:
   - {fileID: 11400000, guid: 50f1eac51565e00469529da58ee4f89c, type: 2}
   aiTransitions:
-  - decision: {fileID: 11400000, guid: 2a895c7d42b1d744c86c70f89a623810, type: 2}
+  - decision: {fileID: 11400000, guid: dea0386fe7ceaa640916852dae788d22, type: 2}
     trueState: {fileID: 11400000, guid: fdf88fef80f3989479213e4ee0ea15ce, type: 2}
     falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
-  sceneGuizmoColor: {r: 0.90344834, g: 1, b: 0, a: 1}

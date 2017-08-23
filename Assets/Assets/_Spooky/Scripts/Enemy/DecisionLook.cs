@@ -12,14 +12,9 @@ public class DecisionLook : AIDecision
     }
     private bool Look(AIController controller)
     {
-        var colliders = Physics.OverlapSphere(controller.transform.position, controller.objectInfo.range, 1 << 9);       //El segundo valor esta dentro de el enemyInfo
-        if (colliders.Length > 0)
+        if (Vector3.SqrMagnitude(controller.transform.position - controller.objectTarget.position) < (controller.objectInfo.objectRange * controller.objectInfo.objectRange) * 0.2)
         {
-            if(colliders[0].CompareTag("Crow"))
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
         else
         {

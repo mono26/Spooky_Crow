@@ -16,11 +16,6 @@ public class AIController : MonoBehaviour
     public Transform objectSprite;
 
     [HideInInspector]
-    public float objectCDTimer1;
-    [HideInInspector]
-    public float objectCDTimer2;
-
-    [HideInInspector]
     public AIState objectCurrentState;
     [HideInInspector]
     public AIState objectRemainState;
@@ -33,6 +28,10 @@ public class AIController : MonoBehaviour
     [HideInInspector]
     public bool objectFinishedStealing;
 
+    public virtual void ChangeTarget(Transform newTarget)
+    {
+
+    }
     public virtual void CastAbility1()
     {
 

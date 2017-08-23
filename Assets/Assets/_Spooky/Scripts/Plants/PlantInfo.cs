@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public class PlantInfo : Info {
     public float meleeRange;
     public float shootRange;
 
-    public PlantInfo()
+    public override void InitializeInfo()
     {
         objectName = plantName;
         objectIndex = plantIndex;

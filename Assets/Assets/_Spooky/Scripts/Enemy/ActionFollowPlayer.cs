@@ -13,9 +13,9 @@ public class ActionFollowPlayer : AIAction
 
     private void FollowPlayer(AIController controller)
     {
-        if (controller.objectTarget != GameManager.Instance.player.transform)
+        if (controller.objectTarget != GameManager.Instance.playerSpooky.transform)
         {
-            controller.objectTarget = GameManager.Instance.player.transform;
+            controller.objectTarget = GameManager.Instance.playerSpooky.transform;
             return;
         }
     }

@@ -12,7 +12,7 @@ public class LookMeleeRangePlant : AIDecision
     }
     private bool MeleeRange(AIController controller)
     {
-        var colliders = Physics.OverlapSphere(controller.transform.position, controller.objectInfo.range, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
+        var colliders = Physics.OverlapSphere(controller.transform.position, controller.objectInfo.objectRange, 1 << 9);      //El segundo valor esta dentro de el enemyInfo
         //El tercer valor es para decirle al metodo en que layer buscar los colliders, es numero magico. Se puede optimizar
         if (colliders.Length > 0)
         {

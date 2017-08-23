@@ -23,4 +23,9 @@ public class AbilityDestroyPlant : AIAbility
         else
             return;
     }
+
+    public override void InitializeAbility()
+    {
+        throw new NotImplementedException();
+    }
 }

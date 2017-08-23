@@ -867,7 +867,7 @@ MonoBehaviour:
   shootTransform: {fileID: 0}
   velocidadAtaque: 0.5
   moveForce: 10
-  bulletP: {fileID: 0}
+  playerBullet: {fileID: 0}
 --- !u!114 &114267041123472294
 MonoBehaviour:
   m_ObjectHideFlags: 1

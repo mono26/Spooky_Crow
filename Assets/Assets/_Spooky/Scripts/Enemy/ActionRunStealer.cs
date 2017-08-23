@@ -13,7 +13,7 @@ public class ActionRunStealer : AIAction
         if (!controller.objectTarget.CompareTag("RunAwayPoint"))
         {
             var runIndex = Random.Range(0, GameManager.Instance.runAwayPoints.Length);
-            controller.objectTarget = GameManager.Instance.runAwayPoints[runIndex];
+            controller.ChangeTarget(GameManager.Instance.runAwayPoints[runIndex]);
             return;
         }
     }

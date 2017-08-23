@@ -11,14 +11,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d81ee52049021848a61dc1ae0d583ef, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: 
-  my_Type: 1
-  enemyName: 
-  index: 0
-  speed: 5
-  health: 2
-  reward: 10
+  objectName: 
+  objectIndex: 0
+  objectSpeed: 0
   ability1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
   ability2: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
+  bullet: {fileID: 0}
+  range: 0
+  enemyType: 1
+  enemyName: 
+  enemyIndex: 0
+  enemyMoveSpeed: 1.5
+  enemyAtackSpeed: 1.5
+  enemyHealthPoints: 5
+  enemyReaward: 3
+  enemyAbility1: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
+  enemyAbility2: {fileID: 0}
   lookRange: 5
   meleeRange: 2
-  shootRange: 0

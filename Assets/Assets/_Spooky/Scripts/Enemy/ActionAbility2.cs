@@ -13,9 +13,9 @@ public class ActionAbility2 : AIAction
 
     private void Atack(AIController controller)
     {
-        if (controller.objectTarget != GameManager.Instance.player.transform)
+        if (controller.objectTarget != GameManager.Instance.playerSpooky.transform)
         {
-            controller.objectTarget = GameManager.Instance.player.transform;
+            controller.objectTarget = GameManager.Instance.playerSpooky.transform;
             return;
         }
         controller.CastAbility2();       //Metodo unico que esta dentro del script de aiAtack

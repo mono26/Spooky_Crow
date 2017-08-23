@@ -6,11 +6,6 @@ public class AbilityStealEnemy : AIAbility
     public float cooldown;
     public string theName;
 
-    private AbilityStealEnemy()
-    {
-        abilityName = theName;
-        abilityCooldown = cooldown;
-    }
     public override void Ability(AIController controller)
     {
         Steal(controller);
@@ -21,5 +16,10 @@ public class AbilityStealEnemy : AIAbility
         Debug.Log("Termine de robar");
         controller.objectNavMesh.isStopped = false;
         controller.objectFinishedStealing = true;
+    }
+    public override void InitializeAbility()
+    {
+        abilityCooldown = cooldown;
+        abilityName = theName;
     }
 }

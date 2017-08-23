@@ -6,6 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AIComponents/Ability/RangeEnemy")]
 public class AbilityRangeEnemy : AIAbility
 {
+    public float cooldown;
+    public string theName;
+
     public override void Ability(AIController controller)
     {
         RangeAtack(controller);
@@ -26,5 +29,10 @@ public class AbilityRangeEnemy : AIAbility
         Physics.IgnoreCollision(bullet.GetComponent<Collider>(), controller.GetComponent<Collider>());
         //bullet.GetComponent<BulletController>().my_Point = GameManager.Instance.player.transform.position;
         bullet.transform.position = controller.transform.position;
+    }
+    public override void InitializeAbility()
+    {
+        abilityCooldown = cooldown;
+        abilityName = theName;
     }
 }

@@ -35,81 +35,108 @@ public class AIEnemyController : AIController
 	public GameObject smokeExplosion;
 	public float[] smokeRotations;
 
-    public AIEnemyController()
+    //Metodos de unity
+    private void OnEnable()
     {
-        objectAnimator = enemyAnimator;
-        objectCDTimer1 = ability1CDTimer;
-        objectCDTimer2 = ability2CDTimer;
-        objectCurrentState = enemyCurrentState;
-        objectFinishedStealing = enemyFinishStealing;
-        objectInfo = enemyInfo;
-        objectNavMesh = enemyNavMesh;
-        objectOriginalState = enemyOriginalState;
-        objectRemainState = enemyRemainState;
-        objectSprite = enemySprite;
-        objectTarget = enemyTarget;
+        InitializeEnemy();
+
+        if (!enemyTarget)
+        {
+            SearchForTarget();
+        }
     }
-    void Awake()
+    private void Awake()
     {
         enemyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = transform.GetComponent<Animator>();
     }
     private void Start()
     {
-        
-    }
-    // Use this for initialization
-    void OnEnable ()
-    {
-        InitializeEnemy();
 
-        if (!enemyTarget)
+    }
+    private void Update()
+    {
+        if(ability1CDTimer > 0)
         {
-            SearchForEnemy();
+            ability1CDTimer -= Time.deltaTime;
+        }
+        if (ability2CDTimer > 0)
+        {
+            ability2CDTimer -= Time.deltaTime;
         }
     }
 
-    public void InitializeEnemy()
+    //Metodos privados
+    private void InitializeEnemy()
     {
-        SearchForEnemy();
-
-        enemyCurrentState = enemyOriginalState;
-
-        enemyNavMesh.isStopped = false;
-        enemyNavMesh.updateRotation = false;
-        enemyNavMesh.SetDestination(enemyTarget.position);
-        StartCoroutine(UpdateDestination());
-
+        SearchForTarget();
+        SetOriginalState();
+        SetOriginalHealthValues();
+        StartNavMeshForFirstTime();
+        InitializeParentVariables();
+    }
+    private void InitializeParentVariables()
+    {
+        this.objectAnimator = enemyAnimator;
+        this.objectCurrentState = enemyCurrentState;
+        this.objectFinishedStealing = enemyFinishStealing;
+        this.objectInfo = enemyInfo;
+        this.objectNavMesh = enemyNavMesh;
+        this.objectOriginalState = enemyOriginalState;
+        this.objectRemainState = enemyRemainState;
+        this.objectSprite = enemySprite;
+        this.objectTarget = enemyTarget;
+    }
+    private void SetOriginalHealthValues()
+    {
         health = enemyInfo.enemyHealthPoints;
         enemyHealthBar.maxValue = health;
         enemyHealthBar.value = health;
     }
-    private void SearchForEnemy()
+    private void SetOriginalState()
+    {
+        enemyCurrentState = enemyOriginalState;
+    }
+    private void StartNavMeshForFirstTime()
+    {
+        enemyNavMesh.isStopped = false;
+        enemyNavMesh.updateRotation = false;
+        enemyNavMesh.SetDestination(enemyTarget.position);
+        StartCoroutine(UpdateDestination());
+    }
+    private void SearchForTarget()
     {
         if (!enemyTarget)
         {
             Debug.Log("There is no target for me" + this.name);
             //Execute SearchTargetCode;
-            switch (enemyInfo.my_Type)
+            switch (enemyInfo.enemyType)
             {
                 case (EnemyInfo.EnemyType.STEALER):
                     {
-                        enemyTarget = GameManager.Instance.stealPoints[Random.Range(0, 5)].transform;
+                        enemyTarget = GameManager.Instance.houseStealPoints[Random.Range(0, 5)].transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.ATACKER):
                     {
-                        enemyTarget = GameManager.Instance.player.transform;
+                        enemyTarget = GameManager.Instance.playerSpooky.transform;
                         break;
                     }
                 case (EnemyInfo.EnemyType.BOSS):
                     {
                         //Assigna el target al inicio dependiendo del tipo
-                        enemyTarget = GameManager.Instance.player.transform;
+                        enemyTarget = GameManager.Instance.playerSpooky.transform;
                         break;
                     }
             }
         }
+    }
+
+    //Eventos Publicos
+    public override void ChangeTarget(Transform newTarget)
+    {
+        enemyTarget = newTarget;
+        objectTarget = newTarget;
     }
     public void Animate()
     {
@@ -117,7 +144,7 @@ public class AIEnemyController : AIController
         {
             return;
         }
-        if(enemyInfo.my_Type == EnemyInfo.EnemyType.BOSS)
+        if(enemyInfo.enemyType == EnemyInfo.EnemyType.BOSS)
         {
             if (transform.position.x <= enemyTarget.position.x)
             {
@@ -189,7 +216,7 @@ public class AIEnemyController : AIController
 		//Rotacion aleatoria para humo explosion
 		float randomRot = Random.Range (0,360);
 		var explotion = Instantiate(smokeExplosion , transform.position  , Quaternion .Euler(90,0,randomRot ));
-        WaveSpawner.Instance.my_NumberOfEnemies--;
+        WaveSpawner.Instance.gameNumberOfEnemies--;
         var drop = DropPool.Instance.GetDrop();
         drop.transform.position = this.transform.position;
         drop.GetComponent<Drop>().SetReward(enemyInfo.enemyReaward);
@@ -197,7 +224,7 @@ public class AIEnemyController : AIController
     }
     public void Escape()
     {
-        WaveSpawner.Instance.my_NumberOfEnemies--;
+        WaveSpawner.Instance.gameNumberOfEnemies--;
         PoolsManagerEnemies.Instance.ReleaseObject(this.gameObject);
     }
     private void OnTriggerEnter(Collider other)
@@ -215,7 +242,5 @@ public class AIEnemyController : AIController
             Escape();
         }
         else return;
-    }
-
-		
+    }	
 }

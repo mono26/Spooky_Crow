@@ -17,6 +17,8 @@ TagManager:
   - Collectable
   - FireJoystick
   - MoveJoystick
+  - WaveBar
+  - HealthBar
   layers:
   - Default
   - TransparentFX

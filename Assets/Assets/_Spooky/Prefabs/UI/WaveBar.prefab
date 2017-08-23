@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224036423752297766}
   m_Layer: 5
   m_Name: WaveBar
-  m_TagString: Untagged
+  m_TagString: WaveBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

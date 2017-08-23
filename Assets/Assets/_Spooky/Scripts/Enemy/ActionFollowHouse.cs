@@ -12,7 +12,7 @@ public class ActionFollowHouse : AIAction
     {
         if (!controller.objectTarget.CompareTag("StealPoint"))
         {
-            controller.objectTarget = GameManager.Instance.stealPoints[Random.Range(0, 5)].transform;
+            controller.objectTarget = GameManager.Instance.houseStealPoints[Random.Range(0, 5)].transform;
             return;
         }
     }

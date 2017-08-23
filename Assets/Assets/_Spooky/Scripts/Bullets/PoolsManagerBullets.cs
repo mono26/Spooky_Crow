@@ -46,7 +46,7 @@ public class PoolsManagerBullets : MonoBehaviour
     private void AddBullet(int index)      //Se le pasa el index que debe de ser igual para le pool y el objeto
     {
         GameObject obj = Instantiate(bulletsPrefabs[index]);
-        obj.GetComponent<AIPlantController>().my_PlantInfo.plantIndex = index;       //Modifica el index del componente del objeto instanciado.
+        obj.GetComponent<BulletController>().bulletInfo.objectIndex = index;       //Modifica el index del componente del objeto instanciado.
         obj.gameObject.SetActive(false);
         pools[index].Add(obj);
     }
@@ -64,6 +64,6 @@ public class PoolsManagerBullets : MonoBehaviour
     {
         //Cada GameObject deberia de tener informacion del pool al que esta asignado.
         obj.gameObject.SetActive(false);
-        pools[obj.GetComponent<AIPlantController>().my_PlantInfo.plantIndex].Add(obj);
+        pools[obj.GetComponent<BulletController>().bulletInfo.objectIndex].Add(obj);
     }
 }

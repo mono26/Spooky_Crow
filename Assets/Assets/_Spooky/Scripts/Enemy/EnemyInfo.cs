@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class EnemyInfo : Info {
         ATACKER, STEALER, BOSS
     }
 
-    public EnemyType my_Type;
+    public EnemyType enemyType;
     public string enemyName;
     public int enemyIndex;   //Variable para almacenar la informacion de los pools.
 
@@ -26,13 +27,13 @@ public class EnemyInfo : Info {
     public AIAbility enemyAbility2;
 
     //Vriables que contienen los rangos necesarios
-    public float lookRange;
-    public float meleeRange;
+    public float enemyRange;
 
-    public EnemyInfo()
+    public override void InitializeInfo()
     {
         objectName = enemyName;
         objectIndex = enemyIndex;
         objectSpeed = enemyMoveSpeed;
+        objectRange = enemyRange;
     }
 }
