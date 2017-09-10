@@ -19,6 +19,8 @@ public class EnemyInfo : Info {
     public float enemyMoveSpeed;       //Esta es la velocidad que tendra el navMesh
     public float enemyAtackSpeed;
 
+    public GameObject[] enemyParticles;
+
     public int enemyHealthPoints;        //Los puntos de vida que tendra en controller del enemigo
     public int enemyReaward;
 
@@ -31,9 +33,17 @@ public class EnemyInfo : Info {
 
     public override void InitializeInfo()
     {
+        enemyAbility1.InitializeAbility();
+        enemyAbility2.InitializeAbility();
+        SetParentVariables();
+    }
+    private void SetParentVariables()
+    {
         objectName = enemyName;
         objectIndex = enemyIndex;
         objectSpeed = enemyMoveSpeed;
         objectRange = enemyRange;
+        objectAbility1 = enemyAbility1;
+        objectAbility2 = enemyAbility2;
     }
 }

@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4434048376047416}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ GameObject:
   m_Layer: 11
   m_Name: Claws
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -458,8 +458,8 @@ GameObject:
   - component: {fileID: 4418477595017464}
   - component: {fileID: 65771630473830378}
   - component: {fileID: 95928840497176920}
-  - component: {fileID: 114075596285737968}
   - component: {fileID: 195190945623133016}
+  - component: {fileID: 114075596285737968}
   m_Layer: 11
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -658,7 +658,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995082792655942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4905907585690298}
@@ -876,21 +876,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689d00c1a012d9c4f9535bc07221b010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_EnemyInfo: {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
-  cdTimer1: 0
-  cdTimer2: 0
-  currentState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
-  remainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
-  originalState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
-  my_Animator: {fileID: 0}
-  my_HealthBar: {fileID: 114815286411170938}
-  my_NavMeshAgent: {fileID: 0}
-  my_Target: {fileID: 4874319383246148, guid: d4a69f60e22e44b4b8d16c55d7336c8c, type: 2}
-  my_Sprite: {fileID: 4434048376047416}
-  updateRate: 2
+  objectInfo: {fileID: 0}
+  objectUpdateRate: 0
+  objectNavMesh: {fileID: 0}
+  objectAnimator: {fileID: 0}
+  objectSprite: {fileID: 0}
+  objectCurrentState: {fileID: 0}
+  objectRemainState: {fileID: 0}
+  objectOriginalState: {fileID: 0}
+  objectTarget: {fileID: 0}
+  objectShootPoint: {fileID: 0}
+  objectFinishedStealing: 0
+  objectForce: 0
+  objectCDTimer1: 0
+  objectCDTimer2: 0
+  enemyInfo: {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
+  ability1CDTimer: 0
+  ability2CDTimer: 0
+  enemyCurrentState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
+  enemyRemainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  enemyOriginalState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
+  enemyAnimator: {fileID: 0}
+  enemyHealthBar: {fileID: 114815286411170938}
+  enemyNavMesh: {fileID: 0}
+  enemyTarget: {fileID: 0}
+  enemySprite: {fileID: 4434048376047416}
+  enemyUpdateRate: 3
   stoleValue: 0
-  finishStealing: 0
-  aiActive: 1
+  enemyFinishStealing: 0
   health: 0
 --- !u!114 &114076515840684448
 MonoBehaviour:
@@ -985,7 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.60000074
+  m_Length: 0.6000006
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4293555859865740}
   m_AttachedIK: {fileID: 0}
@@ -1085,7 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5800009
+  m_Length: 0.58000064
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4646098062045082}
   m_AttachedIK: {fileID: 0}

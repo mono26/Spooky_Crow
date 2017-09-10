@@ -13,19 +13,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectIndex: 0
-  objectSpeed: 0
-  ability1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
-  ability2: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
-  bullet: {fileID: 0}
-  range: 0
+  objectSpeed: 1.5
+  objectDamage: 0
+  objectCooldown1: 0
+  objectCooldown2: 0
+  objectMainSprite: {fileID: 0}
+  objectSpecialEffects: []
+  objectAbility1: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
+  objectAbility2: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30, type: 2}
+  objectBullet: {fileID: 0}
+  objectSpecialBullet: {fileID: 0}
+  objectRange: 1
   enemyType: 1
   enemyName: 
   enemyIndex: 0
   enemyMoveSpeed: 1.5
   enemyAtackSpeed: 1.5
-  enemyHealthPoints: 5
+  enemyParticles: []
+  enemyHealthPoints: 3
   enemyReaward: 3
   enemyAbility1: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
-  enemyAbility2: {fileID: 0}
-  lookRange: 5
-  meleeRange: 2
+  enemyAbility2: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30, type: 2}
+  enemyRange: 1

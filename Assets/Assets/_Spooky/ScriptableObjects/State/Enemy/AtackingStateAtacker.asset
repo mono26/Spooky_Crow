@@ -11,5 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
   m_Name: AtackingStateAtacker
   m_EditorClassIdentifier: 
-  aiActions: []
-  aiTransitions: []
+  aiActions:
+  - {fileID: 11400000, guid: c5f235377f6fb5641b51f7172e9c91b3, type: 2}
+  - {fileID: 11400000, guid: 50caddb5f4c81db4d9f7a004cadb8505, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: 0444907fae705f241b8b2d6f8fa37e63, type: 2}
+    trueState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+    falseState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}

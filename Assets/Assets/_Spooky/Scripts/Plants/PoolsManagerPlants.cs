@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolsManagerPlants : MonoBehaviour {
+public class PoolsManagerPlants : MonoBehaviour
+{
     //Singleton part
     private static PoolsManagerPlants instance;
     public static PoolsManagerPlants Instance
@@ -45,7 +46,7 @@ public class PoolsManagerPlants : MonoBehaviour {
     private void AddPlant(int index)      //Se le pasa el index que debe de ser igual para le pool y el objeto
     {
         GameObject obj = Instantiate(plantPrefabs[index]);
-        obj.GetComponent<AIPlantController>().my_PlantInfo.plantIndex = index;       //Modifica el index del componente del objeto instanciado.
+        obj.GetComponent<AIPlantController>().plantInfo.plantIndex = index;       //Modifica el index del componente del objeto instanciado.
         obj.gameObject.SetActive(false);
         pools[index].Add(obj);
     }
@@ -63,6 +64,6 @@ public class PoolsManagerPlants : MonoBehaviour {
     {
         //Cada GameObject deberia de tener informacion del pool al que esta asignado.
         obj.gameObject.SetActive(false);
-        pools[obj.GetComponent<AIPlantController>().my_PlantInfo.plantIndex].Add(obj);
+        pools[obj.GetComponent<AIPlantController>().plantInfo.plantIndex].Add(obj);
     }
 }

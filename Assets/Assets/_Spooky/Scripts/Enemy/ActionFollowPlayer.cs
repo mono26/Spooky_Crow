@@ -13,10 +13,15 @@ public class ActionFollowPlayer : AIAction
 
     private void FollowPlayer(AIController controller)
     {
-        if (controller.objectTarget != GameManager.Instance.playerSpooky.transform)
+        //Ejecutando movimiento a la casa!
+        if (!controller.objectTarget.CompareTag("Spooky"))
         {
             controller.objectTarget = GameManager.Instance.playerSpooky.transform;
             return;
+        }
+        else
+        {
+            controller.objectNavMesh.SetDestination(controller.objectTarget.position);
         }
     }
 }

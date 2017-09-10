@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4685974337416896}
   - component: {fileID: 65862643856137128}
   - component: {fileID: 114801198200668814}
+  - component: {fileID: 114256396798385056}
   m_Layer: 0
   m_Name: PlantPoint
   m_TagString: Untagged
@@ -93,8 +94,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436740240377334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1, y: 0, z: 14.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.9, y: 0, z: 5.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4420321380348328}
@@ -151,8 +152,38 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.559399, y: 2.5, z: 3.1278682}
-  m_Center: {x: 0.022274017, y: 1.25, z: 0.030125126}
+  m_Size: {x: 12, y: 2.5, z: 5}
+  m_Center: {x: 0.022274017, y: 1.3, z: 0.030125126}
+--- !u!114 &114256396798385056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436740240377334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114801198200668814}
+          m_MethodName: OnClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114801198200668814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,12 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0cb4998e7e902409ac65fa67984436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_PlantBluePrint: {fileID: 0}
-  my_Plant: {fileID: 0}
-  my_Rederer: {fileID: 212283675353980394}
-  noMoneyColor: {r: 0.89705884, g: 0.121912666, b: 0.10553633, a: 0}
-  yesMoneyColor: {r: 0.06374352, g: 0.9632353, b: 0.21882834, a: 0}
-  startColor: {r: 1, g: 1, b: 1, a: 0}
+  plantBluePrint: {fileID: 0}
+  currentPlant: {fileID: 0}
 --- !u!212 &212283675353980394
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4063087441104158}
   - component: {fileID: 212149824889436210}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4724336266664364}
   - component: {fileID: 212226958954090188}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4770473217031926}
   - component: {fileID: 212235965352576244}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4863938665194292}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4110303884825610}
   - component: {fileID: 212494905887658502}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4627399592014632}
   - component: {fileID: 212657693480922674}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4627082781373134}
   - component: {fileID: 212134013824445536}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,11 +133,11 @@ GameObject:
   - component: {fileID: 33854594389370760}
   - component: {fileID: 23150318584554692}
   m_Layer: 14
-  m_Name: MaizInvicible
+  m_Name: MaizInvisible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1314691621908106
 GameObject:
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4185224661297236}
   - component: {fileID: 212274057120968534}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861499382571662}
   - component: {fileID: 65588603579261060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MaizBloque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4655520015896538}
   - component: {fileID: 212035594243288640}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4123809305124058}
   - component: {fileID: 212147742115284472}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4608941317714480}
   - component: {fileID: 212099986485623814}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515906086140222}
   - component: {fileID: 212470231245543762}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338955413199816}
   - component: {fileID: 212300204585396882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4193481332746002}
   - component: {fileID: 212492299596842368}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4337713024786772}
   - component: {fileID: 212394697377300666}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4211885082968912}
   - component: {fileID: 212624613760467802}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752738619037308}
   - component: {fileID: 212260073793759462}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870825311236152}
   - component: {fileID: 212368759116799126}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4933705020364434}
   - component: {fileID: 212983212838824138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Maiz (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,8 +574,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357588264905872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -148.71811, y: 0, z: 75.89624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.3, y: 0, z: 31.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863938665194292}

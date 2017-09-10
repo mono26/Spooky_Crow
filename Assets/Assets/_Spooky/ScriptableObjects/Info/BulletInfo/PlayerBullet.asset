@@ -14,12 +14,24 @@ MonoBehaviour:
   objectName: 
   objectIndex: 0
   objectSpeed: 0
-  ability1: {fileID: 0}
-  ability2: {fileID: 0}
-  bullet: {fileID: 0}
-  range: 0
-  my_Type: 0
+  objectDamage: 1
+  objectCooldown1: 10
+  objectCooldown2: 0
+  objectMainSprite: {fileID: 1247425919023972, guid: 68eb93fef63558143b430562918b28e0,
+    type: 2}
+  objectSpecialEffects: []
+  objectAbility1: {fileID: 0}
+  objectAbility2: {fileID: 0}
+  objectBullet: {fileID: 0}
+  objectSpecialBullet: {fileID: 0}
+  objectRange: 0
+  bulletType: 0
   bulletName: 
   bulletIndex: 0
-  bulletSpeed: 0
-  bulletDamage: 0
+  bulletDamage: 1
+  bulletAbility1: {fileID: 0}
+  bulletSprite: {fileID: 1247425919023972, guid: 68eb93fef63558143b430562918b28e0,
+    type: 2}
+  specialSprite: []
+  bulletLifeTime: 7
+  specialLifeTime: 0

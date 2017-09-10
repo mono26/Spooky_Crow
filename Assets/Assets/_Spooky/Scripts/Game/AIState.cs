@@ -2,38 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIState : MonoBehaviour
+[CreateAssetMenu(menuName = "AIComponents/State")]
+public class AIState : ScriptableObject
 {
     public AIAction[] aiActions;
     public AITransition[] aiTransitions;
 
     public void UpdateState(AIController controller)
     {
-        DoActions(controller);
+        controller.StartCoroutine(DoActions(controller));
         CheckTransitions(controller);
     }
 
-    private void DoActions(AIController controller)
+    private IEnumerator DoActions(AIController controller)
     {
-        for (int i = 0; i < aiActions.Length; i++)
+        if (aiActions.Length > 0)
         {
-            aiActions[i].DoAction(controller);
+            for (int i = 0; i < aiActions.Length; i++)
+            {
+                aiActions[i].DoAction(controller);
+                yield return new WaitForSeconds(1 / controller.objectUpdateRate);
+            }
         }
+        else yield return false;
     }
 
     private void CheckTransitions(AIController controller)
     {
-        for (int i = 0; i < aiTransitions.Length; i++)
+        if (aiTransitions.Length > 0)
         {
-            bool decisionState = aiTransitions[i].decision.Decide(controller);
-            if (decisionState)
+            for (int i = 0; i < aiTransitions.Length; i++)
             {
-                controller.TransitionToState(aiTransitions[i].trueState);
-            }
-            else
-            {
-                controller.TransitionToState(aiTransitions[i].falseState);
+                bool decisionState = aiTransitions[i].decision.Decide(controller);
+                if (decisionState)
+                {
+                    controller.TransitionToState(aiTransitions[i].trueState);
+                }
+                else
+                {
+                    controller.TransitionToState(aiTransitions[i].falseState);
+                }
             }
         }
+        else return;
     }
 }

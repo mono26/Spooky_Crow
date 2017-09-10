@@ -26,7 +26,7 @@ public class Drop : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag("Crow"))
+        if(col.CompareTag("Spooky"))
         {
             GameManager.Instance.GiveMoney(my_Reward);
             DropPool.Instance.ReleaseDrop(this.gameObject);

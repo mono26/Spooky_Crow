@@ -10,16 +10,40 @@ public class BulletInfo : Info {
     {
         FISICAL, MAGIC, HARD
     }
-    public BulletType my_Type;
+    public BulletType bulletType;
     public string bulletName;
     public int bulletIndex;   //Variable para almacenar la informacion de los pools.
-    public float bulletSpeed;
     public int bulletDamage;
+
+    public AIAbility bulletAbility1;
+
+    public GameObject bulletSprite;
+    public GameObject[] specialSprite;
+
+    public float bulletLifeTime;
+    public float specialLifeTime;
 
     public override void InitializeInfo()
     {
+        if(bulletAbility1 != null)
+        {
+            bulletAbility1.InitializeAbility();
+        }
+        SetParentVariables();
+    }
+    private void SetParentVariables()
+    {
         objectName = bulletName;
         objectIndex = bulletIndex;
-        objectSpeed = bulletSpeed;
+        objectDamage = bulletDamage;
+        objectAbility1 = bulletAbility1;
+        objectCooldown1 = bulletLifeTime;
+        objectCooldown2 = specialLifeTime;
+        objectMainSprite = bulletSprite;
+        objectSpecialEffects = new GameObject[specialSprite.Length];
+        for(int i = 0; i < specialSprite.Length; i++)
+        {
+            objectSpecialEffects[i] = specialSprite[i];
+        }
     }
 }

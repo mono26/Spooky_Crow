@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc6099dd698b6348939d875f3697d12, type: 3}
+  m_Name: InfoPlant2.1
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectIndex: 2
+  objectSpeed: 0
+  objectDamage: 0
+  objectCooldown1: 0
+  objectCooldown2: 0
+  objectMainSprite: {fileID: 0}
+  objectSpecialEffects: []
+  objectAbility1: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
+  objectAbility2: {fileID: 0}
+  objectBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
+    type: 2}
+  objectSpecialBullet: {fileID: 0}
+  objectRange: 10
+  my_Type: 0
+  plantName: 
+  plantIndex: 2
+  plantAtackSpeed: 0
+  normalBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
+    type: 2}
+  specialBullet: {fileID: 0}
+  plantAbility1: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
+  plantAbility2: {fileID: 0}
+  meleeRange: 2
+  shootRange: 10

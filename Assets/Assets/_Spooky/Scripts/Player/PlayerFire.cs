@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +10,7 @@ public class PlayerFire : MonoBehaviour
     private Vector3 clickPoint;
     [SerializeField]
     private PlayerMove my_Player; */
+    public GameObject bulletP;
 
     [SerializeField]
     private float shootCooldown;
@@ -34,7 +35,10 @@ public class PlayerFire : MonoBehaviour
     void Awake()
     {
        // my_Player = GetComponent<PlayerMove>();
-
+    }
+    private void Start()
+    {
+        playerBullet.Initialize();
     }
     void FixedUpdate()
     {
@@ -60,7 +64,6 @@ public class PlayerFire : MonoBehaviour
         }
 
 		shootDirection = new Vector3(h, 0, v);
-
         shootCooldown = velocidadAtaque;
         GameObject bullet = PoolsManagerBullets.Instance.GetBullet(playerBullet.bulletInfo.objectIndex);
 
@@ -69,8 +72,6 @@ public class PlayerFire : MonoBehaviour
 		bullet.transform.position = shootTransform.position;
         bullet.transform.rotation = shootTransform.transform.rotation;
 		bullet.GetComponent <Rigidbody > ().AddForce(shootTransform.forward * moveForce , ForceMode.Impulse);
-
-		bullet.GetComponent<BulletController>().SetTimer();
 
 		Debug.DrawRay (shootTransform.position, shootTransform.forward * 20, Color.green, 10);
 
@@ -81,37 +82,11 @@ public class PlayerFire : MonoBehaviour
         //bullet.GetComponent<BulletController>().SetDirection(direction);
     }
 
-	public void RotateTransform(float posX, float posZ){
-	
+	public void RotateTransform(float posX, float posZ)
+    {
 		float rotY = Mathf.Atan2(posX, posZ) * Mathf.Rad2Deg;
 		shootTransform.rotation = Quaternion.Euler(0f, rotY , 0f);        
 
 		//Debug.DrawRay(shootTransform .position, shootTransform .forward* 10, Color.red, 5);
-
 	}
-
-	/*  void ClickToFire()
-    {
-        my_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(my_Ray, out my_RayHit, 50.0f))
-        {
-            clickPoint = my_RayHit.point;
-            clickPoint.y = 0f;
-            //Todos los posibles colliders a los cuales le puedo hacer touch
-        }
-        if(Vector3.Distance(transform.position, my_RayHit.point) > 5f)
-        {
-            Shoot();    //Disparar al my_hit.point
-        }
-    }*/
-	
-		
-  /*  void Shoot()      //Se le debe de pasar la informacion del hit point para que la bala sea dirigida al centro del objeto
-    {
-        shootCooldown = 0.0f;
-        GameObject bullet = BulletsPool.Instance.GetBullet();
-        //Si el bool de plant es falso y el player veradero es que la bala fue disparada por un jugador o enemigo.
-        bullet.transform.position = this.transform.position;
-        bullet.transform.rotation = this.transform.rotation;
-    } */
 }

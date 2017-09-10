@@ -11,6 +11,7 @@ public class FightCloud : MonoBehaviour
     }
     public GameObject player;
     public GameObject enemy;
+    public bool isFighting;
 
     public Transform poolsPosition;
 
@@ -33,6 +34,7 @@ public class FightCloud : MonoBehaviour
     public void PrepareFight()
     {
         transform.position = player.transform.position;
+        isFighting = true;
         player.SetActive(false);
         enemy.SetActive(false);
     }
@@ -47,6 +49,7 @@ public class FightCloud : MonoBehaviour
     private void EndFight()
     {
         transform.position = poolsPosition.position;
+        isFighting = false;
         player.SetActive(true);
         enemy.GetComponent<AIEnemyController>().Die();
     }

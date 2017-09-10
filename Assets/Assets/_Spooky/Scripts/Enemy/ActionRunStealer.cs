@@ -16,5 +16,9 @@ public class ActionRunStealer : AIAction
             controller.ChangeTarget(GameManager.Instance.runAwayPoints[runIndex]);
             return;
         }
+        else
+        {
+            controller.objectNavMesh.SetDestination(controller.objectTarget.position);
+        }
     }
 }

@@ -11,14 +11,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d81ee52049021848a61dc1ae0d583ef, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  my_Type: 2
+  objectName: 
+  objectIndex: 0
+  objectSpeed: 0
+  objectDamage: 0
+  objectCooldown1: 0
+  objectCooldown2: 0
+  objectMainSprite: {fileID: 0}
+  objectSpecialEffects: []
+  objectAbility1: {fileID: 0}
+  objectAbility2: {fileID: 0}
+  objectBullet: {fileID: 0}
+  objectSpecialBullet: {fileID: 0}
+  objectRange: 0
+  enemyType: 0
   enemyName: 
-  index: 2
-  speed: 3
-  health: 10
-  reward: 0
-  ability1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
-  ability2: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
-  lookRange: 5
-  meleeRange: 2
-  shootRange: 10
+  enemyIndex: 2
+  enemyMoveSpeed: 0
+  enemyAtackSpeed: 0
+  enemyParticles: []
+  enemyHealthPoints: 0
+  enemyReaward: 0
+  enemyAbility1: {fileID: 0}
+  enemyAbility2: {fileID: 0}
+  enemyRange: 0

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,27 +12,29 @@ public class GameManager : MonoBehaviour
     {
         get { return instance; }
     }
-
+    //Puntos inportantes en el juego
+    public Transform[] houseStealPoints;    ////Referencia a la casa para que puedan acceder a los targets.
     public Transform[] spawnPoints;     //Array donde se almacenan los spawnPoints.
     public Transform[] runAwayPoints;   //Array para la informacion de los puntos de escape para los ladrones.
+    public IndicatorManager indicatorManager;
 
-    public PlantPoint selectedPlantPoint;
-
+    //Referencia al jugador
     public GameObject playerSpooky;   //Referencia al jugador para que puedan acceder a los targets.
-    public GameObject[] houseStealPoints;    ////Referencia a la casa para que puedan acceder a los targets.
 
     public Image gameHealthBar;
     public Text gameMoneyText;
     public int playerMoney = 400;       //El GameManager es el que va a tener la informacion del dinero y lo mismo de la vida
     public float currentHouseHealth = 800;
     public float gameTime;
+
+    //Variables privadas para el inicio del nivel
     [SerializeField]
     private float maxHouseHelath = 800;
 
+    //Variables relacionadas con el fin del nivel
     public static bool GameIsOver;
-
-    public GameObject my_GameOverUI;
-    public GameObject my_CompleteLevelUI;
+    public GameObject gameOverUI;
+    public GameObject completeLvlUI;
 
     void Awake()
     {
@@ -47,14 +49,20 @@ public class GameManager : MonoBehaviour
         //Para buscar todos los runaway y spawn points
         LookForRunAwayPoints();
         LookForSpawnPoints();
+        LookForGameDependencies();
+        indicatorManager = GetComponent<IndicatorManager>();
     }
     void Start()
     {
         gameHealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
-        //gameMoneyText.text = "$:" + playerMoney; 
+        gameMoneyText.text = "$:" + playerMoney; 
+    }
+    private void Update()
+    {
+
     }
 
-    //Metodos privados 
+    //Metodos privados
     private void LookForSpawnPoints()
     {
         var sp = GameObject.FindGameObjectsWithTag("SpawnPoint");
@@ -77,40 +85,32 @@ public class GameManager : MonoBehaviour
     {
         if (playerSpooky == null || houseStealPoints == null)
         {
-            playerSpooky = GameObject.FindGameObjectWithTag("Crow");
-            houseStealPoints = GameObject.FindGameObjectsWithTag("StealPoint");
+            playerSpooky = GameObject.FindGameObjectWithTag("Spooky");
+            var hPoints = GameObject.FindGameObjectsWithTag("StealPoint");
+            houseStealPoints = new Transform[hPoints.Length];
+            for (int i = 0; i < hPoints.Length; i++)
+            {
+                houseStealPoints[i] = hPoints[i].GetComponent<Transform>();
+            }
         }
     }
-    //Metodos publicos
-    public void SelectPlantPoint(PlantPoint plantPoint)     //Metodo que se llamara cada vez que el jugador haga click sobre un plant point.
+    private void LookForGameDependencies()
     {
-        if(selectedPlantPoint == plantPoint)
+        gameMoneyText = GameObject.FindGameObjectWithTag("GameMoneyText").GetComponent<Text>();
+        gameHealthBar = GameObject.FindGameObjectWithTag("GameHealthBar").GetComponent<Image>();
+    }
+
+    //Metdos publicos
+    //Metodo para cuadno eljugador haga click en el suelo se deseleccione el Build o PlantUI
+    public void ClickGroundToDeselect()
+    {
+        Debug.Log("Estoy haciendo el click");
+        if (UIManager.Instance.currentPlantPoint != null)
         {
-            DeselectPlantPoint();
-            return;
+            UIManager.Instance.DeselectBuildPoint();
+            UIManager.Instance.DeselectPlantPoint();
         }
-        selectedPlantPoint = plantPoint;
-        UIManager.Instance.SetPlantPoint(selectedPlantPoint);
-    }
-    public void SelectBuildPoint(PlantPoint plantPoint)     //Metodo que se llamara cada vez que el jugador haga click sobre un plant point.
-    {
-        if (selectedPlantPoint == plantPoint)
-        {
-            DeselectBuildPoint();
-            return;
-        }
-        selectedPlantPoint = plantPoint;
-        UIManager.Instance.SetBuildPoint(selectedPlantPoint);
-    }
-    public void DeselectPlantPoint()        //Function for deselection the plantpoint
-    {
-        selectedPlantPoint = null;
-        UIManager.Instance.HidePlantUI();
-    }
-    public void DeselectBuildPoint()        //Function for deselection the plantpoint
-    {
-        selectedPlantPoint = null;
-        UIManager.Instance.HideBuildUI();
+        else return;
     }
     public void LoseHealth(int stole)
     {
@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
             {"lvl", PlayerPrefs.GetInt("levelReached", 1)}
         });
         GameIsOver = true;
-        my_GameOverUI.SetActive(true);
+        gameOverUI.SetActive(true);
     }
     public void WinLevel()
     {
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             {"time", gameTime}
         });
         GameIsOver = true;
-        my_CompleteLevelUI.SetActive(true);
+        completeLvlUI.SetActive(true);
     }
     public void PauseGame()
     {

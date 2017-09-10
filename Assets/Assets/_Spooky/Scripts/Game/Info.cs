@@ -11,14 +11,28 @@ public abstract class Info : ScriptableObject
     public int objectIndex;
     [HideInInspector]
     public float objectSpeed;
+    [HideInInspector]
+    public int objectDamage;
 
     [HideInInspector]
-    public AIAbility ability1;
+    public float objectCooldown1;
     [HideInInspector]
-    public AIAbility ability2;
+    public float objectCooldown2;
 
     [HideInInspector]
-    public BulletController bullet;
+    public GameObject objectMainSprite;
+    [HideInInspector]
+    public GameObject[] objectSpecialEffects;
+
+    [HideInInspector]
+    public AIAbility objectAbility1;
+    [HideInInspector]
+    public AIAbility objectAbility2;
+
+    [HideInInspector]
+    public BulletController objectBullet;
+    [HideInInspector]
+    public BulletController objectSpecialBullet;
 
     [HideInInspector]
     public float objectRange;

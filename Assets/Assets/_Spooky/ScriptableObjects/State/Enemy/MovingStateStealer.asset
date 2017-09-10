@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: MovingStateStealer
   m_EditorClassIdentifier: 
   aiActions:
-  - {fileID: 11400000, guid: 50f1eac51565e00469529da58ee4f89c, type: 2}
+  - {fileID: 11400000, guid: 48c135104028ab24587e3778cb6f4ca3, type: 2}
   aiTransitions:
-  - decision: {fileID: 11400000, guid: dea0386fe7ceaa640916852dae788d22, type: 2}
+  - decision: {fileID: 11400000, guid: 0444907fae705f241b8b2d6f8fa37e63, type: 2}
     trueState: {fileID: 11400000, guid: fdf88fef80f3989479213e4ee0ea15ce, type: 2}
     falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}

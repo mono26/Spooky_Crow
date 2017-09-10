@@ -79,7 +79,7 @@ MonoBehaviour:
     count: 05000000
   - name: 
     enemy:
-    - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
+    - {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
     spawnRate: 0.5
     count: 0f000000
   - name: 
@@ -87,8 +87,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
     spawnRate: 0.5
     count: 1e000000
-  my_WaveBar: {fileID: 0}
-  my_NumberOfEnemies: 0
+  gameWaveBar: {fileID: 0}
+  gameNumberOfEnemies: 0
   nextWave: 0
   timeBetweenWaves: 5
   waveCountDown: 0
@@ -105,7 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbe00224d7890542b06f1081eae9265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsPrefabs: []
+  bulletsPrefabs:
+  - {fileID: 1799134145689592, guid: 68eb93fef63558143b430562918b28e0, type: 2}
   listSizes: 
 --- !u!114 &114671474494334016
 MonoBehaviour:
@@ -135,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f3cb064b8717344a0570f70148cc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -147,17 +147,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   selectedPlantPoint: {fileID: 0}
-  player: {fileID: 1906506307335678, guid: d4a69f60e22e44b4b8d16c55d7336c8c, type: 2}
-  stealPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  my_HealthBar: {fileID: 0}
-  my_MoneyText: {fileID: 0}
+  playerSpooky: {fileID: 0}
+  houseStealPoints: []
+  gameHealthBar: {fileID: 0}
+  gameMoneyText: {fileID: 0}
   playerMoney: 400
   currentHouseHealth: 800
   gameTime: 0
@@ -177,7 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b9921774eff964e8c46067e136c54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
+  enemyPrefabs:
+  - {fileID: 1995082792655942, guid: e3b771dffd3510e4e87b5c626e0c8bbc, type: 2}
+  - {fileID: 1995082792655942, guid: df681acca9ba92f4f91913ec93f43195, type: 2}
   listSizes: 
   poolsPosition: {fileID: 0}
 --- !u!114 &114879559993047670

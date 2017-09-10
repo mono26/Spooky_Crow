@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4622095917578012}
   - component: {fileID: 212356731613087994}
   m_Layer: 0
-  m_Name: Maiz_0
+  m_Name: PlayerBulletsprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,20 +112,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a264fae66414cd4429a8bc3905769aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectInfo: {fileID: 0}
+  objectInfo: {fileID: 11400000, guid: 1e5e46dd38c55494791bdc3b0fb3481b, type: 2}
+  objectUpdateRate: 0
   objectNavMesh: {fileID: 0}
   objectAnimator: {fileID: 0}
   objectSprite: {fileID: 0}
-  objectCDTimer1: 0
-  objectCDTimer2: 0
   objectCurrentState: {fileID: 0}
   objectRemainState: {fileID: 0}
   objectOriginalState: {fileID: 0}
   objectTarget: {fileID: 0}
+  objectShootPoint: {fileID: 0}
   objectFinishedStealing: 0
-  "da\xF1o": 1
-  deadTimer: 10
+  objectForce: 0
+  objectCDTimer1: 0
+  objectCDTimer2: 0
+  bulletTime: 0
+  specialTime: 0
+  bulletUpdateRate: 2
   bulletInfo: {fileID: 11400000, guid: 1e5e46dd38c55494791bdc3b0fb3481b, type: 2}
+  bulletRigidBody: {fileID: 0}
 --- !u!198 &198386395648706334
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -181,7 +186,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1265634478
+  randomSeed: 38850120
   InitialModule:
     serializedVersion: 3
     enabled: 1

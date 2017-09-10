@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIController : MonoBehaviour
+public abstract class AIController : MonoBehaviour
 {
     [HideInInspector]
     public Info objectInfo;
+    [HideInInspector]
+    public float objectUpdateRate;
 
     [HideInInspector]
     public NavMeshAgent objectNavMesh;
@@ -24,19 +26,24 @@ public class AIController : MonoBehaviour
 
     [HideInInspector]
     public Transform objectTarget;
+    [HideInInspector]
+    public Transform objectShootPoint;
 
     [HideInInspector]
     public bool objectFinishedStealing;
+    [HideInInspector]
+    public float objectForce;
+    [HideInInspector]
+    public float objectCDTimer1;
+    [HideInInspector]
+    public float objectCDTimer2;
 
+    //Metodos vacios y unos obligatorio para cad uno de los controllers
+    public abstract void Initialize();
+    public abstract void SetCD1(float cooldown);
+    public abstract void SetCD2(float cooldown);
+    public abstract IEnumerator UpdateState(); 
     public virtual void ChangeTarget(Transform newTarget)
-    {
-
-    }
-    public virtual void CastAbility1()
-    {
-
-    }
-    public virtual void CastAbility2()
     {
 
     }

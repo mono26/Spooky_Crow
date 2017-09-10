@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: StealingState
   m_EditorClassIdentifier: 
   aiActions:
-  - {fileID: 11400000, guid: 1378d953a77ba004fa69c5453aab4452, type: 2}
+  - {fileID: 11400000, guid: 50caddb5f4c81db4d9f7a004cadb8505, type: 2}
   aiTransitions:
   - decision: {fileID: 11400000, guid: 620567cb84ca546418b7d628b3672319, type: 2}
     trueState: {fileID: 11400000, guid: b056bd818c77105429e13cc822bb3393, type: 2}

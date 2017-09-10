@@ -55,15 +55,17 @@ public class PoolsManagerBullets : MonoBehaviour
         if (pools[index].Count == 0)
             AddBullet(index);    //Si no hay ningun GameObject lo añade.
         var list = pools[index];    //Referencia al pool especifico
-        GameObject enemy = list[list.Count - 1];      //Se hace una referencia GameObject en la ultima posicion de la list, funciona como un queue
+        GameObject bullet = list[list.Count - 1];      //Se hace una referencia GameObject en la ultima posicion de la list, funciona como un queue
         list.RemoveAt(list.Count - 1);    //Se remueve el GameObject de la lista
-        enemy.gameObject.SetActive(true);    //Se activa el GameObject
-        return enemy;
+        bullet.gameObject.SetActive(true);    //Se activa el GameObject
+        return bullet;
     }
     public void ReleaseBullet(GameObject obj)     ////Se le pasa el index que debe de ser igual para le pool y el objeto
     {
         //Cada GameObject deberia de tener informacion del pool al que esta asignado.
         obj.gameObject.SetActive(false);
+        var rb = obj.GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0,0,0);
         pools[obj.GetComponent<BulletController>().bulletInfo.objectIndex].Add(obj);
     }
 }

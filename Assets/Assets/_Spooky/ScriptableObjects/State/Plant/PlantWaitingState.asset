@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
+  m_Name: PlantWaitingState
+  m_EditorClassIdentifier: 
+  aiActions:
+  - {fileID: 11400000, guid: c64d9adbf2b4e6040bb3b61dd54942dd, type: 2}
+  - {fileID: 11400000, guid: 7dc85f5d58382904eb594aa86249fd04, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: 0444907fae705f241b8b2d6f8fa37e63, type: 2}
+    trueState: {fileID: 11400000, guid: 9a728d0e4c2b26a44b5b961062f97a89, type: 2}
+    falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}

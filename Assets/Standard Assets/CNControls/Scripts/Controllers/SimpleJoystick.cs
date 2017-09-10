@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace CnControls
 {
 
+
     /// <summary>
     /// Simple joystick class
     /// Contains logic for creating a simple joystick
@@ -28,9 +29,11 @@ namespace CnControls
         /// The name of the horizontal axis for this joystick to update
         /// </summary>
         public string HorizontalAxisName = "Horizontal";
+
+        /// <summary>
+        /// The name of the vertical axis for this joystick to update
+        /// </summary>
         public string VerticalAxisName = "Vertical";
-		public string MovementVAxisName = "Movement Vertical";
-		public string MovementHAxisName = "Movement Horizontal";
 
         /// <summary>
         /// Should the joystick be hidden when the user releases the finger?
@@ -89,8 +92,6 @@ namespace CnControls
 
         protected VirtualAxis HorizintalAxis;
         protected VirtualAxis VerticalAxis;
-		protected VirtualAxis MovementVAxis;
-		protected VirtualAxis MovementHAxis;
 
         private void Awake()
         {
@@ -118,14 +119,10 @@ namespace CnControls
 
             HorizintalAxis = HorizintalAxis ?? new VirtualAxis(HorizontalAxisName);
             VerticalAxis = VerticalAxis ?? new VirtualAxis(VerticalAxisName);
-			MovementHAxis = MovementHAxis ?? new VirtualAxis (MovementHAxisName);
-			MovementVAxis = MovementVAxis ?? new VirtualAxis (MovementVAxisName);
 
             // And register them in our input system
             CnInputManager.RegisterVirtualAxis(HorizintalAxis);
             CnInputManager.RegisterVirtualAxis(VerticalAxis);
-			CnInputManager.RegisterVirtualAxis(MovementHAxis);
-			CnInputManager.RegisterVirtualAxis(MovementVAxis);
         }
 
         private void OnDisable()
@@ -134,8 +131,6 @@ namespace CnControls
             // It also happens before the game object is Destroyed
             CnInputManager.UnregisterVirtualAxis(HorizintalAxis);
             CnInputManager.UnregisterVirtualAxis(VerticalAxis);
-			CnInputManager.UnregisterVirtualAxis(MovementHAxis);
-			CnInputManager.UnregisterVirtualAxis(MovementVAxis);
         }
 
         public virtual void OnDrag(PointerEventData eventData)
@@ -204,8 +199,6 @@ namespace CnControls
             // Finally, we update our virtual axis
             HorizintalAxis.Value = horizontalValue;
             VerticalAxis.Value = verticalValue;
-			MovementHAxis.Value = horizontalValue;
-			MovementVAxis.Value = verticalValue;
         }
 
         public void OnPointerUp(PointerEventData eventData)
@@ -216,7 +209,6 @@ namespace CnControls
             _intermediateStickPosition = _initialStickPosition;
 
             HorizintalAxis.Value = VerticalAxis.Value = 0f;
-			MovementHAxis.Value = MovementVAxis.Value = 0f;
 
             // We also hide it if we specified that behaviour
             if (HideOnRelease)

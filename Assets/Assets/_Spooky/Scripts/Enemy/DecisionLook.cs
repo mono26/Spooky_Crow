@@ -12,13 +12,16 @@ public class DecisionLook : AIDecision
     }
     private bool Look(AIController controller)
     {
-        if (Vector3.SqrMagnitude(controller.transform.position - controller.objectTarget.position) < (controller.objectInfo.objectRange * controller.objectInfo.objectRange) * 0.2)
+        //Mirando la transicion.
+        if (controller.objectTarget != null)
         {
-            return true;
+            var distancia = Vector3.Distance(controller.objectTarget.position, controller.transform.position);
+            if (distancia <= controller.objectInfo.objectRange)
+            {
+                return true;
+            }
+            else return false;
         }
-        else
-        {
-            return false;
-        }
+        else return false;
     }
 }
