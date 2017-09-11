@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GameField
   - House
-  - Crow
   - Bullet
   - RunAwayPoint
   - SpawnPoint
@@ -17,8 +15,11 @@ TagManager:
   - Collectable
   - FireJoystick
   - MoveJoystick
-  - WaveBar
-  - HealthBar
+  - Floor
+  - Spooky
+  - GameMoneyText
+  - GameHealthBar
+  - GameWaveBar
   layers:
   - Default
   - TransparentFX
@@ -35,8 +36,8 @@ TagManager:
   - Enviroment
   - Plants
   - Invisible
-  - Collectable
-  - 
+  - Interactable
+  - Ground
   - 
   - 
   - 
