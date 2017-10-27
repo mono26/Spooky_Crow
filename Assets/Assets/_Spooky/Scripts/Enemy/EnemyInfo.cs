@@ -13,37 +13,80 @@ public class EnemyInfo : Info {
 
     public EnemyType enemyType;
     public string enemyName;
-    public int enemyIndex;   //Variable para almacenar la informacion de los pools.
+    //Variable para almacenar la informacion de los pools.
+    public int enemyIndex;
 
     //Variables para los stats
     public float enemyMoveSpeed;       //Esta es la velocidad que tendra el navMesh
-    public float enemyAtackSpeed;
-
-    public GameObject[] enemyParticles;
+    public int enemyMeleeDamage;
+    public float enemyMeleeSpeed;
+    public float enemyBasicSpeed;
+    public float enemySpecialSpeed;
+    public int enemyReward;
 
     public int enemyHealthPoints;        //Los puntos de vida que tendra en controller del enemigo
-    public int enemyReaward;
+    public EnemyDrop enemyDrop;
 
     //Para las abilidades de cada enemigo
-    public AIAbility enemyAbility1;
-    public AIAbility enemyAbility2;
+    public AIAbility enemyMeleeAbility;
+    public AIAbility enemyNormalAbility;
+    public AIAbility enemyEspecialAbility;
 
     //Vriables que contienen los rangos necesarios
     public float enemyRange;
+    public float enemyMeleeRange;
 
     public override void InitializeInfo()
     {
-        enemyAbility1.InitializeAbility();
-        enemyAbility2.InitializeAbility();
+        if(enemyMeleeAbility != null)
+        {
+            enemyMeleeAbility.InitializeAbility();
+        }
+        if(enemyNormalAbility != null)
+        {
+            enemyNormalAbility.InitializeAbility();
+        }
+        if(enemyEspecialAbility != null)
+        {
+            enemyEspecialAbility.InitializeAbility();
+        }
         SetParentVariables();
+        InitializeCooldowns();
     }
     private void SetParentVariables()
     {
-        objectName = enemyName;
-        objectIndex = enemyIndex;
-        objectSpeed = enemyMoveSpeed;
-        objectRange = enemyRange;
-        objectAbility1 = enemyAbility1;
-        objectAbility2 = enemyAbility2;
+        this.objectName = enemyName;
+        this.objectIndex = enemyIndex;
+        this.objectDamage = enemyMeleeDamage;
+        this.objectMovementSpeed = enemyMoveSpeed;
+        this.objectRange = enemyRange;
+        this.objectMeleeRange = enemyMeleeRange;
+        if(enemyMeleeAbility != null)
+        {
+            this.objectMeleeAbility = enemyMeleeAbility;
+        }
+        if(enemyNormalAbility != null)
+        {
+            this.objectBasicAbility = enemyNormalAbility;
+        }
+        if (enemyEspecialAbility != null)
+        {
+            this.objectSpecialAbility = enemyEspecialAbility;
+        }
+    }
+    public override void InitializeCooldowns()
+    {
+        if(enemyMeleeSpeed > 0)
+        {
+            this.objectMeleeCooldown = enemyMeleeSpeed;
+        }
+        if(enemyBasicSpeed > 0)
+        {
+            this.objectBasicCooldown = enemyBasicSpeed;
+        }
+        if(enemySpecialSpeed > 0)
+        {
+            this.objectSpecialCooldown = enemySpecialSpeed;
+        }
     }
 }

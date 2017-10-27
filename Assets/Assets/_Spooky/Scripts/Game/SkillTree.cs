@@ -2,27 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillTree : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class SkillTree : MonoBehaviour 
+{
+    //Referencia de la bala mejorada del player.
+    public Player spooky;
+    public AIAbility atractSoulAbility;
+    public AIAbility spookyEscapeAbility;
 
     //Metodos que van a estar unidos a los botones para mejorar el jugador.
     //Atack Upgrades
     public void IncreasePlayerDamage()
     {
-
+        //PlayerController.Instance.playerDamage += 1;
     }
     public void IncreaseAtackSpeed()
     {
-
+        //PlayerController.Instance.attackSpeed += 1;
     }
     public void AddFireDamage()
     {
@@ -48,10 +43,10 @@ public class SkillTree : MonoBehaviour {
     }
     public void ReduceCost()
     {
-
+        //PlayerMove.Instance.costRatio -=0.5f;
     }
     public void IncreaseSoulRatio()
     {
-
+        //PlayerMove.Instance.soulGainRatio -=0.5f;
     }
 }

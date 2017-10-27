@@ -313,9 +313,11 @@ GameObject:
   - component: {fileID: 4075618107998718}
   - component: {fileID: 114875673679395052}
   - component: {fileID: 95526426224081228}
-  m_Layer: 0
+  - component: {fileID: 65242894194626830}
+  - component: {fileID: 114671137471006862}
+  m_Layer: 13
   m_Name: Plant2.2
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,6 +778,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1485034533420462}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65242894194626830
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812961385654978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!95 &95526426224081228
 Animator:
   serializedVersion: 3
@@ -1098,6 +1112,18 @@ MonoBehaviour:
   - {fileID: 4385833496516958}
   - {fileID: 4569317810007580}
   - {fileID: 4963413224240156}
+--- !u!114 &114671137471006862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812961385654978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d5064681b8a634a8611ab79c56868b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 0}
 --- !u!114 &114682337118093272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1146,6 +1172,7 @@ MonoBehaviour:
   objectNavMesh: {fileID: 0}
   objectAnimator: {fileID: 0}
   objectSprite: {fileID: 0}
+  objectMeleeCollider: {fileID: 0}
   objectCurrentState: {fileID: 0}
   objectRemainState: {fileID: 0}
   objectOriginalState: {fileID: 0}
@@ -1153,11 +1180,15 @@ MonoBehaviour:
   objectShootPoint: {fileID: 0}
   objectFinishedStealing: 0
   objectForce: 0
-  objectCDTimer1: 0
-  objectCDTimer2: 0
+  objectMeleeTimer: 0
+  objectBasicTimer: 0
+  objectSpecialTimer: 0
+  soundPlayer: {fileID: 0}
+  lootPosition: {fileID: 0}
   plantInfo: {fileID: 11400000, guid: 71d9cd128e252334188d0b9983305a20, type: 2}
-  ability1CDTimer: 0
-  ability2CDTimer: 0
+  meleeTimer: 0
+  basicTimer: 0
+  specialTimer: 0
   plantCurrentState: {fileID: 11400000, guid: c30cce3bf4d4d7c42a3e770ec916c3db, type: 2}
   plantRemainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   plantOriginalState: {fileID: 11400000, guid: c30cce3bf4d4d7c42a3e770ec916c3db, type: 2}
@@ -1165,8 +1196,11 @@ MonoBehaviour:
   plantTarget: {fileID: 0}
   plantSprite: {fileID: 4677701224084226}
   plantShootPoint: {fileID: 0}
+  plantMeleeCoollider: {fileID: 0}
   plantForce: 37
-  plantUpdateRate: 2
+  plantUpdateRate: 4
+  plantHealth: 3
+  plantSoundPlayer: {fileID: 0}
 --- !u!135 &135572580202751468
 SphereCollider:
   m_ObjectHideFlags: 1

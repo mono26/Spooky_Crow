@@ -13,28 +13,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectIndex: 1
-  objectSpeed: 1.1
+  objectMovementSpeed: 0
   objectDamage: 0
-  objectCooldown1: 1.1
-  objectCooldown2: 25
-  objectMainSprite: {fileID: 0}
-  objectSpecialEffects: []
-  objectAbility1: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
-  objectAbility2: {fileID: 0}
-  objectBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
+  objectMeleeCooldown: 0
+  objectBasicCooldown: 1.1
+  objectSpecialCooldown: 25
+  objectMeleeAbility: {fileID: 0}
+  objectBasicAbility: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
+  objectSpecialAbility: {fileID: 11400000, guid: 2e4af91fc503fbc4b9bae7cc8e85ddcf,
+    type: 2}
+  objectBasicBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
     type: 2}
   objectSpecialBullet: {fileID: 114065390183582204, guid: 707f54490e9041846b9bb5eac903ae17,
     type: 2}
-  objectRange: 20
-  my_Type: 0
+  objectRange: 15
+  objectMeleeRange: 1
+  attackClip: {fileID: 8300000, guid: 94d2f370329585544a0e3a96a02ff70f, type: 3}
+  plantType: 0
   plantName: 
   plantIndex: 1
+  plantMeleeDamage: 0
   plantAtackSpeed: 1.1
+  plantMeleeSpeed: 0
+  plantSpecialSpeed: 25
+  plantReward: 125
   normalBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
     type: 2}
   specialBullet: {fileID: 114065390183582204, guid: 707f54490e9041846b9bb5eac903ae17,
     type: 2}
-  plantAbility1: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
-  plantAbility2: {fileID: 11400000, guid: 2e4af91fc503fbc4b9bae7cc8e85ddcf, type: 2}
-  meleeRange: 2
-  shootRange: 20
+  plantMeleeAbility: {fileID: 0}
+  plantNormalAbility: {fileID: 11400000, guid: 95d1d619b3ecadf43861ff4b41da0de5, type: 2}
+  plantSpecialAbility: {fileID: 11400000, guid: 2e4af91fc503fbc4b9bae7cc8e85ddcf,
+    type: 2}
+  plantMeleeRange: 1
+  plantShootRange: 15
+  plantAttackClip: {fileID: 8300000, guid: 94d2f370329585544a0e3a96a02ff70f, type: 3}

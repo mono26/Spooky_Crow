@@ -13,25 +13,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectIndex: 1
-  objectSpeed: 1.5
+  objectMovementSpeed: 1.5
   objectDamage: 0
-  objectCooldown1: 0
-  objectCooldown2: 0
-  objectMainSprite: {fileID: 0}
-  objectSpecialEffects: []
-  objectAbility1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
-  objectAbility2: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30, type: 2}
-  objectBullet: {fileID: 0}
+  objectMeleeCooldown: 0
+  objectBasicCooldown: 0
+  objectSpecialCooldown: 0
+  objectMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  objectBasicAbility: {fileID: 0}
+  objectSpecialAbility: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30,
+    type: 2}
+  objectBasicBullet: {fileID: 0}
   objectSpecialBullet: {fileID: 0}
   objectRange: 1
+  objectMeleeRange: 0
   enemyType: 0
   enemyName: 
   enemyIndex: 1
   enemyMoveSpeed: 1.5
-  enemyAtackSpeed: 1.5
-  enemyParticles: []
+  enemyMeleeSpeed: 1
+  enemyBasicSpeed: 0
+  enemySpecialSpeed: 0
+  enemyReward: 15
   enemyHealthPoints: 3
-  enemyReaward: 3
-  enemyAbility1: {fileID: 11400000, guid: 1849437bebb2ecb4c8a637a6ee3355d2, type: 2}
-  enemyAbility2: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30, type: 2}
-  enemyRange: 1
+  enemyDrop: {fileID: 114545139733358790, guid: a76bdaba8cbd60b4d9315fa128de188f,
+    type: 2}
+  enemyMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  enemyNormalAbility: {fileID: 0}
+  enemyEspecialAbility: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30,
+    type: 2}
+  enemyRange: 7
+  enemyMeleeRange: 2.5

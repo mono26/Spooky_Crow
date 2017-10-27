@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
+  m_Name: RunStealerState2
+  m_EditorClassIdentifier: 
+  aiActions:
+  - {fileID: 11400000, guid: a5951bda17a45b641b9086c05736a19c, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: fbf68187a4ed7e042a32825ec65ad15d, type: 2}
+    trueState: {fileID: 11400000, guid: 72fcd997a7c1247488070579b7a6c11a, type: 2}
+    falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}

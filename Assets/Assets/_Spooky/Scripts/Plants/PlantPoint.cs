@@ -4,10 +4,12 @@ using UnityEngine.EventSystems;
 public class PlantPoint : MonoBehaviour
 {
     public PlantBluePrint plantBluePrint;
-    public GameObject currentPlant;
+    public AIPlantController currentPlant;
+    private SoundPlayer plantPointPlayer; 
 
     void Start()
     {
+        plantPointPlayer = this.GetComponent<SoundPlayer>();
     }
     public void OnClicked()
     {
@@ -27,32 +29,42 @@ public class PlantPoint : MonoBehaviour
     {
         GameObject plant = PoolsManagerPlants.Instance.GetPlant(blueprint.plant.plantInfo.plantIndex);
         plant.transform.position = transform.position;
-        currentPlant = plant;
+        currentPlant = plant.GetComponent<AIPlantController>();
         plantBluePrint = blueprint;
-        GameManager.Instance.playerMoney -= blueprint.price;
-        //GameManager.Instance.gameMoneyText.text = "$:" + GameManager.Instance.playerMoney;
+        GameManager.Instance.TakeMoney(blueprint.price);
+        plantPointPlayer.PlayClip();
     }
     public void SellPlant()
     {
-        GameManager.Instance.playerMoney += plantBluePrint.price;
+        GameManager.Instance.GiveMoney(currentPlant.GetComponent<AIPlantController>().plantInfo.plantReward);
         plantBluePrint = null;
-        PoolsManagerPlants.Instance.ReleasePlant(currentPlant);
+        PoolsManagerPlants.Instance.ReleasePlant(currentPlant.gameObject);
         currentPlant = null;
-        GameManager.Instance.gameMoneyText.text = "$:" + GameManager.Instance.playerMoney;
         UIManager.Instance.DeselectPlantPoint();
     }
     public void UpgradePlant()
     {
-        GameManager.Instance.playerMoney -= plantBluePrint.upgradePrice;
-        PoolsManagerPlants.Instance.ReleasePlant(currentPlant);
-        currentPlant = PoolsManagerPlants.Instance.GetPlant(plantBluePrint.upgradePlant.plantInfo.plantIndex);
+        GameManager.Instance.TakeMoney(plantBluePrint.upgradePrice);
+        PoolsManagerPlants.Instance.ReleasePlant(currentPlant.gameObject);
+        currentPlant = PoolsManagerPlants.Instance.GetPlant(plantBluePrint.upgradePlant.plantInfo.plantIndex).GetComponent<AIPlantController>();
         currentPlant.transform.position = transform.position;
         UIManager.Instance.DeselectPlantPoint();
     }
     public void DestroyPlant()
     {
         plantBluePrint = null;
-        PoolsManagerPlants.Instance.ReleasePlant(currentPlant);
         currentPlant = null;
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("EnemyMeleeCollider") && other.gameObject.activeInHierarchy)
+        {
+            Debug.Log("Recibiendo daño");
+            currentPlant.TakeDamage(other.GetComponentInParent<AIEnemyController>().enemyInfo.objectDamage);
+            if (currentPlant.GetComponent<AIPlantController>().plantHealth <= 0)
+            {
+                DestroyPlant();
+            }
+        }
     }
 }

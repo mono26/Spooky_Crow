@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d686f01dbc89e3d44891120f3a0236ba, type: 3}
   m_Name: Plant3BluePrint
   m_EditorClassIdentifier: 
-  price: 0
-  upgradePrice: 0
-  plant: {fileID: 0}
-  upgradePlant: {fileID: 0}
+  price: 150
+  upgradePrice: 175
+  plant: {fileID: 114035845445650496, guid: 4f6cf6c64abdff744b6e2b1424c09aa6, type: 2}
+  upgradePlant: {fileID: 114875673679395052, guid: 12cbadbd1bfce514d853f98643d22edc,
+    type: 2}

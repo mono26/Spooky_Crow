@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
+  m_Name: MovingTorwardsHouse2
+  m_EditorClassIdentifier: 
+  aiActions:
+  - {fileID: 11400000, guid: 48c135104028ab24587e3778cb6f4ca3, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: af2263428df3a374cae8afbcd6e0a239, type: 2}
+    trueState: {fileID: 11400000, guid: 81846f5c39ddeec45bc663f39d01f0c1, type: 2}
+    falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}

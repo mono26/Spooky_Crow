@@ -13,27 +13,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectIndex: 2
-  objectSpeed: 0
+  objectMovementSpeed: 0
   objectDamage: 1
-  objectCooldown1: 10
-  objectCooldown2: 5
-  objectMainSprite: {fileID: 1096874771233098, guid: 707f54490e9041846b9bb5eac903ae17,
-    type: 2}
-  objectSpecialEffects:
-  - {fileID: 1079034957064728, guid: d7cc9ef61a16bc5468077bab18f83d9e, type: 2}
-  objectAbility1: {fileID: 11400000, guid: d83bf6cfe40b5cb40bb3797146b9f55d, type: 2}
-  objectAbility2: {fileID: 0}
-  objectBullet: {fileID: 0}
+  objectMeleeCooldown: 0
+  objectBasicCooldown: 7
+  objectSpecialCooldown: 3
+  objectMeleeAbility: {fileID: 0}
+  objectBasicAbility: {fileID: 11400000, guid: d83bf6cfe40b5cb40bb3797146b9f55d, type: 2}
+  objectSpecialAbility: {fileID: 0}
+  objectBasicBullet: {fileID: 0}
   objectSpecialBullet: {fileID: 0}
   objectRange: 0
+  objectMeleeRange: 0
   bulletType: 0
   bulletName: 
   bulletIndex: 2
   bulletDamage: 1
   bulletAbility1: {fileID: 11400000, guid: d83bf6cfe40b5cb40bb3797146b9f55d, type: 2}
-  bulletSprite: {fileID: 1096874771233098, guid: 707f54490e9041846b9bb5eac903ae17,
-    type: 2}
-  specialSprite:
-  - {fileID: 1079034957064728, guid: d7cc9ef61a16bc5468077bab18f83d9e, type: 2}
   bulletLifeTime: 7
-  specialLifeTime: 3
+  bulletspecialLifeTime: 3

@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a881109d11dc744cb11181a231f6a7e, type: 3}
   m_Name: SecondaryAtack
   m_EditorClassIdentifier: 
-  abilityName: Corrosive Atack
+  abilityName: Secondary Atack
   abilityCooldown: 25
   spriteEffect: {fileID: 0}
   cooldown: 25
-  theName: Corrosive Atack
+  theName: Secondary Atack

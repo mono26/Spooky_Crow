@@ -10,32 +10,37 @@ public abstract class Info : ScriptableObject
     [HideInInspector]
     public int objectIndex;
     [HideInInspector]
-    public float objectSpeed;
+    public float objectMovementSpeed;
     [HideInInspector]
     public int objectDamage;
 
     [HideInInspector]
-    public float objectCooldown1;
+    public float objectMeleeCooldown;
     [HideInInspector]
-    public float objectCooldown2;
+    public float objectBasicCooldown;
+    [HideInInspector]
+    public float objectSpecialCooldown;
 
     [HideInInspector]
-    public GameObject objectMainSprite;
+    public AIAbility objectMeleeAbility;
     [HideInInspector]
-    public GameObject[] objectSpecialEffects;
+    public AIAbility objectBasicAbility;
+    [HideInInspector]
+    public AIAbility objectSpecialAbility;
 
     [HideInInspector]
-    public AIAbility objectAbility1;
-    [HideInInspector]
-    public AIAbility objectAbility2;
-
-    [HideInInspector]
-    public BulletController objectBullet;
+    public BulletController objectBasicBullet;
     [HideInInspector]
     public BulletController objectSpecialBullet;
 
     [HideInInspector]
     public float objectRange;
+    [HideInInspector]
+    public float objectMeleeRange;
+
+    [HideInInspector]
+    public AudioClip attackClip;
 
     public abstract void InitializeInfo();
+    public abstract void InitializeCooldowns();
 }

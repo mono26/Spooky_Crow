@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d81ee52049021848a61dc1ae0d583ef, type: 3}
+  m_Name: Enemy3
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectIndex: 2
+  objectMovementSpeed: 1.5
+  objectDamage: 1
+  objectMeleeCooldown: 2
+  objectBasicCooldown: 10
+  objectSpecialCooldown: 0
+  objectMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  objectBasicAbility: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
+  objectSpecialAbility: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30,
+    type: 2}
+  objectBasicBullet: {fileID: 0}
+  objectSpecialBullet: {fileID: 0}
+  objectRange: 7
+  objectMeleeRange: 2.5
+  enemyType: 1
+  enemyName: 
+  enemyIndex: 2
+  enemyMoveSpeed: 1.5
+  enemyMeleeDamage: 1
+  enemyMeleeSpeed: 2
+  enemyBasicSpeed: 10
+  enemySpecialSpeed: 0
+  enemyReward: 15
+  enemyHealthPoints: 10
+  enemyDrop: {fileID: 114545139733358790, guid: a76bdaba8cbd60b4d9315fa128de188f,
+    type: 2}
+  enemyMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  enemyNormalAbility: {fileID: 11400000, guid: 4790239ba61d12049b29a0ac6fe1bc73, type: 2}
+  enemyEspecialAbility: {fileID: 11400000, guid: 4567cc16e01ceab4684fcc8f559bdc30,
+    type: 2}
+  enemyRange: 7
+  enemyMeleeRange: 2.5

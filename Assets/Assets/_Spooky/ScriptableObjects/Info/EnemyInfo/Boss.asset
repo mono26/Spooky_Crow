@@ -13,25 +13,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectIndex: 0
-  objectSpeed: 0
+  objectMovementSpeed: 0
   objectDamage: 0
-  objectCooldown1: 0
-  objectCooldown2: 0
-  objectMainSprite: {fileID: 0}
-  objectSpecialEffects: []
-  objectAbility1: {fileID: 0}
-  objectAbility2: {fileID: 0}
-  objectBullet: {fileID: 0}
+  objectMeleeCooldown: 0
+  objectBasicCooldown: 0
+  objectSpecialCooldown: 0
+  objectMeleeAbility: {fileID: 0}
+  objectBasicAbility: {fileID: 0}
+  objectSpecialAbility: {fileID: 0}
+  objectBasicBullet: {fileID: 0}
   objectSpecialBullet: {fileID: 0}
   objectRange: 0
+  objectMeleeRange: 0
   enemyType: 0
   enemyName: 
-  enemyIndex: 2
+  enemyIndex: 4
   enemyMoveSpeed: 0
-  enemyAtackSpeed: 0
-  enemyParticles: []
+  enemyMeleeSpeed: 0
+  enemyBasicSpeed: 0
+  enemySpecialSpeed: 0
+  enemyReward: 0
   enemyHealthPoints: 0
-  enemyReaward: 0
-  enemyAbility1: {fileID: 0}
-  enemyAbility2: {fileID: 0}
+  enemyDrop: {fileID: 0}
+  enemyMeleeAbility: {fileID: 0}
+  enemyNormalAbility: {fileID: 0}
+  enemyEspecialAbility: {fileID: 0}
   enemyRange: 0
+  enemyMeleeRange: 0

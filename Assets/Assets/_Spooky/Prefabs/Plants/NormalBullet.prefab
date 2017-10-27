@@ -126,6 +126,8 @@ MonoBehaviour:
   objectCDTimer2: 0
   bulletTime: 0
   specialTime: 0
+  bulletSprite: {fileID: 1247425919023972}
+  bulletEffects: []
   bulletUpdateRate: 1
   bulletInfo: {fileID: 11400000, guid: f5beda86756a578468a02459b6fcd47f, type: 2}
   bulletRigidBody: {fileID: 0}

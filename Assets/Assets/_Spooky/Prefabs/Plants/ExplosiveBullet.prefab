@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4770921139621504}
   - component: {fileID: 212734307566938020}
   m_Layer: 0
-  m_Name: CorrosiveSprite
+  m_Name: ExplosiveSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,9 @@ MonoBehaviour:
   objectCDTimer2: 0
   bulletTime: 0
   specialTime: 0
+  bulletSprite: {fileID: 1096874771233098}
+  bulletEffects:
+  - {fileID: 1644305551437954}
   bulletUpdateRate: 1
   bulletInfo: {fileID: 11400000, guid: e9077a46eb48d0343b9dae341310838c, type: 2}
   bulletRigidBody: {fileID: 0}

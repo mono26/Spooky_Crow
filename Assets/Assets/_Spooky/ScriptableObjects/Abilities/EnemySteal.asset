@@ -11,4 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bdb9f8b2a582b48976bbea89054012, type: 3}
   m_Name: EnemySteal
   m_EditorClassIdentifier: 
-  cdTime: 25
+  abilityName: 
+  spriteEffect: {fileID: 0}
+  cooldown: 0
+  theName: 
+  enemyLoot: {fileID: 114881923839347168, guid: 874eb606882a474418c7abc57019a5df,
+    type: 2}

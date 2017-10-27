@@ -109,15 +109,15 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 0
-        neutralBlackIn: 0.007
+        neutralBlackIn: 0.02
         neutralWhiteIn: 10
-        neutralBlackOut: -0.003
+        neutralBlackOut: 0
         neutralWhiteOut: 10
-        neutralWhiteLevel: 2.6
+        neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
         postExposure: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
         tint: 0
         hueShift: 0
         saturation: 1
-        contrast: 1
+        contrast: 1.01
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -134,13 +134,13 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0.33698475, g: 0.49163267, b: 1, a: 0}
-          power: {r: 1, g: 0.6282376, b: 0, a: 0}
-          offset: {r: 1, g: 0.56953204, b: 0.6167538, a: 0}
+          slope: {r: 1, g: 0.7753252, b: 0.6076571, a: 0}
+          power: {r: 0.70154107, g: 0.97293824, b: 1, a: 0}
+          offset: {r: 1, g: 0.7529118, b: 0.80743814, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 0.82272327, b: 0.9072564, a: 0}
+          gamma: {r: 0.54703367, g: 0.7081406, b: 1, a: 0}
+          gain: {r: 1, g: 0.9694364, b: 0.68585765, a: 0}
       curves:
         master:
           curve:
@@ -149,14 +149,14 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
-              outSlope: 1
+              inSlope: 0
+              outSlope: 0.33136094
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
-              inSlope: 1
-              outSlope: 1
+              inSlope: 0.8461539
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
@@ -171,18 +171,18 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -193,18 +193,18 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -215,18 +215,18 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -276,31 +276,31 @@ MonoBehaviour:
         e_CurveG: 0
         e_CurveB: 0
   userLut:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       lut: {fileID: 2800000, guid: 8e71fc177fa0743a9a92fc075292bf6e, type: 3}
-      contribution: 0.48
+      contribution: 0.642
   chromaticAberration:
     m_Enabled: 0
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 1
+      intensity: 0
   grain:
     m_Enabled: 0
     m_Settings:
-      colored: 1
-      intensity: 0.33
-      size: 3
-      luminanceContribution: 1
+      colored: 0
+      intensity: 1
+      size: 0.53
+      luminanceContribution: 0.769
   vignette:
     m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.51
-      smoothness: 1
-      roundness: 0.45
+      intensity: 0.316
+      smoothness: 0.348
+      roundness: 1
       mask: {fileID: 0}
       opacity: 1
       rounded: 0

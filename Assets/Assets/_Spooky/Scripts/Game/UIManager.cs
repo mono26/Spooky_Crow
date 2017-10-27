@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
 
     public void Menu()
     {
-        sceneFader.FadeTo("menu");
+        sceneFader.FadeTo("MainMenu");
     }
     public void Continue()
     {

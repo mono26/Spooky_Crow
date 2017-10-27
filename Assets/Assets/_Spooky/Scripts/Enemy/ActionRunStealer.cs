@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu (menuName = "AIComponents/Actions/ActionSteal")]
+[CreateAssetMenu (menuName = "AIComponents/Actions/ActionRunSteal")]
 public class ActionRunStealer : AIAction
 { 
     public override void DoAction(AIController controller)
@@ -18,6 +18,7 @@ public class ActionRunStealer : AIAction
         }
         else
         {
+            controller.objectNavMesh.isStopped = false;
             controller.objectNavMesh.SetDestination(controller.objectTarget.position);
         }
     }

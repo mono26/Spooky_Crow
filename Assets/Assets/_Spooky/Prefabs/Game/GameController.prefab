@@ -57,9 +57,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5703c818e311a4c99b581883492aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPrefab: {fileID: 1008430658053762, guid: a76bdaba8cbd60b4d9315fa128de188f, type: 2}
+  dropPrefabs:
+  - {fileID: 1008430658053762, guid: a76bdaba8cbd60b4d9315fa128de188f, type: 2}
+  listSizes: 
   poolsPosition: {fileID: 0}
-  size: 5
 --- !u!114 &114240506306994960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,14 +80,15 @@ MonoBehaviour:
     count: 05000000
   - name: 
     enemy:
-    - {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
+    - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
     spawnRate: 0.5
-    count: 0f000000
+    count: 0a000000
   - name: 
     enemy:
     - {fileID: 11400000, guid: 98ea0d2ffcf17bb40894242dfe960e2d, type: 2}
+    - {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
     spawnRate: 0.5
-    count: 1e000000
+    count: 0a00000007000000
   gameWaveBar: {fileID: 0}
   gameNumberOfEnemies: 0
   nextWave: 0
@@ -107,6 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletsPrefabs:
   - {fileID: 1799134145689592, guid: 68eb93fef63558143b430562918b28e0, type: 2}
+  - {fileID: 1799134145689592, guid: c2a98e8e87febff44a283fae47aec4e7, type: 2}
+  - {fileID: 1780004483422268, guid: 707f54490e9041846b9bb5eac903ae17, type: 2}
+  - {fileID: 1780004483422268, guid: 280e87a8e82e08149a92cd3ccf09538d, type: 2}
   listSizes: 
 --- !u!114 &114671474494334016
 MonoBehaviour:
@@ -136,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f3cb064b8717344a0570f70148cc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseStealPoints: []
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -147,19 +153,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  selectedPlantPoint: {fileID: 0}
+  indicatorManager: {fileID: 0}
   playerSpooky: {fileID: 0}
-  houseStealPoints: []
   gameHealthBar: {fileID: 0}
   gameMoneyText: {fileID: 0}
   playerMoney: 400
   currentHouseHealth: 800
   gameTime: 0
   maxHouseHelath: 800
-  my_GameOverUI: {fileID: 1177487443059824, guid: 6e0691e4b8c1813439cc145d1e58921b,
-    type: 2}
-  my_CompleteLevelUI: {fileID: 1616493812738470, guid: 6e0691e4b8c1813439cc145d1e58921b,
-    type: 2}
+  gameOverUI: {fileID: 0}
+  completeLvlUI: {fileID: 0}
 --- !u!114 &114850924218996652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,5 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ebcf106853df44b97c6f939f8f79df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantPrefabs: []
+  plantPrefabs:
+  - {fileID: 1812961385654978, guid: a4c648ca23a74a046af2e91ac8e9af93, type: 2}
+  - {fileID: 1812961385654978, guid: 08d4490e1e388f34aa2fe8f22c8f1003, type: 2}
+  - {fileID: 1812961385654978, guid: d1e62196c98e9a84492e47ed120e7712, type: 2}
+  - {fileID: 1812961385654978, guid: c3092f3037153de46bd69fa4e75da18d, type: 2}
+  - {fileID: 1812961385654978, guid: 449e0a79aa7e5b242bc7ac2027fd77a2, type: 2}
+  - {fileID: 1812961385654978, guid: 12cbadbd1bfce514d853f98643d22edc, type: 2}
   listSizes: 

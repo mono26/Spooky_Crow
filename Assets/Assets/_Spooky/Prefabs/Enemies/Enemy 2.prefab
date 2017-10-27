@@ -150,9 +150,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4905907585690298}
   - component: {fileID: 65036334271560362}
-  m_Layer: 11
-  m_Name: Claws
-  m_TagString: Untagged
+  - component: {fileID: 23520000639335852}
+  - component: {fileID: 33399991034520046}
+  m_Layer: 0
+  m_Name: MeleeCollider
+  m_TagString: EnemyMeleeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,6 +461,7 @@ GameObject:
   - component: {fileID: 65771630473830378}
   - component: {fileID: 95928840497176920}
   - component: {fileID: 195190945623133016}
+  - component: {fileID: 54646433260334304}
   - component: {fileID: 114075596285737968}
   m_Layer: 11
   m_Name: Enemy 2
@@ -674,7 +677,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202925780302634}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: -1.68, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4303295811914160}
@@ -760,8 +763,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464580999424350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.867, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.2, y: 0.5, z: -1.24}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4418477595017464}
   m_RootOrder: 0
@@ -792,6 +795,60 @@ Transform:
   m_Father: {fileID: 4216429393126122}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!23 &23520000639335852
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464580999424350}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33399991034520046
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464580999424350}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54646433260334304
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995082792655942}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!65 &65036334271560362
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -802,7 +859,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.45, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65771630473830378
 BoxCollider:
@@ -881,6 +938,7 @@ MonoBehaviour:
   objectNavMesh: {fileID: 0}
   objectAnimator: {fileID: 0}
   objectSprite: {fileID: 0}
+  objectMeleeCollider: {fileID: 0}
   objectCurrentState: {fileID: 0}
   objectRemainState: {fileID: 0}
   objectOriginalState: {fileID: 0}
@@ -888,11 +946,15 @@ MonoBehaviour:
   objectShootPoint: {fileID: 0}
   objectFinishedStealing: 0
   objectForce: 0
-  objectCDTimer1: 0
-  objectCDTimer2: 0
+  objectMeleeTimer: 0
+  objectBasicTimer: 0
+  objectSpecialTimer: 0
+  soundPlayer: {fileID: 0}
+  lootPosition: {fileID: 0}
   enemyInfo: {fileID: 11400000, guid: d013d0408803c31418ac43257b58795f, type: 2}
-  ability1CDTimer: 0
-  ability2CDTimer: 0
+  meleeTimer: 0
+  basicTimer: 0
+  specialTimer: 0
   enemyCurrentState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
   enemyRemainState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
   enemyOriginalState: {fileID: 11400000, guid: 6688b27eafd888b499cf973137d27144, type: 2}
@@ -901,10 +963,18 @@ MonoBehaviour:
   enemyNavMesh: {fileID: 0}
   enemyTarget: {fileID: 0}
   enemySprite: {fileID: 4434048376047416}
-  enemyUpdateRate: 3
+  enemyMeleeCollider: {fileID: 65036334271560362}
+  enemyUpdateRate: 4
+  enemyLootPosition: {fileID: 0}
   stoleValue: 0
   enemyFinishStealing: 0
-  health: 0
+  enemyHealth: 3
+  feathersParticle: {fileID: 1320086511984004, guid: b7cfccd1143dc4169a4c65fa9d55e6db,
+    type: 2}
+  explosionVFX: {fileID: 1615974853316570, guid: ea84909439a2b431a9561b45b41d5ece,
+    type: 2}
+  lootObject: {fileID: 0}
+  enemySoundPlayer: {fileID: 0}
 --- !u!114 &114076515840684448
 MonoBehaviour:
   m_ObjectHideFlags: 1

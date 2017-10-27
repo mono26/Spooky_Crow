@@ -9,7 +9,6 @@ TagManager:
   - RunAwayPoint
   - SpawnPoint
   - Enemy
-  - Shreder
   - PlantPoint
   - StealPoint
   - Collectable
@@ -20,6 +19,13 @@ TagManager:
   - GameMoneyText
   - GameHealthBar
   - GameWaveBar
+  - GameField
+  - GameOverUI
+  - WinGameUI
+  - EnemyMeleeCollider
+  - PlantMeleeCollider
+  - CornField
+  - Plant
   layers:
   - Default
   - TransparentFX
@@ -34,13 +40,13 @@ TagManager:
   - House
   - Enemy
   - Enviroment
-  - Plants
+  - Plant
   - Invisible
-  - Interactable
+  - PlantPoint
   - Ground
-  - 
-  - 
-  - 
+  - Bullet
+  - DetectorPlantPoint
+  - DetectorEnemy
   - 
   - 
   - 

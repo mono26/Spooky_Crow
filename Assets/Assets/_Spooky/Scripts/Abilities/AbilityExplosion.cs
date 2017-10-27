@@ -14,7 +14,7 @@ public class AbilityExplosion : AIAbility
 
     public BulletController bullet;
 
-    public GameObject corrosiveField;
+    public GameObject explosionField;
 
     public override void Ability(AIController controller)
     {
@@ -40,8 +40,7 @@ public class AbilityExplosion : AIAbility
     }
     private void SetParentVariables()
     {
-        abilityCooldown = cooldown;
-        spriteEffect = corrosiveField;
+        spriteEffect = explosionField;
         abilityName = theName;
     }
 }

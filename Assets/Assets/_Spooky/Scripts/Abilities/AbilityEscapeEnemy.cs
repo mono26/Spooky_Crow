@@ -8,7 +8,6 @@ public class AbilityEscapeEnemy : AIAbility
 
     public override void InitializeAbility()
     {
-        abilityCooldown = cooldown;
         abilityName = theName;
     }
     public override void Ability(AIController controller)
@@ -20,6 +19,6 @@ public class AbilityEscapeEnemy : AIAbility
     {
         WaveSpawner.Instance.gameNumberOfEnemies--;
         controller.StopAllCoroutines();
-        PoolsManagerEnemies.Instance.ReleaseObject(controller.gameObject);
+        PoolsManagerEnemies.Instance.ReleaseEnemy(controller.gameObject);
     }
 }

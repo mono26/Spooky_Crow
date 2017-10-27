@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AIComponents/Ability/CorrosiveField")]
 public class AbilityCorrosiveField : AIAbility
 {
-    public float cooldown;
     public float areaEfect;
     public float areaDamage;
 
@@ -41,7 +40,6 @@ public class AbilityCorrosiveField : AIAbility
     }
     private void SetParentVariables()
     {
-        abilityCooldown = cooldown;
         spriteEffect = corrosiveField;
         abilityName = theName;
     }

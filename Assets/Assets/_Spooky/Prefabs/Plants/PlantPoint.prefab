@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4677734990157170}
   - component: {fileID: 33912280857121194}
   - component: {fileID: 23316448799741900}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: PlantPointInvisible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1436740240377334
 GameObject:
@@ -38,13 +38,13 @@ GameObject:
   - component: {fileID: 4685974337416896}
   - component: {fileID: 65862643856137128}
   - component: {fileID: 114801198200668814}
-  - component: {fileID: 114256396798385056}
-  m_Layer: 0
+  - component: {fileID: 114369404093439656}
+  m_Layer: 15
   m_Name: PlantPoint
-  m_TagString: Untagged
+  m_TagString: PlantPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1982080738406136
 GameObject:
@@ -55,12 +55,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4420321380348328}
   - component: {fileID: 212283675353980394}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Piso_textura_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4420321380348328
 Transform:
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982080738406136}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: -0.35, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4685974337416896}
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369791114110600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: -0.34999847, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 4685974337416896}
@@ -154,7 +154,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 2.5, z: 5}
   m_Center: {x: 0.022274017, y: 1.3, z: 0.030125126}
---- !u!114 &114256396798385056
+--- !u!114 &114369404093439656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -162,28 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436740240377334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d5064681b8a634a8611ab79c56868b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114801198200668814}
-          m_MethodName: OnClicked
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
+  clip: {fileID: 8300000, guid: 787bb0c4d6ef4014e9d40f4a3fc14c79, type: 3}
 --- !u!114 &114801198200668814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,3 +219,5 @@ SpriteRenderer:
   m_Size: {x: 11.67, y: 3.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0

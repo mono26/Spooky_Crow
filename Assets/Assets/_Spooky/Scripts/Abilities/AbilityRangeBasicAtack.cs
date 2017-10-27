@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AIComponents/Ability/RangeEnemy")]
+[CreateAssetMenu(menuName = "AIComponents/Ability/BasicAtack")]
 public class AbilityRangeBasicAtack : AIAbility
 {
     public string theName;
 
     public override void Ability(AIController controller)
     {
-        Debug.Log("Ejecutando Basic Attack");
         BasicAtack(controller);
-        controller.SetCD1(controller.objectInfo.objectCooldown1);
+        controller.SetBasicCoolDown(controller.objectInfo.objectBasicCooldown);
     }
 
     private void BasicAtack(AIController controller)
@@ -26,10 +25,12 @@ public class AbilityRangeBasicAtack : AIAbility
     void ThrowBasicAtack(AIController controller)
     {
         var direction = (controller.objectTarget.position - controller.transform.position).normalized;
-        var bullet = PoolsManagerBullets.Instance.GetBullet(controller.objectInfo.objectBullet.objectInfo.objectIndex);
+        var bullet = PoolsManagerBullets.Instance.GetBullet(controller.objectInfo.objectBasicBullet.objectInfo.objectIndex);
         //bullet.GetComponent<BulletController>().my_Point = GameManager.Instance.player.transform.position;
         bullet.transform.position = controller.transform.position;
         bullet.GetComponent<Rigidbody>().AddForce(direction * controller.objectForce, ForceMode.Impulse);
+        controller.soundPlayer.PlayClip();
+
     }
     public override void InitializeAbility()
     {

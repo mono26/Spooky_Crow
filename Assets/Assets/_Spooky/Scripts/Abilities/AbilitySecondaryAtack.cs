@@ -3,16 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AIComponents/Ability/CorrosiveAtack")]
+[CreateAssetMenu(menuName = "AIComponents/Ability/SecondaryAtack")]
 public class AbilitySecondaryAtack : AIAbility
 {
-    public float cooldown;
     public string theName;
 
     public override void Ability(AIController controller)
     {
         SecondaryAtack(controller);
-        controller.SetCD2(controller.objectInfo.objectCooldown2);
     }
 
     private void SecondaryAtack(AIController controller)
@@ -33,7 +31,6 @@ public class AbilitySecondaryAtack : AIAbility
     }
     public override void InitializeAbility()
     {
-        abilityCooldown = cooldown;
         abilityName = theName;
     }
 }

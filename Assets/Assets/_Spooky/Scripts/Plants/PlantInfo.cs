@@ -10,48 +10,94 @@ public class PlantInfo : Info {
     {
         FISICAL, MAGIC, HARD
     }
-    public PlantType my_Type;
+    public PlantType plantType;
     public string plantName;
     public int plantIndex;   //Variable para almacenar la informacion de los pools.
-
+    public int plantMeleeDamage;
     public float plantAtackSpeed;
+    public float plantMeleeSpeed;
+    public float plantSpecialSpeed;
+    public int plantReward;
 
     public BulletController normalBullet;
     public BulletController specialBullet;
 
-    public AIAbility plantAbility1;
-    public AIAbility plantAbility2;
+    public AIAbility plantMeleeAbility;
+    public AIAbility plantNormalAbility;
+    public AIAbility plantSpecialAbility;
 
-    public float meleeRange;
-    public float shootRange;
+    public float plantMeleeRange;
+    public float plantShootRange;
+
+    public AudioClip plantAttackClip;
 
     public override void InitializeInfo()
     {
         SetParentVariables();
-        plantAbility1.InitializeAbility();
-        if (plantAbility2 != null)
+        if(plantMeleeAbility != null)
         {
-            plantAbility2.InitializeAbility();
+            plantMeleeAbility.InitializeAbility();
         }
-        normalBullet.Initialize();
+        if(plantNormalAbility != null)
+        {
+            plantNormalAbility.InitializeAbility();
+        }
+        if (plantSpecialAbility != null)
+        {
+            plantSpecialAbility.InitializeAbility();
+        }
+        if(normalBullet != null)
+        {
+            normalBullet.Initialize();
+        }
         if(specialBullet != null)
         {
             specialBullet.Initialize();
         }
+        InitializeCooldowns();
     }
     private void SetParentVariables()
     {
-        objectName = plantName;
-        objectIndex = plantIndex;
-        objectCooldown1 = plantAtackSpeed;
-        if(plantAbility2 != null)
-            objectCooldown2 = plantAbility2.abilityCooldown;
-        objectRange = shootRange;
-        objectAbility1 = plantAbility1;
-        if (plantAbility2 != null)
-            objectAbility2 = plantAbility2;
-        objectBullet = normalBullet;
+        this.objectName = plantName;
+        this.objectIndex = plantIndex;
+        this.objectDamage = plantMeleeDamage;
+        this.objectRange = plantShootRange;
+        this.objectMeleeRange = plantMeleeRange;
+        this.attackClip = plantAttackClip;
+        if(plantSpecialAbility != null)
+        {
+            this.objectSpecialAbility = plantSpecialAbility;
+        }
+        if(plantNormalAbility != null)
+        {
+            this.objectBasicAbility = plantNormalAbility;  
+        }
+        if (plantMeleeAbility != null)
+        {
+            this.objectMeleeAbility = plantMeleeAbility;
+        }
+        if (normalBullet != null)
+        {
+            this.objectBasicBullet = normalBullet;
+        }
         if (specialBullet != null)
-            objectSpecialBullet = specialBullet;
+        {
+            this.objectSpecialBullet = specialBullet;
+        }
+    }
+    public override void InitializeCooldowns()
+    {
+        if(plantMeleeSpeed > 0)
+        {
+            this.objectMeleeCooldown = plantMeleeSpeed;
+        }
+        if(plantAtackSpeed > 0)
+        {
+            this.objectBasicCooldown = plantAtackSpeed;
+        }
+        if(plantSpecialSpeed > 0)
+        {
+            this.objectSpecialCooldown = plantSpecialSpeed;
+        }
     }
 }

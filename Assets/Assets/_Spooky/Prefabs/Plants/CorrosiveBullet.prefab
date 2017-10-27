@@ -57,7 +57,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1780004483422268
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +185,9 @@ MonoBehaviour:
   objectCDTimer2: 0
   bulletTime: 0
   specialTime: 0
+  bulletSprite: {fileID: 1096874771233098}
+  bulletEffects:
+  - {fileID: 1052104322910680}
   bulletUpdateRate: 1
   bulletInfo: {fileID: 11400000, guid: e7bc3e2cd61001b44bec604f40928492, type: 2}
   bulletRigidBody: {fileID: 0}

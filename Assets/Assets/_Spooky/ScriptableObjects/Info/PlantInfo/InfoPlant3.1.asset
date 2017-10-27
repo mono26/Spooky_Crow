@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc6099dd698b6348939d875f3697d12, type: 3}
+  m_Name: InfoPlant3.1
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectIndex: 4
+  objectMovementSpeed: 0
+  objectDamage: 1
+  objectMeleeCooldown: 1
+  objectBasicCooldown: 1
+  objectSpecialCooldown: 10
+  objectMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  objectBasicAbility: {fileID: 0}
+  objectSpecialAbility: {fileID: 11400000, guid: 2e4af91fc503fbc4b9bae7cc8e85ddcf,
+    type: 2}
+  objectBasicBullet: {fileID: 0}
+  objectSpecialBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
+    type: 2}
+  objectRange: 10
+  objectMeleeRange: 3
+  attackClip: {fileID: 8300000, guid: 94d2f370329585544a0e3a96a02ff70f, type: 3}
+  plantType: 0
+  plantName: 
+  plantIndex: 4
+  plantMeleeDamage: 1
+  plantAtackSpeed: 1
+  plantMeleeSpeed: 1
+  plantSpecialSpeed: 10
+  plantReward: 105
+  normalBullet: {fileID: 0}
+  specialBullet: {fileID: 114192043229103188, guid: c2a98e8e87febff44a283fae47aec4e7,
+    type: 2}
+  plantMeleeAbility: {fileID: 11400000, guid: 3d36bdb41252d804d9689ff812cf6386, type: 2}
+  plantNormalAbility: {fileID: 0}
+  plantSpecialAbility: {fileID: 11400000, guid: 2e4af91fc503fbc4b9bae7cc8e85ddcf,
+    type: 2}
+  plantMeleeRange: 3
+  plantShootRange: 10
+  plantAttackClip: {fileID: 8300000, guid: 94d2f370329585544a0e3a96a02ff70f, type: 3}

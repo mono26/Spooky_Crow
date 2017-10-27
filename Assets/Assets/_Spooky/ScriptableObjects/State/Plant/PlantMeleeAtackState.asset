@@ -11,3 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08570e481e7e2b84a877b4b73fabf42b, type: 3}
   m_Name: PlantMeleeAtackState
   m_EditorClassIdentifier: 
+  aiActions:
+  - {fileID: 11400000, guid: 8b316103e8752fd46bb5f5399cc75063, type: 2}
+  - {fileID: 11400000, guid: 6093a1c541406fc419f6c94d8b75f9ae, type: 2}
+  aiTransitions:
+  - decision: {fileID: 11400000, guid: b0911761be7a9f54dbf8b8a2ad9965d3, type: 2}
+    trueState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+    falseState: {fileID: 11400000, guid: 9a728d0e4c2b26a44b5b961062f97a89, type: 2}

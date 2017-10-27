@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad61453796adf794ebedd8c356135522, type: 3}
   m_Name: BasicAtack
   m_EditorClassIdentifier: 
-  abilityName: 
+  abilityName: Basic Atack
   abilityCooldown: 0
-  cooldown: 1.25
-  theName: 
+  spriteEffect: {fileID: 0}
+  theName: Basic Atack

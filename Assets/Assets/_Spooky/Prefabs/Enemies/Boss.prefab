@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 65043014379553568}
   - component: {fileID: 195509902025937160}
   - component: {fileID: 95553172731828350}
+  - component: {fileID: 54732510344269974}
   - component: {fileID: 114646151318193386}
   m_Layer: 11
   m_Name: Boss
@@ -1262,6 +1263,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128899300119072}
   m_Mesh: {fileID: 43908144956380956, guid: 334bd832a849341ae9600b544dbd145e, type: 2}
+--- !u!54 &54732510344269974
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693399255368238}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!65 &65043014379553568
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1808,6 +1824,7 @@ MonoBehaviour:
   objectNavMesh: {fileID: 0}
   objectAnimator: {fileID: 0}
   objectSprite: {fileID: 0}
+  objectMeleeCollider: {fileID: 0}
   objectCurrentState: {fileID: 0}
   objectRemainState: {fileID: 0}
   objectOriginalState: {fileID: 0}
@@ -1815,11 +1832,15 @@ MonoBehaviour:
   objectShootPoint: {fileID: 0}
   objectFinishedStealing: 0
   objectForce: 0
-  objectCDTimer1: 0
-  objectCDTimer2: 0
+  objectMeleeTimer: 0
+  objectBasicTimer: 0
+  objectSpecialTimer: 0
+  soundPlayer: {fileID: 0}
+  lootPosition: {fileID: 0}
   enemyInfo: {fileID: 0}
-  ability1CDTimer: 0
-  ability2CDTimer: 0
+  meleeTimer: 0
+  basicTimer: 0
+  specialTimer: 0
   enemyCurrentState: {fileID: 0}
   enemyRemainState: {fileID: 0}
   enemyOriginalState: {fileID: 0}
@@ -1828,10 +1849,16 @@ MonoBehaviour:
   enemyNavMesh: {fileID: 0}
   enemyTarget: {fileID: 0}
   enemySprite: {fileID: 0}
+  enemyMeleeCollider: {fileID: 0}
   enemyUpdateRate: 2
+  enemyLootPosition: {fileID: 0}
   stoleValue: 0
   enemyFinishStealing: 0
-  health: 0
+  enemyHealth: 0
+  feathersParticle: {fileID: 0}
+  explosionVFX: {fileID: 0}
+  lootObject: {fileID: 0}
+  enemySoundPlayer: {fileID: 0}
 --- !u!114 &114662261487839592
 MonoBehaviour:
   m_ObjectHideFlags: 1

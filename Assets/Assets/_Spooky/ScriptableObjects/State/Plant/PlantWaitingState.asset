@@ -13,8 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiActions:
   - {fileID: 11400000, guid: c64d9adbf2b4e6040bb3b61dd54942dd, type: 2}
-  - {fileID: 11400000, guid: 7dc85f5d58382904eb594aa86249fd04, type: 2}
+  - {fileID: 11400000, guid: 8b316103e8752fd46bb5f5399cc75063, type: 2}
   aiTransitions:
-  - decision: {fileID: 11400000, guid: 0444907fae705f241b8b2d6f8fa37e63, type: 2}
+  - decision: {fileID: 11400000, guid: b0911761be7a9f54dbf8b8a2ad9965d3, type: 2}
+    trueState: {fileID: 11400000, guid: d03f705e59da10e41ac8decd782b464e, type: 2}
+    falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}
+  - decision: {fileID: 11400000, guid: f4c12722bfb72c74e9005c3b3a0172b6, type: 2}
     trueState: {fileID: 11400000, guid: 9a728d0e4c2b26a44b5b961062f97a89, type: 2}
     falseState: {fileID: 11400000, guid: 0640beba5a0cb174a970983e755832b3, type: 2}

@@ -10,9 +10,11 @@ public class AIEnemyController : AIController
 {
     //Cada habilidad debe de contener su cooldown propio
     public EnemyInfo enemyInfo;
-    public float ability1CDTimer;
-    public float ability2CDTimer;     
+    public float meleeTimer;
+    public float basicTimer;  
+    public float specialTimer;   
 
+    //Informacion para los estados.
     public AIState enemyCurrentState;
     //Estado de hacer nada, para que siempre el estado a cambiar sea diferente a este.
     public AIState enemyRemainState;
@@ -25,17 +27,34 @@ public class AIEnemyController : AIController
     public Transform enemyTarget;
     //Es un game object para poder flipear el sprite con el scale sin alterar el collider del parent.
     public Transform enemySprite;
-
+    //Melee collider para el enemigo
+    public Collider enemyMeleeCollider;
     //Numero de veces que se hace el update por segundo.
     public float enemyUpdateRate = 2f;
 
+    public Transform enemyLootPosition;
     public float stoleValue;
     //Valor por default porque cuando empieza no ha robado
     public bool enemyFinishStealing = false;
 
-    public float health;      //Debe de ser sacada del enemyInfo para ser almacenada aqui. Nunca modificar los valores del enemyInfo!
+    public float enemyHealth;      //Debe de ser sacada del enemyInfo para ser almacenada aqui. Nunca modificar los valores del enemyInfo!
+
+    public GameObject feathersParticle;
+    public GameObject explosionVFX;
+    public GameObject lootObject;
+
+    public SoundPlayer enemySoundPlayer;
 
     //Metodos de unity
+    private void OnDrawGizmos()
+    {
+        //Shoot Range
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, enemyInfo.enemyRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enemyInfo.enemyMeleeRange);
+    }
     private void OnEnable()
     {
         Initialize();
@@ -45,23 +64,24 @@ public class AIEnemyController : AIController
     {
         enemyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = transform.GetComponent<Animator>();
-    }
-    private void Start()
-    {
-        Initialize();
-        StartNavMeshForFirstTime();
+        enemySoundPlayer = this.GetComponent<SoundPlayer>();
     }
     private void Update()
     {
-        if(ability1CDTimer > 0)
+        if(meleeTimer > 0)
         {
-            ability1CDTimer -= Time.deltaTime;
-            objectCDTimer1 = ability1CDTimer;
+            meleeTimer -= Time.deltaTime;
+            this.objectMeleeTimer = meleeTimer;
         }
-        if (ability2CDTimer > 0)
+        if (basicTimer > 0)
         {
-            ability2CDTimer -= Time.deltaTime;
-            objectCDTimer2 = ability2CDTimer;
+            basicTimer -= Time.deltaTime;
+            this.objectBasicTimer = basicTimer;
+        }
+        if (specialTimer > 0)
+        {
+            specialTimer -= Time.deltaTime;
+            this.objectSpecialTimer = basicTimer;
         }
     }
 
@@ -72,6 +92,10 @@ public class AIEnemyController : AIController
         SetOriginalHealthValues();
         SetParentVariables();
         enemyInfo.InitializeInfo();
+        if (enemyMeleeCollider != null)
+        {
+            enemyMeleeCollider.gameObject.SetActive(false);
+        }
     }
 
     //Metodos privados
@@ -84,14 +108,20 @@ public class AIEnemyController : AIController
         this.objectOriginalState = enemyOriginalState;
         this.objectRemainState = enemyRemainState;
         this.objectSprite = enemySprite;
+        this.lootPosition = enemyLootPosition;
         this.objectTarget = enemyTarget;
-        objectUpdateRate = enemyUpdateRate;
+        this.objectUpdateRate = enemyUpdateRate;
+        this.soundPlayer = enemySoundPlayer;
+        if (enemyMeleeCollider != null)
+        {
+            this.objectMeleeCollider = enemyMeleeCollider;
+        }
     }
     private void SetOriginalHealthValues()
     {
-        health = enemyInfo.enemyHealthPoints;
-        enemyHealthBar.maxValue = health;
-        enemyHealthBar.value = health;
+        enemyHealth = enemyInfo.enemyHealthPoints;
+        enemyHealthBar.maxValue = enemyHealth;
+        enemyHealthBar.value = enemyHealth;
     }
     private void SetStartCurrentState()
     {
@@ -132,8 +162,9 @@ public class AIEnemyController : AIController
     //Eventos Publicos
     public override void ChangeTarget(Transform newTarget)
     {
-        enemyTarget = newTarget;
-        objectTarget = newTarget;
+        this.enemyTarget = newTarget;
+        this.objectTarget = newTarget;
+        this.enemyNavMesh.isStopped = true;
     }
     public override void TransitionToState(AIState nextState)
     {
@@ -142,17 +173,22 @@ public class AIEnemyController : AIController
             enemyCurrentState = nextState;
         }
     }
-    public override void SetCD1(float cooldown)
+    public override void SetMeleeCoolDown(float cooldown)
     {
-        ability1CDTimer = cooldown;
-        objectCDTimer1 = ability1CDTimer;
+        meleeTimer = cooldown;
+        objectMeleeTimer = meleeTimer;
     }
-    public override void SetCD2(float cooldown)
+    public override void SetBasicCoolDown(float cooldown)
     {
-        ability2CDTimer = cooldown;
-        objectCDTimer2 = ability2CDTimer;
+        basicTimer = cooldown;
+        objectBasicTimer = basicTimer;
     }
-    public void Animate()
+    public override void SetSpecialCoolDown(float cooldown)
+    {
+        specialTimer = cooldown;
+        objectSpecialTimer = specialTimer;
+    }
+    public void Flip()
     {
         if (!enemyTarget)
         {
@@ -188,16 +224,16 @@ public class AIEnemyController : AIController
             yield return false;
         }
         enemyCurrentState.UpdateState(this);
-        Animate();
+        Flip();
         yield return new WaitForSeconds(1 / enemyUpdateRate); //Numero de Updates por segundo.
         StartCoroutine(UpdateState());
     }
     public void TakeDamage(float damage)      //Este metodo se usa con el send mesagge para el daño y mirar si murio
     {
-        Debug.Log("Estoy recibiendo daño");
-        health -= damage;
-        enemyHealthBar.value = health;
-        if (health <= 0)
+        var feathersP = Instantiate(feathersParticle  , transform.position, Quaternion.Euler(-90,0,0));
+        enemyHealth -= damage;
+        enemyHealthBar.value = enemyHealth;
+        if (enemyHealth <= 0)
         {
             //Drop o aumentar la plata.
             Die();
@@ -207,12 +243,28 @@ public class AIEnemyController : AIController
     {
 		//Rotacion aleatoria para humo explosion
 		float randomRot = Random.Range (0,360);
-		//var explotion = Instantiate(smokeExplosion , transform.position  , Quaternion .Euler(90,0,randomRot ));
+		var explotion = Instantiate(explosionVFX , transform.position  , Quaternion .Euler(90,0,randomRot ));
         WaveSpawner.Instance.gameNumberOfEnemies--;
-        var drop = DropPool.Instance.GetDrop();
-        drop.transform.position = this.transform.position;
-        drop.GetComponent<Drop>().SetReward(enemyInfo.enemyReaward);
+        var drop = PoolsManagerDrop.Instance.GetObject(enemyInfo.enemyDrop.dropIndex, this.transform);
+        drop.GetComponent<EnemyDrop>().SetReward(enemyInfo.enemyReward);
+        if(lootObject)
+        {
+            //sacar el loot del parent
+            lootObject.transform.parent = null;
+        }
         StopAllCoroutines();
-        PoolsManagerEnemies.Instance.ReleaseObject(this.gameObject);
+        PoolsManagerEnemies.Instance.ReleaseEnemy(this.gameObject);
+        //enemySoundPlayer.PlayClip();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("PlantMeleeCollider"))
+        {
+            TakeDamage(other.GetComponentInParent<AIPlantController>().plantInfo.objectDamage);
+        }
+        if(other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<BulletController>().bulletInfo.objectDamage);
+        }
     }
 }

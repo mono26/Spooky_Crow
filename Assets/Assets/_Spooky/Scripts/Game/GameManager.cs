@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
-using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,11 +56,6 @@ public class GameManager : MonoBehaviour
         gameHealthBar.fillAmount = currentHouseHealth/maxHouseHelath;
         gameMoneyText.text = "$:" + playerMoney; 
     }
-    private void Update()
-    {
-
-    }
-
     //Metodos privados
     private void LookForSpawnPoints()
     {
@@ -101,17 +95,6 @@ public class GameManager : MonoBehaviour
     }
 
     //Metdos publicos
-    //Metodo para cuadno eljugador haga click en el suelo se deseleccione el Build o PlantUI
-    public void ClickGroundToDeselect()
-    {
-        Debug.Log("Estoy haciendo el click");
-        if (UIManager.Instance.currentPlantPoint != null)
-        {
-            UIManager.Instance.DeselectBuildPoint();
-            UIManager.Instance.DeselectPlantPoint();
-        }
-        else return;
-    }
     public void LoseHealth(int stole)
     {
         currentHouseHealth -= stole;
@@ -125,6 +108,11 @@ public class GameManager : MonoBehaviour
     public void GiveMoney(int reward)
     {
         playerMoney += reward;
+        gameMoneyText.text = "$:" + playerMoney;
+    }
+    public void TakeMoney(int money)
+    {
+        playerMoney -= money;
         gameMoneyText.text = "$:" + playerMoney;
     }
     void GameOver()

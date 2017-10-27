@@ -17,11 +17,8 @@ public class BulletInfo : Info {
 
     public AIAbility bulletAbility1;
 
-    public GameObject bulletSprite;
-    public GameObject[] specialSprite;
-
     public float bulletLifeTime;
-    public float specialLifeTime;
+    public float bulletSpecialLifeTime;
 
     public override void InitializeInfo()
     {
@@ -30,20 +27,24 @@ public class BulletInfo : Info {
             bulletAbility1.InitializeAbility();
         }
         SetParentVariables();
+        InitializeCooldowns();
     }
     private void SetParentVariables()
     {
         objectName = bulletName;
         objectIndex = bulletIndex;
         objectDamage = bulletDamage;
-        objectAbility1 = bulletAbility1;
-        objectCooldown1 = bulletLifeTime;
-        objectCooldown2 = specialLifeTime;
-        objectMainSprite = bulletSprite;
-        objectSpecialEffects = new GameObject[specialSprite.Length];
-        for(int i = 0; i < specialSprite.Length; i++)
+        objectBasicAbility = bulletAbility1;
+    }
+    public override void InitializeCooldowns()
+    {
+        if(bulletLifeTime > 0)
         {
-            objectSpecialEffects[i] = specialSprite[i];
+            this.objectBasicCooldown = bulletLifeTime;
+        }
+        if(bulletSpecialLifeTime > 0)
+        {
+            this.objectSpecialCooldown = bulletSpecialLifeTime;
         }
     }
 }

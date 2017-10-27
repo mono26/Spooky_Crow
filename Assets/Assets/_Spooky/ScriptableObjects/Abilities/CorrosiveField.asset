@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityCooldown: 25
   spriteEffect: {fileID: 1079034957064728, guid: d7cc9ef61a16bc5468077bab18f83d9e,
     type: 2}
-  cooldown: 25
+  areaEfect: 2.5
   areaDamage: 5
   theName: Corrosive Field
   bullet: {fileID: 114065390183582204, guid: 707f54490e9041846b9bb5eac903ae17, type: 2}

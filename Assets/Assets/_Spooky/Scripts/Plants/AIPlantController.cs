@@ -5,22 +5,37 @@ using UnityEngine;
 
 public class AIPlantController : AIController
 {
+    //Informacion especifica de esta planta
     public PlantInfo plantInfo;
-    public float ability1CDTimer;
-    public float ability2CDTimer;
-
+    public float meleeTimer;
+    public float basicTimer;
+    public float specialTimer;
+    //Informacion de los estados de la planta
     public AIState plantCurrentState;
     public AIState plantRemainState;
     public AIState plantOriginalState;
-
+    //Informacion para el funcionamiento
     public Animator plantAnimator;
     public Transform plantTarget;
     public Transform plantSprite;
     public Transform plantShootPoint;
+    public Collider plantMeleeCoollider;
 
     public float plantForce;
     public float plantUpdateRate;
+    public float plantHealth;
 
+    public SoundPlayer plantSoundPlayer;
+
+    private void OnDrawGizmos()
+    {
+        //Shoot Range
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, plantInfo.plantShootRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, plantInfo.plantMeleeRange);
+    }
     private void OnEnable()
     {
         Initialize();
@@ -29,22 +44,24 @@ public class AIPlantController : AIController
     private void Awake()
     {
         plantAnimator = transform.GetComponent<Animator>();
+        plantSoundPlayer = this.GetComponent<SoundPlayer>();
     }
     private void Update()
     {
-        if (ability1CDTimer > 0)
+        if (meleeTimer > 0)
         {
-            ability1CDTimer -= Time.deltaTime;
-            objectCDTimer1 = ability1CDTimer;
+            meleeTimer -= Time.deltaTime;
+            this.objectMeleeTimer = meleeTimer;
         }
-        if (ability2CDTimer > 0)
+        if (basicTimer > 0)
         {
-            ability2CDTimer -= Time.deltaTime;
-            objectCDTimer2 = ability2CDTimer;
+            basicTimer -= Time.deltaTime;
+            this.objectBasicTimer = basicTimer;
         }
-        if(plantTarget != null && !plantTarget.gameObject.activeInHierarchy)
+        if (specialTimer > 0)
         {
-            plantTarget = null;
+            specialTimer -= Time.deltaTime;
+            this.objectSpecialTimer = specialTimer;
         }
     }
 
@@ -54,6 +71,10 @@ public class AIPlantController : AIController
         SetStartCurrentState();
         SetParentVariables();
         plantInfo.InitializeInfo();
+        if (plantMeleeCoollider != null)
+        {
+            plantMeleeCoollider.gameObject.SetActive(false);
+        }
     }
 
     //Metodos privados
@@ -66,7 +87,12 @@ public class AIPlantController : AIController
         this.objectOriginalState = plantOriginalState;
         this.objectRemainState = plantRemainState;
         this.objectForce = plantForce;
-        objectUpdateRate = plantUpdateRate;
+        this.objectUpdateRate = plantUpdateRate;
+        this.soundPlayer = plantSoundPlayer;
+        if (plantMeleeCoollider != null)
+        {
+            this.objectMeleeCollider = plantMeleeCoollider;
+        }
     }
     private void SetStartCurrentState()
     {
@@ -85,17 +111,22 @@ public class AIPlantController : AIController
     public override void ChangeTarget(Transform newTarget)
     {
         plantTarget = newTarget;
-        objectTarget = newTarget;
+        this.objectTarget = newTarget;
     }
-    public override void SetCD1(float cooldown)
+    public override void SetMeleeCoolDown(float cooldown)
     {
-        ability1CDTimer = cooldown;
-        objectCDTimer1 = ability1CDTimer;
+        meleeTimer = cooldown;
+        this.objectMeleeTimer = meleeTimer;
     }
-    public override void SetCD2(float cooldown)
+    public override void SetBasicCoolDown(float cooldown)
     {
-        ability2CDTimer = cooldown;
-        objectCDTimer2 = ability2CDTimer;
+        basicTimer = cooldown;
+        this.objectBasicTimer = basicTimer;
+    }
+    public override void SetSpecialCoolDown(float cooldown)
+    {
+        specialTimer = cooldown;
+        this.objectSpecialTimer = specialTimer;
     }
     public void Animate()
     {
@@ -118,5 +149,19 @@ public class AIPlantController : AIController
         {
             plantCurrentState = nextState;
         }
+    }
+    public void TakeDamage(float damage)
+    {
+        plantHealth -= damage;
+        if (plantHealth <= 0)
+        {
+            //Drop o aumentar la plata.
+            Die();
+        }
+    }
+    public void Die()
+    {
+        StopAllCoroutines();
+        PoolsManagerPlants.Instance.ReleasePlant(this.gameObject);
     }
 }
